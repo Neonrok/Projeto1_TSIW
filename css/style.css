@@ -1,5 +1,25 @@
+
+:root{
+  --mainBlack: #171717;
+  --mainWhite: #EDEDED;
+  --mainGrey: #A0A0A2;
+  --grey20: #333333;
+  --grey25: #404040;
+  --mainYellow: #FFD324;
+  --mainPurple: #9CA6FC;
+  --lightPurple: #D6D9F3;
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
 }

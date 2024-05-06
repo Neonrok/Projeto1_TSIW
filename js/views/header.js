@@ -10,7 +10,7 @@ export function createHeader(){
           <li><a href="" class="navLink">Testemunhos</a></li>
           <li><a href="" class="navLink">Sobre</a></li>
       </ul>
-      <button>Registar</button>
+      <a href="" class="button" role="button">Registar</a>
   </nav>`
   const mainContainer = document.getElementById("mainContainer")
   mainContainer.prepend(header) 
