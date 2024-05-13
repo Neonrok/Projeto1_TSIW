@@ -3,12 +3,14 @@ import * as data from "./SR_Back.js"
 $(document).ready(function(e) {
     $('img[usemap]').rwdImageMaps();
 })
+
 //variaveis necessarias
 let Back_ordem = [];
 Back_ordem = data.init();
 let tela_atual = document.getElementById("T_Inicio");
 let pc1_state = false;
 let chave_entrada = false;
+let next_tela
 
 //renderização---------------------------------------------------------------------------------------
 let Butão_voltar = document.getElementById("voltar");
@@ -19,7 +21,7 @@ for (let i = 0 ; i<Back_ordem.length ; i++) {
 };
 //funções----------------------------------------------------------------------------------------------
 const S_1 = function() {
-    let next_tela = document.getElementById("Sala_Entrada");
+    next_tela = document.getElementById("Sala_Entrada");
     tela_atual.style.display = "none";
     tela_atual = next_tela;
     tela_atual.style.display = "block";
@@ -28,6 +30,9 @@ const S_1 = function() {
         document.getElementById("item_S1").style.display = "none"
     }
 }
+const Pc1_interior = function() {
+    
+}
 //ações----------------------------------------------------------------------------------------------------
 const Iniciar = document.getElementById("LCA").addEventListener('click', function() {
     S_1();
@@ -35,9 +40,7 @@ const Iniciar = document.getElementById("LCA").addEventListener('click', functio
 
 const chave = document.getElementById("item_s1").addEventListener('click',function() {
     let element = document.getElementById("item_S1");
-    alert("chave para interagir");
     element.style.display = "none";
-    alert("desapareceu");
     chave_entrada = true;
 });
 
