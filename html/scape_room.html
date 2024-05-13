@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" 
+        content="width=device-width, initial-scale=1.0">
+        <title>Scape_room</title>
+        <link rel="stylesheet" href="../css/Scaperoom.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="enquadrar">
+<!-------------------------------Inicio---------------------------->
+            <div class="Inicio" id="T_Inicio">
+                <img src="../img/SR/salas/inicio_SR.jpg" 
+                alt="jpg" class="Tela_Inicio" id="Iniciar">
+                <img src="../img/SR/sprits(tirar_o_fundo)/inicio_SR.png" alt="png"
+                usemap="#Iniciar_butão" alt="room"
+                class="Iniciar_but" id="Start">
+            </div>
+<!-------------------------------Inicio---------------------------->
+<!--------------------------------All------------------------------>
+            <div class="sala1" id="Sala_Entrada">
+                <img src="../img/SR/salas/entrada_SR.jpg" alt="jpg"
+                usemap="#sala1" alt="room"
+                class="SR_Entrada" id="SR_Entrada">
+                <img src="../img/SR/sprits(tirar_o_fundo)/chave.png"
+                alt="png" usemap="#item_sala1" alt="room"
+                class="chave_Entrada" id="item_S1">
+            </div>
+<!--------------------------------All------------------------------>
+<!--------------------------butão--voltar-------------------------->
+            <div class="voltar" id="voltar">
+                <img src="../img/SR/sprits(tirar_o_fundo)/Sprit_b1.png" 
+                alt="png" usemap="voltar" alt="room" class="back" 
+                id="back">
+            </div>
+<!--------------------------butão--voltar-------------------------->
+<!----------------------------PC1--off----------------------------->
+            <div class="off" id="Pc1_off">
+                <img src="../img/SR/salas/moniroi template.jpg"
+                alt="jpg" usemap="#off" alt="room"
+                class="SR_oSala" id="off_tela">
+            </div>
+        </div>
+<!----------------------------PC1--off----------------------------->
+<!-------------------------------Inicio---------------------------->
+       <map name="Iniciar_butão">
+            <area shape="rect" coords="0, 0, 1900, 400" 
+            href="#" alt="fiz_pc1" id="LCA">
+       </map>
+<!-------------------------------Inicio---------------------------->
+<!--------------------------------All------------------------------>
+        <map name="sala1">
+            <area shape="rect" coords="348, 330, 412, 350"
+            href="#" alt="fiz_pc1" id="tampa_pc1">
+            <area shape="rect" coords="348, 230, 412, 295"
+            href="#" alt="fiz_pc1" id="tela_pc1">
+        </map>
+<!--------------------------------All------------------------------>
+<!----------------------------PC1--off----------------------------->
+        <map name="item_sala1">
+            <area shape="rect" coords="0, 0, 50, 50"
+            href="#" alt="fiz_pc1" id="item_s1">
+        </map>
+<!----------------------------PC1--off----------------------------->
+<!--------------------------butão--voltar-------------------------->
+        <map name="voltar">
+            <area shape="circle" coords="50, 50, 50"
+            href="#" alt="fiz_pc1" id="voltar">
+        </map>
+<!--------------------------butão--voltar-------------------------->
+
+        <script type="module" src="../js/SR_BD.js"></script>
+        <script type="module" src="../js/SR.js"></script>
+    </body>
+</html>
