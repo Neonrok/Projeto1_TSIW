@@ -9,6 +9,8 @@
   --lightPurple: #D6D9F3;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 /**
 * @license
 *
@@ -76,10 +78,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--mainWhite);
+  font-family: Work Sans;
 }
 
 body{
   background-color: var(--mainBlack);
+}
+
+h1{
+  font-family: ClashDisplay-Semibold;
+  font-size: clamp(1.875rem,9.23078vw,3.75rem);
 }
 
 li{
@@ -87,21 +96,45 @@ li{
 }
 
 a{
+  font-weight: medium;
+  font-size: 1rem;
   text-decoration: none;
-  color: var(--mainWhite);
 }
+
+/*buttons*/
 
 .button{
   font-family: ClashDisplay-Medium;
+  font-size: 1rem;
   border: 1px solid var(--mainWhite);
   border-radius: 12px;
   padding: 0.5rem 1rem;
   background-color: var(--mainBlack);
   filter: drop-shadow(3px 3px var(--mainWhite));
+  transition: 0.4s;
 }
 
-.CTA-button{
-  font-size: 24px;
+.button-big{
+  font-size: 1.5rem;
   padding: 1rem 1rem;
   filter: drop-shadow(5px 5px var(--mainWhite));
+}
+
+/*text*/
+
+.text-yellow{
+  font: inherit;
+  color: var(--mainYellow);
+}
+
+.text-mainGrey{
+  color: var(--mainGrey);
+}
+
+/*Hovers*/
+
+.button:hover{
+  color: var(--mainBlack);
+  background-color: var(--mainWhite);
+  filter: drop-shadow(0px 0px);
 }
