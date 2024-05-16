@@ -4,11 +4,11 @@ export function createHeader(){
   <a href="index.html"><img src="./img/LogoTSIW.svg"></a>
   <nav class="navbar">
       <ul class="navbarLinks">
-          <li><a href="" class="navLink">Aprender</a></li>
-          <li><a href="" class="navLink">Atividades</a></li>
-          <li><a href="" class="navLink">Projetos</a></li>
-          <li><a href="" class="navLink">Testemunhos</a></li>
-          <li><a href="" class="navLink">Sobre</a></li>
+          <li><a href="" class="navLink text-16 text-medium">Aprender</a></li>
+          <li><a href="" class="navLink text-16 text-medium">Atividades</a></li>
+          <li><a href="" class="navLink text-16 text-medium">Projetos</a></li>
+          <li><a href="" class="navLink text-16 text-medium">Testemunhos</a></li>
+          <li><a href="" class="navLink text-16 text-medium">Sobre</a></li>
       </ul>
       <a href="" class="button" role="button">Registar</a>
   </nav>`

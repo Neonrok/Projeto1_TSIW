@@ -74,6 +74,8 @@
   font-style: normal;
 }
 
+/*General and css reset*/
+
 *{
   margin: 0;
   padding: 0;
@@ -89,6 +91,7 @@ body{
 h1{
   font-family: ClashDisplay-Semibold;
   font-size: clamp(1.875rem,9.23078vw,3.75rem);
+  text-align: left;
 }
 
 li{
@@ -96,8 +99,6 @@ li{
 }
 
 a{
-  font-weight: medium;
-  font-size: 1rem;
   text-decoration: none;
 }
 
@@ -131,7 +132,57 @@ a{
   color: var(--mainGrey);
 }
 
-/*Hovers*/
+.text-regular{
+  font-weight: 400;
+}
+
+.text-medium{
+  font-weight: medium;
+}
+
+.text-16{
+  font-size: 1rem;
+}
+
+.text-18{
+  font-size: 1.125rem;
+}
+
+.text-24{
+  font-size: 1.5rem;
+}
+
+/*spacing and sizing*/
+
+.pad-container{
+  padding-left: clamp(1rem, 5vw, 3rem);
+  padding-right: clamp(1rem, 5vw, 3rem);
+}
+
+.w-100{
+  width: 100%;
+}
+
+.flex{
+  display: flex;
+}
+
+.grid{
+  display: grid;
+}
+
+/*header and footer*/
+
+header{
+  display: flex;
+  width: 100%;
+  height: 74px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--grey20);
+}
+
+/*hovers*/
 
 .button:hover{
   color: var(--mainBlack);
