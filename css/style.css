@@ -124,7 +124,6 @@ a{
 /*text*/
 
 .text-yellow{
-  font: inherit;
   color: var(--mainYellow);
 }
 
@@ -167,8 +166,16 @@ a{
   display: flex;
 }
 
+.direction-column{
+  flex-direction: column;
+}
+
 .items-center{
   align-items: center;
+}
+
+.items-start{
+  align-items: flex-start;
 }
 
 .gap-24{

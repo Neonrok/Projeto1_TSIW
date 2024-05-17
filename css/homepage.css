@@ -1,0 +1,26 @@
+@import "style.css";
+
+.font-inherit{
+  font: inherit;
+}
+
+.hero-shape-square{
+  background-color: var(--mainWhite);
+  width: 55px;
+  height: 64px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--mainBlack);
+}
+
+span{
+  color: var(--mainBlack);
+  font-family: ClashDisplay-Medium;
+  font-size: 20px;
+}
+
+.hero-shape-square:hover .hero-hover-fill-topshape{
+  transform: translate(-148,-77);
+}
