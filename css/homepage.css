@@ -5,6 +5,7 @@
 }
 
 .hero-shape-square{
+  position: relative;
   background-color: var(--mainWhite);
   width: 55px;
   height: 64px;
@@ -12,15 +13,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--mainBlack);
 }
 
-span{
-  color: var(--mainBlack);
+.hero-square-text{
   font-family: ClashDisplay-Medium;
-  font-size: 20px;
+  color: var(--mainBlack);
 }
 
-.hero-shape-square:hover .hero-hover-fill-topshape{
-  transform: translate(-148,-77);
+.hero-fillShape{
+  transition: linear 0.6s;
+  transform: translate(89px,19px);
+}
+
+.hero-fillShape-hover{
+  transition: linear 0.6s;
+  transform: translate(-148px,-77px);
+}
+
+.hero-hover:hover~.hero-hover-sib #mask1 .hero-fillShape{
+  transition: linear 0.6s;
+  transform: translate(-148px,-77px);
+}
+
+foreignObject{
+  pointer-events:none;
+}
+
+.hero-hover:hover div span{
+  color: blue;
 }
