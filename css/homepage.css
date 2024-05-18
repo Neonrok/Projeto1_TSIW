@@ -4,6 +4,14 @@
   font: inherit;
 }
 
+.hero-section{
+  margin-top: 6rem;
+}
+
+.hero-description{
+  max-width: 653px;;
+}
+
 .hero-shape-square{
   position: relative;
   background-color: var(--mainWhite);

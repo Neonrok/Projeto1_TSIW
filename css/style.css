@@ -102,6 +102,10 @@ a{
   text-decoration: none;
 }
 
+.border-bottom{
+  border-bottom: 1px solid var(--grey20);
+}
+
 /*buttons*/
 
 .button{
@@ -162,7 +166,12 @@ a{
   padding-right: clamp(1rem, 5vw, 3rem);
 }
 
-.w-100{
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container{
   width: 100%;
 }
 
@@ -182,6 +191,10 @@ a{
   align-items: flex-start;
 }
 
+.space-between{
+  justify-content: space-between;
+}
+
 .gap-24{
   gap: 1.5rem;
 }
@@ -198,8 +211,6 @@ a{
 
 .header{
   height: 74px;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--grey20);
 }
 
 /*hovers*/
@@ -233,4 +244,11 @@ a{
   transform: scaleX(1);
   transform-origin: bottom left;
   transition-delay: 0.2s;
+}
+
+/*media queries*/
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
 }
