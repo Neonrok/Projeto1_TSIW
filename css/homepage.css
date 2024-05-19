@@ -51,6 +51,7 @@
 .hero-topShape-text{
   font-family: ClashDisplay-Regular;
   color: var(--mainBlack);
+  z-index: 1000;
 }
 
 #hero-shape-topSquare{
