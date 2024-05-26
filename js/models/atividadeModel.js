@@ -10,6 +10,11 @@ export function addAtividade(title,image,date,description){
   }
 }
 
+export function removeAtividade(title){
+  atividades = atividades.filter((atividade) => atividade.title !== title)
+  localStorage.setItem("atividades", JSON.stringify(atividades))
+}
+
 class Atividade{
   constructor(title,image,date,description){
     this.title = title
