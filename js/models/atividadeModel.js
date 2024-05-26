@@ -22,5 +22,4 @@ class Atividade{
     this.date = date
     this.description = description
   }
-
 }
