@@ -1,0 +1,64 @@
+@import "style.css";
+
+.font-inherit{
+  font: inherit;
+}
+
+.hero-section{
+  margin-top: 6rem;
+}
+
+.hero-description{
+  max-width: 653px;;
+}
+
+.hero-shape-square{
+  position: relative;
+  background-color: var(--mainWhite);
+  width: 55px;
+  height: 64px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-square-text{
+  font-family: ClashDisplay-Medium;
+  color: var(--mainBlack);
+}
+
+.hero-fillShape{
+  transition: linear 0.6s;
+  transform: translate(89px,19px);
+}
+
+.hero-fillShape-hover{
+  transition: linear 0.6s;
+  transform: translate(-148px,-77px);
+}
+
+.hero-shape{
+  width: 384px;
+  height: 386px;
+}
+
+.hero-topShape-container{
+  position: absolute;
+  transform: translate(91px,-512px);
+}
+
+.hero-topShape-text{
+  font-family: ClashDisplay-Regular;
+  color: var(--mainBlack);
+  z-index: 1000;
+}
+
+#hero-shape-topSquare{
+  transform: translate(170px,119px);
+}
+
+#hero-shape-topSquare:hover + svg defs mask g{
+  transition: linear 0.6s;
+  transform: translate(-148px,-77px);
+} 

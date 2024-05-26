@@ -9,10 +9,89 @@
   --lightPurple: #D6D9F3;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/**
+* @license
+*
+* Font Family: Clash Display
+* Designed by: Indian Type Foundry
+* URL: https://www.fontshare.com/fonts/clash-display
+* © 2024 Indian Type Foundry
+*
+* Clash Display Light 
+* Clash Display Regular 
+* Clash Display Medium 
+* Clash Display Semibold 
+* Clash Display Bold 
+* Clash Display Variable (Variable font)
+
+*
+*/
+@font-face {
+  font-family: 'ClashDisplay-Light';
+  src: url('../fonts/ClashDisplay-Light.woff2') format('woff2'),
+       url('../fonts/ClashDisplay-Light.woff') format('woff'),
+       url('../fonts/ClashDisplay-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ClashDisplay-Regular';
+  src: url('../fonts/ClashDisplay-Regular.woff2') format('woff2'),
+       url('../fonts/ClashDisplay-Regular.woff') format('woff'),
+       url('../fonts/ClashDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ClashDisplay-Medium';
+  src: url('../fonts/ClashDisplay-Medium.woff2') format('woff2'),
+       url('../fonts/ClashDisplay-Medium.woff') format('woff'),
+       url('../fonts/ClashDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ClashDisplay-Semibold';
+  src: url('../fonts/ClashDisplay-Semibold.woff2') format('woff2'),
+       url('../fonts/ClashDisplay-Semibold.woff') format('woff'),
+       url('../fonts/ClashDisplay-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ClashDisplay-Bold';
+  src: url('../fonts/ClashDisplay-Bold.woff2') format('woff2'),
+       url('../fonts/ClashDisplay-Bold.woff') format('woff'),
+       url('../fonts/ClashDisplay-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+/*General and css reset*/
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--mainWhite);
+  font-family: Work Sans;
+}
+
+body{
+  background-color: var(--mainBlack);
+}
+
+h1{
+  font-family: ClashDisplay-Semibold;
+  font-size: clamp(1.875rem,9.23078vw,3.75rem);
+  text-align: left;
 }
 
 li{
@@ -21,4 +100,155 @@ li{
 
 a{
   text-decoration: none;
+}
+
+.border-bottom{
+  border-bottom: 1px solid var(--grey20);
+}
+
+/*buttons*/
+
+.button{
+  font-family: ClashDisplay-Medium;
+  font-size: 1rem;
+  border: 1px solid var(--mainWhite);
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  background-color: var(--mainBlack);
+  filter: drop-shadow(3px 3px var(--mainWhite));
+  transition: 0.4s;
+}
+
+.button-big{
+  font-size: 1.5rem;
+  padding: 1rem 1rem;
+  filter: drop-shadow(5px 5px var(--mainWhite));
+}
+
+/*text*/
+
+.text-yellow{
+  color: var(--mainYellow);
+}
+
+.text-mainGrey{
+  color: var(--mainGrey);
+}
+
+.text-regular{
+  font-weight: 400;
+}
+
+.text-medium{
+  font-weight: 500;
+}
+
+.text-16{
+  font-size: 1rem;
+}
+
+.text-18{
+  font-size: 1.125rem;
+}
+
+.text-20{
+  font-size: 1.3rem;
+}
+
+.text-24{
+  font-size: 1.5rem;
+}
+
+/*spacing and sizing*/
+
+.px-container{
+  padding-left: clamp(1rem, 5vw, 3rem);
+  padding-right: clamp(1rem, 5vw, 3rem);
+}
+
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container{
+  width: 100%;
+}
+
+.flex{
+  display: flex;
+}
+
+.direction-column{
+  flex-direction: column;
+}
+
+.items-center{
+  align-items: center;
+}
+
+.items-start{
+  align-items: flex-start;
+}
+
+.space-between{
+  justify-content: space-between;
+}
+
+.gap-24{
+  gap: 1.5rem;
+}
+
+.gap-32{
+  gap: 2rem;
+}
+
+.grid{
+  display: grid;
+}
+
+/*header and footer*/
+
+.header{
+  height: 74px;
+}
+
+/*hovers*/
+
+.button:hover{
+  color: var(--mainBlack);
+  background-color: var(--mainWhite);
+  filter: drop-shadow(0px 0px);
+}
+
+.hover-underline-animation{
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation::after{
+  content: '';
+  position: absolute;
+  border-bottom: 2px solid #737373;
+  width: 100%;
+  transform: scaleX(0);
+  bottom: 0;
+  left: 0;
+  background-color: #737373;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+  transition-delay: 0.2s;
+}
+
+.hover-underline-animation:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  transition-delay: 0.2s;
+}
+
+/*media queries*/
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
 }

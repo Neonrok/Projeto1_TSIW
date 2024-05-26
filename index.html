@@ -4,18 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TSIW</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/homepage.css">
 </head>
 <body>
     <div id="mainContainer" class="container-homepage">
         <main class="mainContent-homepage">
-            <section class="hero-section">
-                <div class="title-description-button">
-                    <div class="title-and-description">
-                        <h1>A Tua Carreira Em <span class="text-yellow">Desenvolvimento Web</span> Começa Aqui</h1>
-                        <p class="text-mainGrey p-description">Nesta licenciatura vais adquirir competências na conceção, design e desenvolvimento de produtos e software para a Web.</p>
+            <section class="px-container hero-section flex space-between items-center container mx-auto">
+                <div class="title-description-button flex direction-column items-start gap-32">
+                    <div class="title-and-description flex direction-column items-start gap-24">
+                        <h1>
+                            <p class="font-inherit">A Tua Carreira Em</p>
+                            <p class="font-inherit text-yellow">Desenvolvimento Web</p>
+                            <p class="font-inherit">Começa Aqui</p>
+                        </h1>
+                        <p class="hero-description text-mainGrey text-regular text-24">Nesta licenciatura vais adquirir competências na conceção, design e desenvolvimento de produtos e software para a Web.</p>
                     </div>
-                    <a href="" class="CTA-button" role="button">Ir para a Área de Aprendizagem</a>
+                    <a href="" class="button button-big" role="button">Ir para a Área de Aprendizagem</a>
+                </div>
+                <div class="hero-shape">
+                    <img src="img/Hero MainShape.svg" alt="Hero-Shape" width="384" height="386">
+                    <div class="hero-topShape-container">
+                        <!--<p class="hero-topShape-text text-16 text-regular">13% dos diplomados estão a estudar</p>-->
+                        <div class="hero-shape-square" id="hero-shape-topSquare">
+                            <span class="hero-square-text text-20">13%</span>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="225" height="119" viewBox="0 0 225 119" class="hero-topShape">
+                            <path d="M190 119C178.97 119 170 110.03 170 99V80C170 66.19 158.81 55 145 55H24C10.77 55 0 44.23 0 31V24C0 10.77 10.77 0 24 0H148C161.23 0 172 10.77 172 24V30C172 43.81 183.19 55 197 55H205C216.03 55 225 63.97 225 75V99C225 110.03 216.03 119 205 119H190Z" fill="#EDEDED" mask="url(#mask1)"/>
+                            <defs>
+                                <mask id="mask1">
+                                    <g class="hero-fillShape" id="hero-fillShapeTop" xmlns="http://www.w3.org/2000/svg" width="136" height="101">
+                                        <path d="M400 87.5C400 135.549 310.457 174.5 200 174.5C89.5431 174.5 0 135.549 0 87.5C0 39.4512 138.5 170.309 200 0.5C310.457 0.5 400 39.4512 400 87.5Z" fill="#ffffff"/>
+                                    </g>
+                                </mask>
+                            </defs>
+                        </svg>
+                    </div>
                 </div>
             </section>
         </main>
