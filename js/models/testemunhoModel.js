@@ -11,7 +11,7 @@ export function addTestemunho(name,image,testimony,ocupation){
 }
 
 export function removeTestemunho(name){
-  testemunhos = testemunhos.filter((testemunho) => testemunho.name !== name)
+  testemunhos = testemunhos.filter((testemunho) => testemunho.title !== title)
   localStorage.setItem("testemunhos", JSON.stringify(testemunhos))
 }
 
