@@ -1,0 +1,45 @@
+@import "style.css";
+
+.welcome-text{
+  font-family: ClashDisplay-Medium;
+  font-size: 2.25rem;
+}
+
+.registarForm-input{
+  border: 1px solid var(--grey40);
+  border-radius: 12px;
+  height: 50px;
+  background-color: var(--grey12);
+  padding: 0.5rem 1rem;
+}
+
+.registar-section{
+  max-width: 450px;
+  border: 1px solid var(--grey40);
+  border-radius: 20px;
+  background-color: var(--grey12);
+  padding: 3rem;
+}
+
+.button-register{
+  padding: 1rem;
+  border-radius: 16px ;
+}
+
+.registarForm-link{
+  color: var(--grey63);
+  text-decoration: underline;
+}
+
+.registarForm-link:hover{
+  color: var(--mainGrey);
+}
+
+.registarForm-input:hover{
+  border-color: var(--mainGrey);
+}
+
+.registarForm-input:focus{
+  border-color: var(--mainWhite);
+}
+

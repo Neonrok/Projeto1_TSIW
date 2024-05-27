@@ -3,7 +3,7 @@ export function createHeader(){
   header.innerHTML = `
   <header class="border-bottom">
     <div class="header flex space-between items-center container mx-auto px-container">
-      <a href="index.html"><img src="./img/LogoTSIW.svg"></a>
+      <a href="../index.html"><img src="/img/LogoTSIW.svg"></a>
       <nav class="flex items-center gap-32">
           <ul class="flex items-center gap-24">
               <li><a href="" class="hover-underline-animation text-16 text-medium">Aprender</a></li>
@@ -12,7 +12,7 @@ export function createHeader(){
               <li><a href="" class="hover-underline-animation text-16 text-medium">Testemunhos</a></li>
               <li><a href="" class="hover-underline-animation text-16 text-medium">Sobre</a></li>
           </ul>
-          <a href="" class="button" role="button">Registar</a>
+          <a href="/html/registo.html" class="button" role="button">Registar</a>
       </nav>
     </div>  
   </header>`
