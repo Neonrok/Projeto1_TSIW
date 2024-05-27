@@ -5,10 +5,6 @@
   font-size: 2.25rem;
 }
 
-.h-screen{
-  height: 100vh;
-}
-
 .registarForm-input{
   border: 1px solid var(--grey40);
   border-radius: 12px;
