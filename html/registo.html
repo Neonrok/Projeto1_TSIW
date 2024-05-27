@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TSIW</title>
+  <link rel="stylesheet" href="/css/registopage.css">
+</head>
+<body class="h-screen">
+  <div id="mainContainer" class="h-full flex direction-column">
+    <div class="px-container h-full flex justify-center items-center">
+      <div class="registar-section container flex direction-column items-center gap-48">
+        <p class="welcome-text">Bem-vindo!</p>
+        <form action="" class="container flex direction-column gap-48">
+          <div class="flex direction-column gap-32">
+            <div class="flex direction-column gap-8">
+              <label for="name" class="text-20">Nome</label>
+              <input class="registarForm-input text-16" type="text">
+            </div>
+            <div class="flex direction-column gap-8">
+              <label for="password" class="text-20">Password</label>
+              <input class="registarForm-input text-16" type="password">
+            </div>
+          </div>
+          <div class="flex direction-column items-center gap-8">
+            <button class="button button-register container text-20">Registar</button>
+            <a href="login.html" class="registarForm-link text-16 text-regular">Já tem conta?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/js/views/headerView.js"></script>
+</body>
+</html>
