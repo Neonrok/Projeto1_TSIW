@@ -5,6 +5,10 @@
   font-size: 2.25rem;
 }
 
+.h-screen{
+  height: 100vh;
+}
+
 .registarForm-input{
   border: 1px solid var(--grey40);
   border-radius: 12px;
@@ -15,6 +19,7 @@
 
 .registar-section{
   max-width: 450px;
+  max-height: 514px;
   border: 1px solid var(--grey40);
   border-radius: 20px;
   background-color: var(--grey12);
@@ -32,7 +37,7 @@
 }
 
 .registarForm-link:hover{
-  color: var(--mainGrey);
+  color: var(--mainWhite);
 }
 
 .registarForm-input:hover{
@@ -41,5 +46,5 @@
 
 .registarForm-input:focus{
   border-color: var(--mainWhite);
+  outline:0px none transparent;
 }
-

@@ -87,12 +87,7 @@
   font-family: Work Sans;
 }
 
-html{
-  height: 100%;
-}
-
 body{
-  height: 100%;
   background-color: var(--mainBlack);
 }
 
@@ -185,6 +180,10 @@ button{
 
 .container{
   width: 100%;
+}
+
+.h-full{
+  height: 100%;
 }
 
 .flex{
