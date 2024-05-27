@@ -230,10 +230,25 @@ button{
   display: grid;
 }
 
-/*header and footer*/
+/*header*/
 
 .header{
   height: 74px;
+}
+
+.header-hamburger{
+  border: 1px solid var(--grey25);
+  border-radius: 12px;
+  background-color: var(--mainBlack);
+  gap: 6px;
+  padding: 12px 16px;
+  transition: 0.4s;
+}
+
+.hamburger-bar{
+  width: 20px;
+  height: 1px;
+  background-color: var(--mainWhite);
 }
 
 /*hovers*/
@@ -267,6 +282,10 @@ button{
   transform: scaleX(1);
   transform-origin: bottom left;
   transition-delay: 0.2s;
+}
+
+.header-hamburger:hover{
+  border-color: var(--mainWhite);
 }
 
 /*media queries*/
