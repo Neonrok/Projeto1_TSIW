@@ -245,6 +245,7 @@ button{
 }
 
 .header-hamburger{
+  display: none;
   border: 1px solid var(--grey25);
   border-radius: 12px;
   background-color: var(--mainBlack);
@@ -267,8 +268,13 @@ button{
   background-color: #1C1C1C;
   position: fixed;
   top: 0;
-  right: 0;
+  right: -100%;
   bottom: 0;
+  transition: 0.4s;
+}
+
+.side-nav-active{
+  right: 0;
 }
 
 /*hovers*/
@@ -312,5 +318,21 @@ button{
 @media (min-width: 1536px) {
   .container {
     max-width: 1536px;
+  }
+}
+
+@media (max-width: 810px) {
+  .header-links {
+    display: none;
+  }
+
+  .header-hamburger{
+    display: flex;
+  }
+}
+
+@media (max-width: 400px) {
+  #headerButtonRegisto{
+    display: none;
   }
 }
