@@ -1,0 +1,109 @@
+body{
+    margin: 2% 25% 0% 25%;
+    background-color: #171717;
+
+}
+
+.enquadrar{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.Tela_Inicio{
+    width: 100%;
+    height: auto;
+}
+
+.Iniciar_but{
+    position: absolute;
+    top: 54.5%;
+    left: 16.5%;
+    z-index: 1;
+    width: 67%;
+    height: auto;
+}
+
+.SR_Entrada{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.SR_oSala{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.back{
+    position: absolute;
+    top: 87%;
+    left: 90%;
+    z-index: 1;
+    width: 6%;
+    height: auto;
+}
+
+.chave_Entrada{
+    position: absolute;
+    top: 73%;
+    left: 65%;
+    z-index: 1;
+    width: 2%;
+}
+
+.P1_Entrada{
+    position: absolute;
+    top: 18%;
+    left: 2.3%;
+    z-index: 1;
+    width: 12.5%;
+    height: auto;
+}
+.P2_Entrada{
+    position: absolute;
+    top: 34%;
+    left: 25.5%;
+    z-index: 1;
+    width: 6.2%;
+    height: auto;
+}
+.P3_Entrada{
+    position: absolute;
+    top: 22.5%;
+    left: 78.1%;
+    z-index: 1;
+    width: 5%;
+    height: auto;
+}
+
+.SR_Pc1_Int_Lock{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.SR_Pc1_Int_unLock{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.inventário{
+    border: 2px solid snow;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    min-height: 75px;
+    width: auto;
+}
+.Items{
+    height: 75px;
+    width: auto;
+    margin: 2px;
+    border: 1px solid snow;
+    cursor: pointer;
+}
+.Item_1_use{
+    max-height: 75px;
+    width: auto;
+}
