@@ -1,0 +1,18 @@
+@import "style.css";
+
+.admin-input{
+  width: 740px;
+  border: 1px solid var(--grey40);
+  border-radius: 12px;
+  height: 50px;
+  background-color: var(--grey12);
+  padding: 0.5rem 1rem;
+}
+
+.descp-input{
+  height: 350px;
+}
+
+.adicionar-button{
+  width: 350px;
+}
