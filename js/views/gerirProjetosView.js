@@ -8,36 +8,30 @@ const inputFile = document.getElementById("inputFile")
 const projetoForm = document.getElementById("projetoForm")
 
 //functions
-const reader = (file) =>{
-  new Promise((resolve, reject) => {
-    const fr = new FileReader()
-    fr.onload = () => resolve(fr)
-    fr.onerror = (err) => reject(err)
-    fr.readAsDataURL(file)
-  })
-}
 
-async function SaveImagesData(fileList) {
-  let fileResults = [];
-  let frPromises = fileList.map(reader);
-
-  try {
-    fileResults = await Promise.all(frPromises);
-  } catch (err) {
-    console.error(err);
-    return;
-  }
-
-  return fileResults
+function reader(file, callback) {
+  const fr = new FileReader()
+  fr.onload = () => callback(null, fr.result)
+  fr.onerror = (err) => callback(err)
+  fr.readAsDataURL(file)
 }
 
 function addProjeto(){
   let title = inputTitle.value
   let author = inputAuthor.value
   let descp = inputDescp.value
-  let images = SaveImagesData([...inputFile.files])
+  let inputFiles = [...inputFile.files]
+  let fileResults = []
 
-  Projeto.addProjeto(title,images,author,descp)
+  for(let i=0;i<inputFiles.length;i++){
+    reader(inputFiles[i], (err, res) => {
+      console.log(res)
+      fileResults.push(res)
+      if(fileResults.length == inputFiles.length){
+        Projeto.addProjeto(title,fileResults,author,descp)
+      }
+    })
+  }
 }
 
 //Event listeners
