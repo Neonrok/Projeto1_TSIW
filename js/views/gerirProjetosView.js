@@ -1,32 +1,48 @@
-import * as Atividade from "../models/atividadeModel.js"
+import * as Projeto from "../models/projetoModel.js"
 
 //get id's
 const inputTitle = document.getElementById("inputTitle")
-const inputDate = document.getElementById("inputDate")
+const inputAuhor = document.getElementById("inputAuhor")
 const inputDescp = document.getElementById("inputDescp")
 const inputFile = document.getElementById("inputFile")
-const atividadeForm = document.getElementById("atividadeForm")
+const projetoForm = document.getElementById("projetoForm")
 
 //functions
-function reader(file, callback) {
-  const fr = new FileReader()
-  fr.onload = () => callback(null, fr.result)
-  fr.onerror = (err) => callback(err)
-  fr.readAsDataURL(file)
-}
-
-function addAtividade(){
-  let title = inputTitle.value
-  let date = inputDate.value
-  let descp = inputDescp.value
-  reader(inputFile.files[0], (err, res) => {
-    Atividade.addAtividade(title,res,date,descp)
+const reader = (file) =>{
+  new Promise((resolve, reject) => {
+    const fr = new FileReader()
+    fr.onload = () => resolve(fr)
+    fr.onerror = (err) => reject(err)
+    fr.readAsDataURL(file)
   })
 }
 
+async function SaveImagesData(fileList) {
+  let fileResults = [];
+  const frPromises = fileList.map(reader);
+
+  try {
+    fileResults = await Promise.all(frPromises);
+  } catch (err) {
+    console.error(err);
+    return;
+  }
+
+  return fileResults
+}
+
+function addProjeto(){
+  let title = inputTitle.value
+  let auhor = inputAuhor.value
+  let descp = inputDescp.value
+  let images = SaveImagesData(inputFile)
+
+  Projeto.addProjeto(title,images,auhor,descp)
+}
+
 //Event listeners
-atividadeForm.addEventListener('submit', (event) => {
+projetoForm.addEventListener('submit', (event) => {
   event.preventDefault()
-  addAtividade()
-  atividadeForm.reset()
+  addProjeto()
+  projetoForm.reset()
 })
