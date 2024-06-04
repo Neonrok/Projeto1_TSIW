@@ -15,7 +15,7 @@ export function removeTestemunho(name){
   localStorage.setItem("testemunhos", JSON.stringify(testemunhos))
 }
 
-class Testemunho{
+export class Testemunho{
   constructor(name,image,testimony,ocupation){
     this.name = name
     this.image = image
