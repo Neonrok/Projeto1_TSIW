@@ -2,7 +2,7 @@ import * as Projeto from "../models/projetoModel.js"
 
 //get id's
 const inputTitle = document.getElementById("inputTitle")
-const inputAuhor = document.getElementById("inputAuhor")
+const inputAuthor = document.getElementById("inputAuthor")
 const inputDescp = document.getElementById("inputDescp")
 const inputFile = document.getElementById("inputFile")
 const projetoForm = document.getElementById("projetoForm")
@@ -33,11 +33,11 @@ async function SaveImagesData(fileList) {
 
 function addProjeto(){
   let title = inputTitle.value
-  let auhor = inputAuhor.value
+  let author = inputAuthor.value
   let descp = inputDescp.value
   let images = SaveImagesData(inputFile)
 
-  Projeto.addProjeto(title,images,auhor,descp)
+  Projeto.addProjeto(title,images,author,descp)
 }
 
 //Event listeners
