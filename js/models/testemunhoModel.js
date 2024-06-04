@@ -11,11 +11,11 @@ export function addTestemunho(name,image,testimony,ocupation){
 }
 
 export function removeTestemunho(name){
-  testemunhos = testemunhos.filter((testemunho) => testemunho.title !== title)
+  testemunhos = testemunhos.filter((testemunho) => testemunho.name !== name)
   localStorage.setItem("testemunhos", JSON.stringify(testemunhos))
 }
 
-class Testemunho{
+export class Testemunho{
   constructor(name,image,testimony,ocupation){
     this.name = name
     this.image = image
