@@ -35,7 +35,7 @@ function addProjeto(){
   let title = inputTitle.value
   let author = inputAuthor.value
   let descp = inputDescp.value
-  let images = SaveImagesData([...inputFile])
+  let images = SaveImagesData([...inputFile.files])
 
   Projeto.addProjeto(title,images,author,descp)
 }
