@@ -19,7 +19,7 @@ const reader = (file) =>{
 
 async function SaveImagesData(fileList) {
   let fileResults = [];
-  const frPromises = fileList.map(reader);
+  let frPromises = fileList.map(reader);
 
   try {
     fileResults = await Promise.all(frPromises);
@@ -35,7 +35,7 @@ function addProjeto(){
   let title = inputTitle.value
   let author = inputAuthor.value
   let descp = inputDescp.value
-  let images = SaveImagesData(inputFile)
+  let images = SaveImagesData([...inputFile])
 
   Projeto.addProjeto(title,images,author,descp)
 }
