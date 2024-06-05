@@ -1,5 +1,16 @@
 let atividades = []
 
+export function init() {
+  if(localStorage.atividades) {
+    const tempAtividades = JSON.parse(localStorage.atividades);
+    for(let atividade of tempAtividades) {
+      atividades.push(new Atividade(atividade.title, atividade.image, atividade.date, atividade.description));
+    }
+  } else {
+    atividades = [];
+  }
+}
+
 export function addAtividade(title,image,date,description){
   if(atividades.some((atividade) => atividade.title === title)){
     throw Error(`Atividade com o título ${title} já existe`)
