@@ -1,5 +1,7 @@
 import * as Testemunho from "../models/testemunhoModel.js"
 
+Testemunho.init()
+
 //get id's
 const inputName = document.getElementById("inputName")
 const inputOcupation = document.getElementById("inputOcupation")

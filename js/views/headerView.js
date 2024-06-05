@@ -9,7 +9,7 @@ function createHeader(){
             <li><a href="" class="hover-underline-animation text-16 text-medium">Aprender</a></li>
             <li><a href="" class="hover-underline-animation text-16 text-medium">Atividades</a></li>
             <li><a href="" class="hover-underline-animation text-16 text-medium">Projetos</a></li>
-            <li><a href="" class="hover-underline-animation text-16 text-medium">Testemunhos</a></li>
+            <li><a href="/html/testemunhos.html" class="hover-underline-animation text-16 text-medium">Testemunhos</a></li>
             <li><a href="" class="hover-underline-animation text-16 text-medium">Sobre</a></li>
         </ul>
         <a href="/html/registo.html" class="button" id="headerButtonRegisto" role="button">Registar</a>
