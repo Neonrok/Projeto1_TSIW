@@ -1,4 +1,4 @@
-export function createHeader(){
+function createHeader(){
   const header = document.createElement("header")
   header.innerHTML = `
   <header class="border-bottom">

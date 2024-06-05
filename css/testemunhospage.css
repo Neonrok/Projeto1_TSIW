@@ -1,0 +1,26 @@
+@import "style.css";
+
+.lineH-30{
+  line-height: 1.875rem;
+}
+
+.testemunho-img{
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+
+.testemunho-card{
+  background-color: var(--grey12);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--mainGrey);
+}
+
+.testemunhos-container{
+  max-width: 1056px;
+}
+
+.gap-64{
+  gap: 4rem;
+}
