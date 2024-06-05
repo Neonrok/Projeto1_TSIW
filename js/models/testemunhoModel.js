@@ -1,5 +1,16 @@
 let testemunhos = []
 
+export function init() {
+  if(localStorage.testemunhos) {
+    const tempTestemunhos = JSON.parse(localStorage.testemunhos);
+    for(let testemunho of tempTestemunhos) {
+      testemunhos.push(new Testemunho(testemunho.name, testemunho.image, testemunho.testimony, testemunho.ocupation));
+    }
+  } else {
+    testemunhos = [];
+  }
+}
+
 export function addTestemunho(name,image,testimony,ocupation){
   if(testemunhos.some((testemunho) => testemunho.name === name)){
     throw Error(`Testemunho com o nome ${name} já existe`)
@@ -13,6 +24,10 @@ export function addTestemunho(name,image,testimony,ocupation){
 export function removeTestemunho(name){
   testemunhos = testemunhos.filter((testemunho) => testemunho.name !== name)
   localStorage.setItem("testemunhos", JSON.stringify(testemunhos))
+}
+
+export function getTestemunhos(){
+  return testemunhos
 }
 
 export class Testemunho{
