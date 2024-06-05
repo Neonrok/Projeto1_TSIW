@@ -1,17 +1,17 @@
-import * as Testemunho from "../models/testemunhoModel.js"
+import * as Atividade from "../models/atividadeModel.js"
 
-const testemunhosContainer = document.getElementById("testemunhosContainer")
+const atividadesContainer = document.getElementById("atividadesContainer")
 
-function renderTestemunhos(){
-  Testemunho.init()
-  let testemunhos = Testemunho.getTestemunhos()
+function renderAtividades(){
+  Atividade.init()
+  let atividades = Atividade.getAtividades()
   let result = "";
 
-  for (let testemunho of testemunhos) {
-    result += generateCard(testemunho);
+  for (let atividade of atividades) {
+    result += generateCard(atividade);
   }
 
-  testemunhosContainer.innerHTML = result;
+  atividadesContainer.innerHTML = result;
 }
 
 function generateCard(testemunho){

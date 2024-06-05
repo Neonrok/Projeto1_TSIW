@@ -1,5 +1,7 @@
 import * as Atividade from "../models/atividadeModel.js"
 
+Atividade.init()
+
 //get id's
 const inputTitle = document.getElementById("inputTitle")
 const inputDate = document.getElementById("inputDate")

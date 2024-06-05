@@ -26,6 +26,10 @@ export function removeAtividade(title){
   localStorage.setItem("atividades", JSON.stringify(atividades))
 }
 
+export function getAtividades(){
+  return atividades
+}
+
 export class Atividade{
   constructor(title,image,date,description){
     this.title = title
