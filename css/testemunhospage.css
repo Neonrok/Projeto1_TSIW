@@ -8,6 +8,7 @@
   height: 80px;
   width: 80px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .testemunho-card{
