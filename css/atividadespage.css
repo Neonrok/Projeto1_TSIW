@@ -1,0 +1,32 @@
+@import "style.css";
+
+.atividades-container{
+  grid-template-columns: repeat(auto-fill, minmax(312px, 1fr));
+}
+
+.atividade-card{
+  padding: 1rem;
+  background-color: var(--mainBlack);
+  border: 1px solid var(--grey20);
+  border-radius: 16px;
+  filter: drop-shadow(8px 8px var(--grey20));
+  transition: 0.4s;
+  cursor: pointer;
+  max-width: 312px;
+}
+
+.atividade-img{
+  height: 280px;
+  width: 280px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.atividade-title{
+  height: 38px;
+}
+
+.atividade-card:hover{
+  filter: none;
+  background-color: var(--grey20);
+}
