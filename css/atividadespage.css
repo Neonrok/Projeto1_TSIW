@@ -6,6 +6,7 @@
   border: 1px solid var(--grey20);
   border-radius: 16px;
   filter: drop-shadow(8px 8px var(--grey20));
+  transition: 0.4s;
 }
 
 .atividade-img{
@@ -17,4 +18,9 @@
 
 .atividade-title{
   height: 38px;
+}
+
+.atividade-card:hover{
+  filter: none;
+  background-color: var(--grey20);
 }
