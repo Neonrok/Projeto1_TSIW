@@ -17,25 +17,23 @@
 
 .projeto-img{
   height: 100%;
-  max-width: 624px;
+  width: 624px;
   object-fit: cover;
 }
 
 .projetos-slider{
-  max-height: 406.17px;
-  max-width: 624px;
+  height: 406.17px;
+  width: 624px;
   overflow: hidden;
   border-radius: 16px;
+  position: relative;
 }
 
-.sliderButon-left, .sliderButon-right{
+ .slider-buttons{
+  padding: 0 8px;
   position: absolute;
   top: 50%;
-}
-
-.sliderButon-right{
-  right: 0;
-}
+ }
 
 .projeto-card:hover{
   filter: none;
