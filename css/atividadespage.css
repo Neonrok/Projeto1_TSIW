@@ -1,5 +1,9 @@
 @import "style.css";
 
+.atividades-container{
+  grid-template-columns: repeat(auto-fill, minmax(312px, 1fr));
+}
+
 .atividade-card{
   padding: 1rem;
   background-color: var(--mainBlack);
@@ -8,6 +12,7 @@
   filter: drop-shadow(8px 8px var(--grey20));
   transition: 0.4s;
   cursor: pointer;
+  max-width: 312px;
 }
 
 .atividade-img{
