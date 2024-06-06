@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TSIW</title>
+  <link rel="stylesheet" href="/css/projetospage.css">
+</head>
+<body>
+  <div id="mainContainer" class="flex direction-column gap-128">
+    <div class="flex direction-column gap-64 px-container">
+      <div class="flex direction-column">
+        <h1>Projetos</h1>
+        <p class="text-medium text-32 text-mainGrey">Explora projetos realizados por alunos do curso</p>
+      </div>
+      <div id="projetosContainer" class="grid gap-32 projetos-container">
+        <div class="projeto-card">
+          <div class="projetos-slider">
+            <img src="/img/Slider left button.svg" alt="" class="sliderButon-left">
+            <img src="/img/Slider right button.svg" alt="" class="sliderButon-right">
+            <div class="slider-img">
+              <img src="/img/Aditional Information.png" alt="" class="projeto-img">
+              <img src="/img/Advanced mode Dashboard.png" alt="" class="projeto-img">
+              <img src="/img/Authentication - Form.png" alt="" class="projeto-img">
+            </div>
+          </div>
+          <div class="flex direction-column gap-4">
+            <p class="text-16 text-semibold">Nimbus - Real-Time Revelations from the Sky</p>
+            <p class="text-16 text-medium text-mainGrey">Paulo Graça e Victoria Martínez</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/js/views/headerView.js"></script>
+  <script type="module" src="/js/views/projetosView.js"></script>
+</body>
+</html>

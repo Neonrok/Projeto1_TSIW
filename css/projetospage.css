@@ -1,0 +1,43 @@
+@import "style.css";
+
+/*.projetos-container{
+  grid-template-columns: repeat(auto-fill, minmax(656px, 1fr));
+}*/
+
+.projeto-card{
+  padding: 1rem;
+  background-color: var(--mainBlack);
+  border: 1px solid var(--grey20);
+  border-radius: 16px;
+  filter: drop-shadow(8px 8px var(--grey20));
+  transition: 0.4s;
+  cursor: pointer;
+  max-width: 656px;
+}
+
+.projeto-img{
+  height: 100%;
+  max-width: 624px;
+  object-fit: cover;
+}
+
+.projetos-slider{
+  max-height: 406.17px;
+  max-width: 624px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.sliderButon-left, .sliderButon-right{
+  position: absolute;
+  top: 50%;
+}
+
+.sliderButon-right{
+  right: 0;
+}
+
+.projeto-card:hover{
+  filter: none;
+  background-color: var(--grey20);
+}
