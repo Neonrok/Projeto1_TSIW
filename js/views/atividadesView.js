@@ -14,8 +14,12 @@ function renderAtividades(){
   atividadesContainer.innerHTML = result;
 }
 
-function generateCard(testemunho){
-  let result = ``
+function generateCard(atividade){
+  let result = `
+        <div class="flex direction-column gap-16 atividade-card">
+          <img src="${atividade.image}" alt="" class="atividade-img">
+          <p class="text-16 text-medium atividade-title">${atividade.title}</p>
+        </div>`
 
   return result
 }
