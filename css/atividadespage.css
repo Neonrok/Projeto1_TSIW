@@ -1,1 +1,20 @@
 @import "style.css";
+
+.atividade-card{
+  padding: 1rem;
+  background-color: var(--mainBlack);
+  border: 1px solid var(--grey20);
+  border-radius: 16px;
+  filter: drop-shadow(8px 8px var(--grey20));
+}
+
+.atividade-img{
+  height: 280px;
+  width: 280px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.atividade-title{
+  height: 38px;
+}
