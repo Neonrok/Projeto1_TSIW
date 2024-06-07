@@ -31,7 +31,7 @@
 }
 
 .slider-buttons{
-  display: none;
+  opacity: 0;
   padding: 0 8px;
   position: absolute;
   top: 50%;
@@ -44,5 +44,5 @@
 }
 
 .projeto-card:hover .projeto-slider .slider-buttons{
-  display: flex;
+  opacity: 1;
 }
