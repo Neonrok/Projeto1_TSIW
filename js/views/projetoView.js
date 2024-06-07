@@ -8,13 +8,14 @@ const sliderDescpContainer = document.getElementById("sliderDescpContainer")
 
 function renderProjeto(){
   Projeto.init()
-  let projetos = Projeto.getProjetos()
+  let projeto = Projeto.getCurrentProjeto()
 
   projetoTitle.innerText = projeto.title
   projetoAuthor.innerText = projeto.author
+  projetoDescp.innerText = projeto.description
 
   let slider = createSlider(projeto)
-
+  sliderDescpContainer.prepend(slider)
 }
 
 renderProjeto()

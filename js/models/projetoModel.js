@@ -30,13 +30,13 @@ export function getProjetos(){
   return projetos
 }
 
-export function setCurrentProjeto(name){
-  localStorage.setItem("projeto", name)
+export function setCurrentProjeto(title){
+  localStorage.setItem("projeto", title)
 }
 
 // OBTER A BANDA ATUAL (TODO O OBJETO)
 export function getCurrentProjeto(){
-  return projetos.find((projeto) => projeto.name === localStorage.getItem("projeto"))
+  return projetos.find((projeto) => projeto.title === localStorage.getItem("projeto"))
 }
 
 export class Projeto{

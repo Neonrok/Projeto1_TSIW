@@ -20,7 +20,6 @@ export function createSlider(projeto){
   rightButton.src = "/img/Slider right button.svg"
 
   leftButton.addEventListener("click", () =>{
-    console.log(`left click on ${projeto.title}`)
     if(currentPosition == 0){
       sliderCurrentImage.src = sliderImages[lastIndex]
       currentPosition = lastIndex
