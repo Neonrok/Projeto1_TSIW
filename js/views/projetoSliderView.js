@@ -1,9 +1,11 @@
 export function createSlider(projeto){
   let currentPosition = 0
-  let projetoSlider = document.createElement("div")
-  projetoSlider.classList.add("projeto-slider")
+
+  let sliderContainer = document.createElement("div")
+  sliderContainer.classList.add("projeto-slider")
   let buttonsContainer = document.createElement("div")
   buttonsContainer.classList.add("flex space-between container slider-buttons")
+
   let sliderImages = projeto.images
   let lastIndex = sliderImages.length - 1
   
@@ -38,13 +40,8 @@ export function createSlider(projeto){
     }
   })
 
-  return `
-  <div class="projeto-slider">
-    <div class="flex space-between container slider-buttons">
-      ${leftButton}
-      <${rightButton}
-    </div>
-    ${sliderCurrentImage}
-  </div>
-  `
+  buttonsContainer.append(leftButton,rightButton)
+  sliderContainer.append(buttonsContainer,sliderCurrentImage)
+
+  return sliderContainer
 }
