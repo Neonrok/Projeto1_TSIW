@@ -1,5 +1,7 @@
 import * as Projeto from "../models/projetoModel.js"
 
+Projeto.init()
+
 //get id's
 const inputTitle = document.getElementById("inputTitle")
 const inputAuthor = document.getElementById("inputAuthor")

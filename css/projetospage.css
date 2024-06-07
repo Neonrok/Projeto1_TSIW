@@ -1,0 +1,49 @@
+@import "style.css";
+
+.projetos-container{
+  grid-template-columns: repeat(auto-fill, minmax(656px, 1fr));
+}
+
+.projeto-card{
+  padding: 1rem;
+  background-color: var(--mainBlack);
+  border: 1px solid var(--grey20);
+  border-radius: 16px;
+  filter: drop-shadow(8px 8px var(--grey20));
+  transition: 0.4s;
+  cursor: pointer;
+  max-width: 656px;
+  max-height: 496.17px;
+}
+
+.projeto-img{
+  height: 100%;
+  max-width: 624px;
+  object-fit: cover;
+}
+
+.projeto-slider{
+  max-height: 406.17px;
+  max-width: 624px;
+  overflow: hidden;
+  border-radius: 16px;
+  position: relative;
+}
+
+.slider-buttons{
+  opacity: 0;
+  padding: 0 8px;
+  position: absolute;
+  top: 50%;
+  transition: 0.4s;
+  z-index: 100;
+ }
+
+.projeto-card:hover{
+  filter: none;
+  background-color: var(--grey20);
+}
+
+.projeto-card:hover .projeto-slider .slider-buttons{
+  opacity: 1;
+}

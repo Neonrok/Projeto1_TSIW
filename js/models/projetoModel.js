@@ -1,5 +1,16 @@
 let projetos = []
 
+export function init() {
+  if(localStorage.projetos) {
+    const tempProjetos = JSON.parse(localStorage.projetos);
+    for(let projeto of tempProjetos) {
+      projetos.push(new Projeto(projeto.title, projeto.images, projeto.author, projeto.description));
+    }
+  } else {
+    projetos = [];
+  }
+}
+
 export function addProjeto(title,images,author,description){
   if(projetos.some((projeto) => projeto.title === title)){
     throw Error(`Projeto com o nome ${title} já existe`)
@@ -13,6 +24,10 @@ export function addProjeto(title,images,author,description){
 export function removeProjeto(title){
   projetos = projetos.filter((projeto) => projeto.title !== title)
   localStorage.setItem("projetos", JSON.stringify(projetos))
+}
+
+export function getProjetos(){
+  return projetos
 }
 
 export class Projeto{
