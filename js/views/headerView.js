@@ -8,7 +8,7 @@ function createHeader(){
         <ul class="header-links flex items-center gap-24">
             <li><a href="" class="hover-underline-animation text-16 text-medium">Aprender</a></li>
             <li><a href="/html/atividades.html" class="hover-underline-animation text-16 text-medium">Atividades</a></li>
-            <li><a href="" class="hover-underline-animation text-16 text-medium">Projetos</a></li>
+            <li><a href="/html/projetos.html" class="hover-underline-animation text-16 text-medium">Projetos</a></li>
             <li><a href="/html/testemunhos.html" class="hover-underline-animation text-16 text-medium">Testemunhos</a></li>
             <li><a href="" class="hover-underline-animation text-16 text-medium">Sobre</a></li>
         </ul>
@@ -34,18 +34,18 @@ function createHeader(){
           <p class="text-18 text-medium text-mainGrey">Navegação</p>
           <ul class="flex direction-column gap-16">
               <li><a href="" class="hover-underline-animation text-18 text-medium">Aprender</a></li>
-              <li><a href="" class="hover-underline-animation text-18 text-medium">Atividades</a></li>
-              <li><a href="" class="hover-underline-animation text-18 text-medium">Projetos</a></li>
-              <li><a href="" class="hover-underline-animation text-18 text-medium">Testemunhos</a></li>
+              <li><a href="/html/atividades.html" class="hover-underline-animation text-18 text-medium">Atividades</a></li>
+              <li><a href="/html/projetos.html" class="hover-underline-animation text-18 text-medium">Projetos</a></li>
+              <li><a href="/html/testemunhos.html" class="hover-underline-animation text-18 text-medium">Testemunhos</a></li>
               <li><a href="" class="hover-underline-animation text-18 text-medium">Sobre</a></li>
           </ul>
       </div>
       <div class="flex direction-column gap-16">
           <p class="text-18 text-medium text-mainGrey">Redes Sociais</p>
           <ul class="flex direction-column gap-16">
-              <li><a href="" class="hover-underline-animation text-18 text-medium">Facebook</a></li>
-              <li><a href="" class="hover-underline-animation text-18 text-medium">Instagram</a></li>
-              <li><a href="" class="hover-underline-animation text-18 text-medium">Youtube</a></li>
+              <li><a href="https://www.facebook.com/LTSIW" class="hover-underline-animation text-18 text-medium">Facebook</a></li>
+              <li><a href="https://www.instagram.com/_tsiw.esmad_/" class="hover-underline-animation text-18 text-medium">Instagram</a></li>
+              <li><a href="https://www.youtube.com/channel/UCA1uYDftSXjN1Lx5E9-ByIg" class="hover-underline-animation text-18 text-medium">Youtube</a></li>
           </ul>
       </div>
   </div>  
