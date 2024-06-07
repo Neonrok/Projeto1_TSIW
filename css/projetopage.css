@@ -2,15 +2,15 @@
 
 .projeto-img{
   height: 100%;
-  max-width: 624px;
+  max-width: 1185.9px;
   object-fit: cover;
 }
 
 .projeto-slider{
-  max-height: 406.17px;
-  max-width: 624px;
+  max-height: 770.68px;
+  max-width: 1185.9px;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 18px;
   position: relative;
 }
 
@@ -19,4 +19,9 @@
   position: absolute;
   top: 50%;
   z-index: 100;
+ }
+
+ .projeto-descp{
+  max-width: 800px;
+  line-height: 40px;
  }
