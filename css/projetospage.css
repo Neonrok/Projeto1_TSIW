@@ -13,23 +13,24 @@
   transition: 0.4s;
   cursor: pointer;
   max-width: 656px;
+  max-height: 496.17px;
 }
 
 .projeto-img{
   height: 100%;
-  width: 624px;
+  max-width: 624px;
   object-fit: cover;
 }
 
-.projetos-slider{
-  height: 406.17px;
-  width: 624px;
+.projeto-slider{
+  max-height: 406.17px;
+  max-width: 624px;
   overflow: hidden;
   border-radius: 16px;
   position: relative;
 }
 
- .slider-buttons{
+.slider-buttons{
   padding: 0 8px;
   position: absolute;
   top: 50%;
