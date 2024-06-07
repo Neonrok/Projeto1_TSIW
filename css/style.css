@@ -170,8 +170,16 @@ button{
   font-size: 1.5rem;
 }
 
+.text-30{
+  font-size: 1.875rem;
+}
+
 .text-32{
   font-size: 2rem;
+}
+
+.text-48{
+  font-size: 3rem;
 }
 
 .text-center{
