@@ -27,7 +27,7 @@ function generateCard(projeto){
   projetoAuthor.className = "text-16 text-medium text-mainGrey"
 
   projetoTitle.innerText = projeto.title
-  projetoAuthor.innerText = projetoAuthor
+  projetoAuthor.innerText = projeto.author
 
   let slider = createSlider(projeto)
 
