@@ -1,8 +1,8 @@
 @import "style.css";
 
-/*.projetos-container{
+.projetos-container{
   grid-template-columns: repeat(auto-fill, minmax(656px, 1fr));
-}*/
+}
 
 .projeto-card{
   padding: 1rem;
