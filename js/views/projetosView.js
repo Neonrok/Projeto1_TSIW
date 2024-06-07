@@ -6,27 +6,35 @@ const projetosContainer = document.getElementById("projetosContainer")
 function renderProjetos(){
   Projeto.init()
   let projetos = Projeto.getProjetos()
-  let result = "";
 
   for (let projeto of projetos) {
-    result += generateCard(projeto);
+    projetosContainer.appendChild(generateCard(projeto))
   }
 
-  projetosContainer.innerHTML = result;
 }
 
 function generateCard(projeto){
-  let slider = createSlider(projeto)
-  let result = `
-    <div class="projeto-card flex gap-16 direction-column">
-      ${slider.outerHTML}
-      <div class="flex direction-column gap-4">
-        <p class="text-16 text-semibold">${projeto.title}</p>
-        <p class="text-16 text-medium text-mainGrey">${projeto.author}</p>
-      </div>
-    </div>`
+  let projetoCard = document.createElement("div")
+  projetoCard.className = "projeto-card flex gap-16 direction-column"
 
-  return result
+  let textContainer = document.createElement("div")
+  textContainer.className = "flex direction-column gap-4"
+
+  let projetoTitle = document.createElement("p")
+  let projetoAuthor = document.createElement("p")
+
+  projetoTitle.className = "text-16 text-semibold"
+  projetoAuthor.className = "text-16 text-medium text-mainGrey"
+
+  projetoTitle.innerText = projeto.title
+  projetoAuthor.innerText = projetoAuthor
+
+  let slider = createSlider(projeto)
+
+  textContainer.append(projetoTitle,projetoAuthor)
+  projetoCard.append(slider,textContainer)
+
+  return projetoCard
 }
 
 renderProjetos()
