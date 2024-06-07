@@ -16,12 +16,13 @@ function renderProjetos(){
 }
 
 function generateCard(projeto){
+  let slider = createSlider(projeto)
   let result = `
     <div class="projeto-card flex gap-16 direction-column">
-      ${createSlider(projeto)}
+      ${slider.outerHTML}
       <div class="flex direction-column gap-4">
         <p class="text-16 text-semibold">${projeto.title}</p>
-        <p class="text-16 text-medium text-mainGrey">${projeto.authors}</p>
+        <p class="text-16 text-medium text-mainGrey">${projeto.author}</p>
       </div>
     </div>`
 
