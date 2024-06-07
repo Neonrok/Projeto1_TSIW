@@ -4,7 +4,8 @@ export function createSlider(projeto){
   let sliderContainer = document.createElement("div")
   sliderContainer.classList.add("projeto-slider")
   let buttonsContainer = document.createElement("div")
-  buttonsContainer.classList.add("flex space-between container slider-buttons")
+  buttonsContainer.className = "flex space-between container slider-buttons"
+  
 
   let sliderImages = projeto.images
   let lastIndex = sliderImages.length - 1
