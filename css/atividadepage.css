@@ -1,0 +1,9 @@
+@import "style.css";
+
+.atividade-descp{
+  line-height: 40px;
+}
+
+.atividade-container{
+  padding: 0 128px;
+}
