@@ -5,9 +5,9 @@ function createFooter(){
         <div class="flex direction-column space-between">
           <a href="../index.html"><img src="/img/LogoTSIW.svg" width="223px" height="84px"></a>
           <div>
-            <p class="footer-slogan font-inherit">A Tua Carreira Em</p>
-            <p class="footer-slogan font-inherit text-yellow">Desenvolvimento Web</p>
-            <p class="footer-slogan font-inherit">Começa Aqui</p>
+            <p class="footer-slogan">A Tua Carreira Em</p>
+            <p class="footer-slogan text-yellow">Desenvolvimento Web</p>
+            <p class="footer-slogan">Começa Aqui</p>
           </div>
         </div>
         <div class="flex gap-64">
