@@ -34,7 +34,6 @@ export function setCurrentProjeto(title){
   localStorage.setItem("projeto", title)
 }
 
-// OBTER A BANDA ATUAL (TODO O OBJETO)
 export function getCurrentProjeto(){
   return projetos.find((projeto) => projeto.title === localStorage.getItem("projeto"))
 }
