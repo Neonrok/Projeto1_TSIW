@@ -1,7 +1,7 @@
 function createHeader(){
   const header = document.createElement("header")
+  header.className = "border-bottom"
   header.innerHTML = `
-  <header class="border-bottom">
   <div class="header flex space-between items-center container mx-auto px-container">
     <a href="../index.html"><img src="/img/LogoTSIW.svg"></a>
     <nav class="flex items-center gap-32">
@@ -48,8 +48,7 @@ function createHeader(){
               <li><a href="https://www.youtube.com/channel/UCA1uYDftSXjN1Lx5E9-ByIg" class="hover-underline-animation text-18 text-medium">Youtube</a></li>
           </ul>
       </div>
-  </div>  
-</header>`
+  </div>`
   
   const mainContainer = document.getElementById("mainContainer")
   mainContainer.prepend(header) 

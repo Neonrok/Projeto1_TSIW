@@ -309,6 +309,26 @@ button{
   right: 0;
 }
 
+/*footer*/
+
+.footer-nav{
+  padding-right: 4rem;
+  border-right: 1px solid var(--mainGrey);
+}
+
+.footer-container{
+  padding: 96px 48px;
+}
+
+.footer-slogan{
+  font-family: ClashDisplay-Semibold;
+  font-size: 2.25rem;
+}
+
+footer{
+  border-top: 1px solid var(--grey20);
+}
+
 /*hovers*/
 
 .button:hover{
