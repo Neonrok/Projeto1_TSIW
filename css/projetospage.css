@@ -12,8 +12,6 @@
   filter: drop-shadow(8px 8px var(--grey20));
   transition: 0.4s;
   cursor: pointer;
-  max-width: 656px;
-  max-height: 496.17px;
 }
 
 .projeto-img{
@@ -23,8 +21,6 @@
 }
 
 .projeto-slider{
-  max-height: 406.17px;
-  max-width: 624px;
   overflow: hidden;
   border-radius: 16px;
   position: relative;

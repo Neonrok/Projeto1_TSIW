@@ -30,6 +30,14 @@ export function getAtividades(){
   return atividades
 }
 
+export function setCurrentAtividade(title){
+  localStorage.setItem("atividade", title)
+}
+
+export function getCurrentAtividade(){
+  return atividades.find((atividade) => atividade.title === localStorage.getItem("atividade"))
+}
+
 export class Atividade{
   constructor(title,image,date,description){
     this.title = title
