@@ -20,6 +20,10 @@
   top: 50%;
  }
 
+ .slider-buttons img{
+  cursor: pointer;
+ }
+
  .projeto-descp{
   max-width: 800px;
   line-height: 40px;
