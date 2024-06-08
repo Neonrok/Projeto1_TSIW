@@ -27,6 +27,7 @@ function generateCard(atividade){
   cardContainer.append(cardImg,cardTitle)
   cardContainer.addEventListener("click", ()=>{
     Atividade.setCurrentAtividade(atividade.title)
+    location.href = "/html/atividade.html"
   })
 
   return cardContainer
