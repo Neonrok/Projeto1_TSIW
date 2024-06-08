@@ -34,6 +34,11 @@ function generateCard(projeto){
   textContainer.append(projetoTitle,projetoAuthor)
   projetoCard.append(slider,textContainer)
 
+  projetoCard.addEventListener("click", () =>{
+    Projeto.setCurrentProjeto(projeto.title)
+    location.href = "/html/projeto.html"
+  })
+
   return projetoCard
 }
 
