@@ -1,2 +1,14 @@
 @import "style.css";
 
+input[type="file"] {
+  display: none;
+}
+
+.avatar-input{
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-image: url("/img/User\ DefaultAvatar.svg");
+  object-fit: cover;
+  cursor: pointer;
+}
