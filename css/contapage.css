@@ -25,7 +25,8 @@ input[type="file"] {
 
 .contaNavItem{
   padding: 1rem;
-  max-width: 316px;
+  width: min(30vw, 316px);
+  min-width: 163px;
   border-radius: 8px;
   background-color: var(--grey18);
 }
