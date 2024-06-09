@@ -8,6 +8,7 @@ registoForm.addEventListener("submit", (event)=>{
   event.preventDefault()
   User.addUser(registoName.value,registoPassword.value)
   User.login(registoName.value,registoPassword.value)
+  location.href = "/html/conta.html"
 })
 
 

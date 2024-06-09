@@ -12,3 +12,46 @@ input[type="file"] {
   object-fit: cover;
   cursor: pointer;
 }
+
+.perfilContainer{
+  background-color: var(--grey18);
+  border: 1px solid var(--mainGrey);
+  border-radius: 16px;
+}
+
+.perfilInfo-container{
+  padding: 24px 24px 0 24px;
+}
+
+.contaNavItem{
+  padding: 1rem;
+  max-width: 316px;
+  border-radius: 8px;
+  background-color: var(--grey18);
+}
+
+.conta-changeInput{
+  max-width: 428px;
+  background-color: var(--grey25);
+  border: 1px solid var(--mainGrey);
+  border-radius: 12px;
+  padding: 0.75rem;
+  height: 50px;
+}
+
+.conta-changeInput:hover{
+  border-color: var(--mainWhite);
+}
+
+.conta-changeInput:focus{
+  border-color: var(--mainWhite);
+  outline:0px none transparent;
+}
+
+.perfilButton-container{
+  padding: 16px 24px;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  justify-content: right;
+  background-color: var(--grey25);
+}

@@ -8,7 +8,7 @@
 </head>
 <body>
   <div id="mainContainer" class="flex direction-column gap-128">
-    <div class="flex gap-24 container mx-auto">
+    <div class="flex gap-24 px-container container mx-auto">
       <div class="flex direction-column gap-8">
         <p class="text-18 text-medium contaNavItem container">Perfil</p>
         <p class="text-18 text-medium contaNavItem container text-mainGrey">Password</p>
@@ -16,30 +16,27 @@
         <p class="text-18 text-medium contaNavItem container text-mainGrey">Notificações</p>
         <p class="text-18 text-medium contaNavItem container text-mainGrey">Eliminar Conta</p>
       </div>
-      <div id="contaArea">
-        <div class="flex direction-column">
-          <div class="flex direction-column gap-24">
+      <div id="contaArea" class="flex container">
+        <div class="flex direction-column gap-24 perfilContainer container">
+          <div class="perfilInfo-container flex direction-column gap-24">
             <div class="flex direction-column gap-4">
               <p class="text-30 text-medium">Perfil</p>
               <p class="text-18 text-medium text-mainGrey">Aqui podes ver e mudar o teu perfil</p>
             </div>
-            <form action="">
-              <div class="flex direction-column gap-8">
-                <label for="Avatar" class="text-18 text-medium">Avatar</label>
-                <label class="avatar-input">
-                  <input type="file">
-                </label>
-
-              </div>
-              <div class="flex direction-column gap-8">
-                <label for="Nome" class="text-18 text-medium">Nome</label>
-                <input type="text" class="conta-changeInput" id="changeNameInput">
-              </div>
+            <div class="flex direction-column gap-8">
+              <label for="Avatar" class="text-18 text-medium">Avatar</label>
+              <label class="avatar-input">
+                <input type="file">
+              </label>
             </div>
-            <div class="flex">
-              <button class="button" type="submit">Guardar</button>
+            <div class="flex direction-column gap-8">
+              <label for="Nome" class="text-18 text-medium">Nome</label>
+              <input type="text" class="text-18 text-regular conta-changeInput container" id="changeNameInput">
             </div>
-            </form>
+          </div>
+          <div class="flex perfilButton-container">
+            <button class="button" id="guardarPerfilButton">Guardar</button>
+          </div>
         </div>
       </div>
     </div>
