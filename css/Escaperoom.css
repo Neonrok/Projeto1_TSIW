@@ -1,10 +1,10 @@
 body{
-    margin: 2% 25% 0% 25%;
     background-color: #171717;
 
 }
 
 .enquadrar{
+    margin: 2% 25% 0% 25%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -88,7 +88,142 @@ body{
     width: 100%;
     height: auto;
 }
+
+.SR_Pc1_Int_Lock_button{
+    position: absolute;
+    top: 45.65%;
+    left: 44.1%;
+    z-index: 1;
+    width: 12.1%;
+    height: auto;
+}
+
+.Pc1_f_block{
+    position:absolute;
+    top: 65.5%;
+    left: 0%;
+    z-index: 1;
+    width: 19%;
+    height: auto;
+}
+
+.Pc1_Act_block{
+    position:absolute;
+    top: 53%;
+    left: 52.3%;
+    z-index: 1;
+    width: 4%;
+    height: auto;
+}
+
+.apresentador {
+    position: absolute;
+    height: 30%;
+    left: 59%;
+    top: 15.5%;
+}
+
+.overlay {
+    position: absolute;
+    border: solid grey 2px;
+    width: 62.5%;
+    height: 21%;
+    left: 0.5%;
+    top: 77%;
+}
+
+.hiperlay{
+    width: 98.5%;
+    height: 95.5%;
+    color: snow;
+    background-color: #171717;
+}
+
+.texto_qt{
+    height: 40%;
+    padding: 2%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: solid red 5px;
+}
+
+.Opt{
+    margin-left: 20%;
+    width: 60%;
+    height: 35%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 2px;
+    border: solid red 5px;
+    border-top: none;
+}
+
+.Opti{
+    border: solid #000000 1px;
+}
+
+.bloco_da_consola1{
+    position: absolute;
+    top: 1%;
+    left: 91%;
+    height: 12%;
+    width: 8%;
+}
+.bloco_da_consola2{
+    position: absolute;
+    top: 1%;
+    left: 82%;
+    height: 12%;
+    width: 8%;
+}
+.bloco_da_consola3{
+    position: absolute;
+    top: 1%;
+    left: 72%;
+    height: 12%;
+    width: 9%;
+}
+.bloco_da_consola4{
+    position: absolute;
+    top: 1%;
+    left: 61.5%;
+    height: 12%;
+    width: 9%;
+}
+.bloco_da_consola5{
+    position: absolute;
+    top: 1%;
+    left: 52%;
+    height: 12%;
+    width: 9%;
+}
+.bloco_da_consola6{
+    position: absolute;
+    top: 1%;
+    left: 43%;
+    height: 12%;
+    width: 8%;
+}
+
+
+
+
+
+
+
+
+
+.escrever_inventário{
+    margin: 0% 25% 0% 25%;
+    font-size: larger;
+    color: snow;
+    font-family: sans-serif;
+}
+
 .inventário{
+    margin: 0% 25% 0% 25%;
     border: 2px solid snow;
     padding: 2px;
     display: flex;
@@ -96,6 +231,7 @@ body{
     min-height: 75px;
     width: auto;
 }
+
 .Items{
     height: 75px;
     width: auto;
@@ -103,6 +239,7 @@ body{
     border: 1px solid snow;
     cursor: pointer;
 }
+
 .Item_1_use{
     max-height: 75px;
     width: auto;

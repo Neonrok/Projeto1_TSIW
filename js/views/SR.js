@@ -1,36 +1,69 @@
 import * as data from "./SR_Back.js"
 import * as Inve from "./SR_Item_use.js"
+import * as Q1_Pc1_data from "./SR_Q_Pc1.js"
+import * as Consola_pc1 from "./Console_map_pc1.js"
+
+
+
+
+
+
 $(document).ready(function(e) {
     $('img[usemap]').rwdImageMaps();
 })
 
-//variaveis necessarias
 //para--funcionamento----------------------------------------------------------------------------------
 let Back_ordem = [];
 Back_ordem = data.init();
 let Item_ordem = [];
 Item_ordem = Inve.init();
+let Q1_Pc1 = [];
+Q1_Pc1 = Q1_Pc1_data.init();
+let Com_Pc1 = [];
+Com_Pc1 = Consola_pc1.init();
+
+
+
+
+let Q1_Pc2 = [];
+
+let Com_Pc2 = [];
+
+let Q1_Pc3 = [];
+
+let Com_Pc3 = [];
+
+let Com_Pc4 = [];
+
+let stop=false
 let Use_Item = document.querySelectorAll(".inventário img");
 let tela_atual = document.getElementById("T_Inicio");
 let next_tela;
+let focar = document.getElementById("input_consola")
+let QCom1 = document.getElementById("Pc1_on_Console")
+let QCom2 = document.getElementById("Pc2_on_Console")
+let QCom3 = document.getElementById("Pc3_on_Console")
+let QCom4 = document.getElementById("Pc4_on_Console")
 
 //para--Salas------------------------------------------------------------------------------------------
 let P1_S1 = true;
 let P2_S1 = true;
 let P3_S1 = true;
+
 let pc1_state = false;
-
-
-//Inventário-------------------------------------------------------------------------------------------
-
+let pc1_game = true;
+let Console_p1_get = false;
+let pc2_state = false;
+let pc2_game = true;
+let Console_p2_get = false;
+let pc3_state = false;
+let pc3_game = true;
+let Console_p3_Activate = false
+let Console_p4_get = false
 
 //funções----------------------------------------------------------------------------------------------
 const S_1 = function() {
-    next_tela = document.getElementById("Sala_Entrada");
-    tela_atual.style.display = "none";
-    tela_atual = next_tela;
-    tela_atual.style.display = "block";
-    Butão_voltar.style.display = Back_ordem[0].estado;
+    alterar_sala("Sala_Entrada",0) 
     if (Item_ordem[0].var_item) {
         document.getElementById(Item_ordem[0].id).style.display = "none"
     }
@@ -51,12 +84,160 @@ const S_1 = function() {
     }
 }
 
-const Pc1_interior = function() {
-    next_tela = document.getElementById("Pc1_interior_lock");
+const alterar_sala = function(n,y){
+    next_tela = document.getElementById(n);
     tela_atual.style.display = "none";
     tela_atual = next_tela;
     tela_atual.style.display = "block";
-    Butão_voltar.style.display = Back_ordem[2].estado;
+    Butão_voltar.style.display = Back_ordem[y].estado;
+};
+
+
+focar.addEventListener('keydown', function(event){
+    if(event.key === 'Enter'){
+        event.preventDefault();
+        Consola(focar.value)
+        focar.value = '';
+    }
+})
+
+const Consola = function(n){
+    let mapa;
+    let local = 0;
+    let pup = true;
+    let pdown = true;
+    let pleft = true;
+    let pright = true;
+    let pget = true;
+    let pactivate = true;
+
+    if( tela_atual === QCom1){
+        mapa = Com_Pc1
+    } else if( tela_atual === QCom2){
+        mapa = Com_Pc2
+    } else if( tela_atual === QCom3){
+        mapa = Com_Pc3
+    } else if( tela_atual === QCom4){
+        mapa = Com_Pc4
+    };
+
+    function reloc(){
+        if(mapa[local].up !== "N/A"){
+            document.getElementById("bloco1_consola_p4").style.display = "none"
+            pup = true;
+        }else{
+            document.getElementById("bloco1_consola_p4").style.display = "block"
+            pup = false;
+        };
+
+        if(mapa[local].down !== "N/A"){
+            document.getElementById("bloco1_consola_p3").style.display = "none"
+            pdown = true;
+        }else{
+            document.getElementById("bloco1_consola_p3").style.display = "block"
+            pdown = false;
+        };
+
+        if(mapa[local].left !== "N/A"){
+            document.getElementById("bloco1_consola_p2").style.display = "none"
+            pleft = true;
+        }else{
+            document.getElementById("bloco1_consola_p2").style.display = "block"
+            pleft = false;
+        };
+
+        if(mapa[local].right !== "N/A"){
+            document.getElementById("bloco1_consola_p1").style.display = "none"
+            pright = true;
+        }else{
+            document.getElementById("bloco1_consola_p1").style.display = "block"
+            pright = false;
+        };
+
+        if(mapa[local].get !== "N/A"){
+            document.getElementById("bloco1_consola_p5").style.display = "none"
+            pget = true;
+        }else{
+            document.getElementById("bloco1_consola_p5").style.display = "block"
+            pget = false;
+        };
+
+        if(mapa[local].activate !== "N/A"){
+            document.getElementById("bloco1_consola_p6").style.display = "none"
+            pactivate = true;
+        }else{
+            document.getElementById("bloco1_consola_p6").style.display = "block"
+            pactivate = false;
+        };
+    }
+    
+    if (n === "up" && pup){
+        local=mapa[local].up
+        reloc()
+    } else if (n === "down" && pdown){
+        local=mapa[local].down
+        reloc()
+    } else if (n === "left" && pleft){
+        local=mapa[local].left
+        reloc()
+    } else if (n === "right" && pright){
+        local=mapa[local].right
+        reloc()
+    } else if (n === "get" && pget){
+        return true
+        Execut_Back();
+    } else if (n === "activate" && pactivate){
+        return true
+        Execut_Back();
+    };
+};
+
+//debug--professor--------------------------------------------------------------------------------------------------------------------------------------------
+const quise_p1 = function(n) {
+    let ST = 0;
+    stop=true
+    while (stop) {
+        let CQ = Math.floor(Math.random() * n.length);
+        document.getElementById('question').textContent = n[CQ].Qest;
+
+        const opti = [
+            { id: 'opt1', text: n[CQ].Opt1 },
+            { id: 'opt2', text: n[CQ].Opt2 },
+            { id: 'opt3', text: n[CQ].Opt3 },
+            { id: 'opt4', text: n[CQ].Opt4 }
+        ];
+
+        for (let i = opti.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [opti[i], opti[j]] = [opti[j], opti[i]];
+        }
+
+        opti.forEach((opt) => {
+            const button = document.getElementById(opt.id);
+            button.textContent = opt.text;
+            button.onclick = () => function() {
+                const currentQuestion = n[CQ];
+                if (selectedOption === currentQuestion.Opt3) {
+                    ST++;
+                    if (ST === 3) {
+                        pc1_game = true;
+                        Execut_Back();
+                    }
+                } else {
+                    ST = 0;
+                }
+            };
+        });
+    }
+}
+
+
+const Pc1_interior = function() {
+    if (Item_ordem[0].var_local){
+        alterar_sala("Pc1_interior_unlock",2)
+    } else {
+        alterar_sala("Pc1_interior_lock",2)
+    }
 }
 
 const Inventario = function(n) {//ajuda-----vaso das variaveis e arranjar uma forma de evitar usar o ciclo for----------------------------------
@@ -64,6 +245,27 @@ const Inventario = function(n) {//ajuda-----vaso das variaveis e arranjar uma fo
         document.getElementById(Item_ordem[n].item).style.display = "none"
     } else {
         document.getElementById(Item_ordem[n].item).style.display = "block"
+    }
+}
+
+const Execut_Back = function() {
+    for (let i = 0; i<Back_ordem.length; i++) {
+        let estado_ = document.getElementById(Back_ordem[i].sala);
+        let efeito_ = document.getElementById(Back_ordem[i].efeito);
+        if (estado_ === tela_atual) {
+            console.log(efeito_)
+            console.log(document.getElementById("Sala_Entrada"))
+            if (efeito_ === document.getElementById("Sala_Entrada")) {
+                estado_.style.display = "none";
+                S_1();
+            }
+            estado_.style.display = "none";
+            efeito_.style.display = Back_ordem[i].estado;
+            document.getElementById("voltar").style.display = Back_ordem[i].N_estado;
+            tela_atual = efeito_;
+            stop=false
+            break;
+        }
     }
 }
 
@@ -75,7 +277,7 @@ for (let i = 0 ; i<Back_ordem.length ; i++) {
     document.getElementById(Sala_secundaria).style.display = "none";
 };
 for (let i = 0 ; i<Item_ordem.length ; i++) {
-    Inventario(i)
+    Inventario(i);
 };
 
 
@@ -88,7 +290,7 @@ const Usar_item_1 = document.getElementById(Item_ordem[0].id_1).addEventListener
     let element = document.getElementById(Item_ordem[0].id);
     element.style.display = "none";
     Item_ordem[0].var_item = true;
-    Inventario(0)
+    Inventario(0);
 });
 
 Use_Item.forEach((option) => {
@@ -96,8 +298,11 @@ Use_Item.forEach((option) => {
         let pl = option.id;
         for (let i = 0; i<Item_ordem.length; i++){
             if (document.getElementById(Item_ordem[i].sala) === tela_atual && Item_ordem[i].item === pl){
-                alert("Este é o fim da primeira alfa\nAlfa0.1\n\n^_^");
-                //alterar-a-variavel-mesmo-problema.
+                Item_ordem[i].var_local = true;
+                Item_ordem[i].var_item = false;
+                Inventario(i);
+                Execut_Back();
+                return;
             }
         }
         
@@ -109,29 +314,37 @@ const Tampa_pa1 = document.getElementById("tampa_pc1").addEventListener('click',
 });
 
 const Tela_pc1 = document.getElementById("tela_pc1").addEventListener('click', function() {
-    
-    if (pc1_state === true) {
-        alert("implementar_depois");
-        return;
+    if (pc1_state) {
+        if (pc1_game){
+            alterar_sala("Pc1_on_unlock",3);
+        }else{
+            alterar_sala("Pc1_on_lock",4);
+            quise_p1(Q1_Pc1);
+        }
     } else {
-        let next_tela = document.getElementById("Pc1_off");
-        tela_atual.style.display = "none";
-        tela_atual = next_tela;
-        tela_atual.style.display = "block";
-        Butão_voltar.style.display = "block";
+        alterar_sala("Pc1_off",2);
     }
 });
 
+const Pc1_On_But = document.getElementById("SR_Pc1_Int_button").addEventListener('click',function() {
+    pc1_state = true
+    document.getElementById("SR_Pc1_Int_Lock_button").style.display = "none"
+    Execut_Back();
+})
+
+const Pc1_active_But = document.getElementById("Pc1_Usar").addEventListener('click', function(){
+    P1_S1=false;
+    document.getElementById("Pc1_Act_block").style.display="none"
+    Execut_Back();
+})
+
+const Pc1_Console_Acess = document.getElementById("Pc1_Distrair").addEventListener('click', function(){
+    alterar_sala("Pc1_on_Console",6);
+    focar.focus();
+})
+
+
+
 const back = document.getElementById("voltar").addEventListener('click',function() {
-    for (let i = 0; i<Back_ordem.length; i++) {
-        let estado_ = document.getElementById(Back_ordem[i].sala);
-        let efeito_ = document.getElementById(Back_ordem[i].efeito);
-        if (estado_ === tela_atual) {
-            estado_.style.display = "none";
-            efeito_.style.display = Back_ordem[i].estado;
-            document.getElementById("voltar").style.display = Back_ordem[i].N_estado;
-            tela_atual = efeito_;
-            break;
-        }
-    }
+    Execut_Back();
 });

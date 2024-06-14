@@ -14,7 +14,7 @@
             <div class="Inicio" id="T_Inicio">
                 <img src="../img/SR/salas/inicio_SR.jpg" 
                 alt="jpg" class="Tela_Inicio" id="Iniciar">
-                <img src="../img/SR/sprits(tirar_o_fundo)/inicio_SR.png" alt="png"
+                <img src="../img/SR/sprits/inicio_SR.png" alt="png"
                 usemap="#Iniciar_butão" alt="room"
                 class="Iniciar_but" id="Start">
             </div>
@@ -24,32 +24,84 @@
                 <img src="../img/SR/salas/entrada_SR.jpg" alt="jpg"
                 usemap="#sala1" alt="room"
                 class="SR_Entrada" id="SR_Entrada">
-                <img src="../img/SR/sprits(tirar_o_fundo)/chave.png"
+                <img src="../img/SR/sprits/chave.png"
                 alt="png" usemap="#item_sala1" alt="room"
                 class="chave_Entrada" id="item_S1">
-                <img src="../img/SR/sprits(tirar_o_fundo)/porta1_op.png" 
+                <img src="../img/SR/sprits/porta1_op.png" 
                 alt="png" usemap="#P1_sala1" alt="room"
                 class="P1_Entrada" id="P1_S1">
-                <img src="../img/SR/sprits(tirar_o_fundo)/porta2_op.png" 
+                <img src="../img/SR/sprits/porta2_op.png" 
                 alt="png" usemap="#P2_sala1" alt="room"
                 class="P2_Entrada" id="P2_S1">
-                <img src="../img/SR/sprits(tirar_o_fundo)/porta3_op.png" 
+                <img src="../img/SR/sprits/porta3_op.png" 
                 alt="png" usemap="#P3_sala1" alt="room"
                 class="P3_Entrada" id="P3_S1">
             </div>
 <!--------------------------------All------------------------------>
 <!--------------------------butão--voltar-------------------------->
             <div class="voltar" id="voltar">
-                <img src="../img/SR/sprits(tirar_o_fundo)/Sprit_b1.png" 
+                <img src="../img/SR/sprits/Sprit_b1.png" 
                 alt="png" usemap="voltar" alt="room" class="back" 
                 id="back">
             </div>
-<!--------------------------butão--voltar-------------------------->
+<!----------------------------Pc1--State--------------------------->
 
             <div class="off" id="Pc1_off">
                 <img src="../img/SR/salas/moniroi template.jpg"
                 alt="jpg" usemap="#off" alt="room"
                 class="SR_oSala" id="off_tela">
+            </div>
+            <div class="off" id="Pc1_on_lock">  
+                <img src="../img/SR/salas/Pc1_sala_base.jpg"
+                alt="jpg" usemap="#off" alt="room"
+                class="SR_oSala" id="off_tela">
+                
+                <img src="../img/SR/sprits/quize_Pc1.png" 
+                alt="png" class="apresentador">
+                <img src="../img/SR/sprits/distração_PC_sala1.png"
+                alt="png" class="Pc1_f_block">
+                <div class="overlay">
+                    <div class="texto_qt">
+                        <p id="question">Texto sobre a imagem</p>
+                    </div>
+                    <div class="Opt">
+                        <button class="Opti" id="opt1">opt1</button>
+                        <button class="Opti" id="opt2">opt2</button>
+                        <button class="Opti" id="opt3">opt3</button>
+                        <button class="Opti" id="opt4">opt4</button>
+                    </div>
+                </div>
+            </div>
+            <div class="off" id="Pc1_on_unlock">
+                <img src="../img/SR/salas/Pc1_sala_base.jpg"
+                alt="jpg" usemap="#off" alt="room"
+                class="SR_oSala" id="off_tela">
+                <img src="../img/SR/sprits/Pc1_sala_base.png"
+                alt="png" usemap="#Pc1_use" alt="room"
+                id="Pc1_Act_block" class="Pc1_Act_block">
+                <img src="../img/SR/sprits/distração_PC_sala1.png"
+                alt="png" usemap="#Pc1_dist" alt="room" class="Pc1_f_block">
+            </div>
+            <div class="off" id="Pc1_on_Console">
+                <img src="../img/SR/salas/consola.jpg"
+                alt="jpg" usemap="#off" alt="room"
+                class="SR_oSala" id="off_tela">
+                <img src="../img/SR/sprits/bloco_consola.png" alt="png"
+                id="bloco1_consola_p1" class="bloco_da_consola1">
+                <img src="../img/SR/sprits/bloco_consola.png" alt="png"
+                id="bloco1_consola_p2" class="bloco_da_consola2">
+                <img src="../img/SR/sprits/bloco_consola.png" alt="png"
+                id="bloco1_consola_p3" class="bloco_da_consola3">
+                <img src="../img/SR/sprits/bloco_consola.png" alt="png"
+                id="bloco1_consola_p4" class="bloco_da_consola4">
+                <img src="../img/SR/sprits/bloco_consola.png" alt="png"
+                id="bloco1_consola_p5" class="bloco_da_consola5">
+                <img src="../img/SR/sprits/bloco_consola.png" alt="png"
+                id="bloco1_consola_p6" class="bloco_da_consola6">
+                
+                <div class="overlay">
+                    <input class="hiperlay" id="input_consola" type="text" placeholder="...">
+                </div>
             </div>
 
 <!-----------------------interior--Pc1--lock----------------------->
@@ -60,17 +112,21 @@
 
 <!----------------------interior--Pc1--unlock---------------------->
             <div class="Pc1_interior_unlock" id="Pc1_interior_unlock">
-                <img src="../img/SR/salas/ligar_fechado.jpg" 
+                <img src="../img/SR/salas/ligar.jpg" 
                 alt="jpg" class="SR_Pc1_Int_unLock" id="SR_Pc1_Int_unLock">
+                <img src="../img/SR/sprits/ligar.png"
+                alt="png" usemap="#SR_Pc1_Int_Lock_button" class="SR_Pc1_Int_Lock_button"
+                id="SR_Pc1_Int_Lock_button">
             </div>
 
         </div>
-        <br>
         <!-----------------------inventário----------------------->
-        <div Class="inventário">
+        <p class="escrever_inventário">Inventário</p>
+        <div class="inventário">
+            
             <div id="item_1_use">
                 <div class="Items">
-                    <img src="../img/SR/sprits(tirar_o_fundo)/chave.png" 
+                    <img src="../img/SR/sprits/chave.png" 
                     alt="Item_1" class="Item_1_use" id="item_1_use">
                 </div>
             </div>
@@ -101,13 +157,31 @@
 
 <!----------------------------P3--All------------------------------>
 
+<!--pc1--int-->
+        <map name="Pc1_use">
+            <area shape="rect" coords="0, 0, 50, 100" href="#" alt="fiz_pc1" id="Pc1_Usar">
+        </map>
+        
+        <map name="Pc1_dist">
+            <area shape="rect" coords="0, 0, 1000, 1000" href="#" alt="fiz_pc1" id="Pc1_Distrair">
+        </map>
+
+
+
+
+
 <!--------------------------butão--voltar-------------------------->
         <map name="voltar">
             <area shape="circle" coords="50, 50, 50"
             href="#" alt="fiz_pc1" id="voltar">
         </map>
-<!-------------------------------???------------------------------->
 
+        <map name="SR_Pc1_Int_Lock_button">
+            <area shape="rect" coords="0 0 100 50" 
+            href="#" alt="fiz_pc1" id="SR_Pc1_Int_button">
+        </map>
+<!-------------------------------???------------------------------->
+        <script type="module" src="./js/views/headerView.js"></script>
         <script type="module" src="../js/views/SR_Back.js"></script>
         <script type="module" src="../js/views/SR_Item_use.js"></script>
         <script type="module" src="../js/views/SR.js"></script>

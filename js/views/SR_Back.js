@@ -33,5 +33,28 @@ export function init() {
     }
     Back.push(SPV)
 
+    SPV = {
+        sala: "Pc1_on_lock",
+        efeito: "Sala_Entrada",
+        estado: "block",
+        N_estado: "none"
+    }
+    Back.push(SPV)
+
+    SPV = {
+        sala: "Pc1_on_unlock",
+        efeito: "Sala_Entrada",
+        estado: "block",
+        N_estado: "none"
+    }
+    Back.push(SPV)
+    SPV = {
+        sala: "Pc1_on_Console",
+        efeito: "Sala_Entrada",
+        estado: "block",
+        N_estado: "none"
+    }
+    Back.push(SPV)
+
     return Back
 }
