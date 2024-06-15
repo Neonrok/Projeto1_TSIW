@@ -61,6 +61,9 @@ let pc3_game = true;
 let Console_p3_Activate = false
 let Console_p4_get = false
 
+
+
+let local = 0;
 //funções----------------------------------------------------------------------------------------------
 const S_1 = function() {
     alterar_sala("Sala_Entrada",0) 
@@ -94,62 +97,101 @@ const alterar_sala = function(n,y){
 
 
 focar.addEventListener('keydown', function(event){
-    if(event.key === 'Enter'){
-        event.preventDefault();
-        Consola(focar.value)
-        focar.value = '';
+    if (tela_atual=document.getElementById("Pc1_on_Console")){
+        if(event.key === 'Enter'){
+            event.preventDefault();
+            Console_p1_get = Consola(focar.value);
+            focar.value = '';
+            if(Console_p1_get){Execut_Back();}
+        }
+    } else if (tela_atual=document.getElementById("Pc2_on_Console")){
+        if(event.key === 'Enter'){
+            event.preventDefault();
+            Console_p2_get = Consola(focar.value);
+            focar.value = '';
+            if(Console_p2_get){Execut_Back();}
+        }
+    } else if (tela_atual=document.getElementById("Pc3_on_Console")){
+        if(event.key === 'Enter'){
+            event.preventDefault();
+            Console_p3_Activate = Consola(focar.value);
+            focar.value = '';
+            if(Console_p3_Activate){Execut_Back();}
+        }
+    } else if (tela_atual=document.getElementById("Pc4_on_Console")){
+        if(event.key === 'Enter'){
+            event.preventDefault();
+            Console_p4_get = Consola(focar.value);
+            focar.value = '';
+            if(Console_p4_get){Execut_Back();}
+        }
     }
+    
 })
 
 const Consola = function(n){
     let mapa;
-    let local = 0;
+    
     let pup = true;
     let pdown = true;
     let pleft = true;
     let pright = true;
     let pget = true;
     let pactivate = true;
+    
 
     if( tela_atual === QCom1){
-        mapa = Com_Pc1
+        mapa = Com_Pc1;
+        reloc();
     } else if( tela_atual === QCom2){
-        mapa = Com_Pc2
+        mapa = Com_Pc2;
+        reloc();
     } else if( tela_atual === QCom3){
-        mapa = Com_Pc3
+        mapa = Com_Pc3;
+        reloc();
     } else if( tela_atual === QCom4){
-        mapa = Com_Pc4
+        mapa = Com_Pc4;
+        reloc();
     };
 
     function reloc(){
+        console.log(local)
         if(mapa[local].up !== "N/A"){
+            
             document.getElementById("bloco1_consola_p4").style.display = "none"
             pup = true;
         }else{
+            
             document.getElementById("bloco1_consola_p4").style.display = "block"
             pup = false;
         };
 
         if(mapa[local].down !== "N/A"){
+            
             document.getElementById("bloco1_consola_p3").style.display = "none"
             pdown = true;
         }else{
+            
             document.getElementById("bloco1_consola_p3").style.display = "block"
             pdown = false;
         };
 
         if(mapa[local].left !== "N/A"){
+            
             document.getElementById("bloco1_consola_p2").style.display = "none"
             pleft = true;
         }else{
+            
             document.getElementById("bloco1_consola_p2").style.display = "block"
             pleft = false;
         };
 
         if(mapa[local].right !== "N/A"){
+            
             document.getElementById("bloco1_consola_p1").style.display = "none"
             pright = true;
         }else{
+            
             document.getElementById("bloco1_consola_p1").style.display = "block"
             pright = false;
         };
@@ -185,10 +227,8 @@ const Consola = function(n){
         reloc()
     } else if (n === "get" && pget){
         return true
-        Execut_Back();
     } else if (n === "activate" && pactivate){
         return true
-        Execut_Back();
     };
 };
 
@@ -253,8 +293,6 @@ const Execut_Back = function() {
         let estado_ = document.getElementById(Back_ordem[i].sala);
         let efeito_ = document.getElementById(Back_ordem[i].efeito);
         if (estado_ === tela_atual) {
-            console.log(efeito_)
-            console.log(document.getElementById("Sala_Entrada"))
             if (efeito_ === document.getElementById("Sala_Entrada")) {
                 estado_.style.display = "none";
                 S_1();
@@ -340,6 +378,7 @@ const Pc1_active_But = document.getElementById("Pc1_Usar").addEventListener('cli
 
 const Pc1_Console_Acess = document.getElementById("Pc1_Distrair").addEventListener('click', function(){
     alterar_sala("Pc1_on_Console",6);
+    Consola("");
     focar.focus();
 })
 
