@@ -20,7 +20,7 @@ function createHeader(){
             <a href="/html/notificacoes.html"><img src="/img/NotificationIcon.svg" width="16px" height="18px"></a>
             <a href="/html/conta.html"><img src=${loggedUser.avatar} width="36px" height="36px"></a>
           </div>
-          <button class="button" id="headerButtonLogOut">Log out</button>
+          <a href="/index.html" class="button" id="headerButtonLogOut" role="button">Log out</a>
           <button id="buttonHamburger" class="header-hamburger flex direction-column">
             <div class="hamburger-bar"></div>
             <div class="hamburger-bar"></div>
@@ -32,7 +32,7 @@ function createHeader(){
         <div class="flex space-between items-center">
             <a href="../index.html"><img src="/img/LogoTSIW Versao pequena.svg" height="30px"></a>
             <div class="flex gap-16 items-center">
-                <button class="button" id="sideNavButtonLogOut">Log out</button>
+                <a href="/index.html" class="button" id="sideNavButtonLogOut" role="button">Log out</a>
                 <button id="buttonSideNavClose" class="header-hamburger flex">
                   <img src="/img/cross.svg" height="12px">
                 </button>
@@ -118,6 +118,8 @@ createHeader()
 const buttonHamburger = document.getElementById("buttonHamburger")
 const buttonSideNavClose = document.getElementById("buttonSideNavClose")
 const sideNavBar = document.getElementById("sideNavBar")
+const headerButtonLogOut = document.getElementById("headerButtonLogOut")
+const sideNavButtonLogOut = document.getElementById("sideNavButtonLogOut")
 
 buttonHamburger.addEventListener("click", () =>{
   sideNavBar.classList.add("side-nav-active")
@@ -125,4 +127,12 @@ buttonHamburger.addEventListener("click", () =>{
 
 buttonSideNavClose.addEventListener("click", () =>{
   sideNavBar.classList.remove("side-nav-active")
+})
+
+headerButtonLogOut.addEventListener("click", () =>{
+  User.logout()
+})
+
+sideNavButtonLogOut.addEventListener("click", () =>{
+  User.logout()
 })

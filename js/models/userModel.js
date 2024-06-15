@@ -1,5 +1,16 @@
 let users = []
 
+export function init() {
+  if (localStorage.users) {
+    const tempUsers = JSON.parse(localStorage.users)
+    for(let user of tempUsers) {
+      users.push(new User(user.name, user.password))
+    }
+  } else {
+    users = []
+  }
+}
+
 export function addUser(name, password){
   if(users.some((user) => user.name === name)){
     throw Error(`Utilizador com o nome "${user.name}" já existe`)
@@ -16,26 +27,26 @@ export function removeUser(name){
 }
 
 export function login(name,password){
-  const user = users.find((user) => user.name === name && user.password === password);
+  const user = users.find((user) => user.name === name && user.password === password)
   if(user){
-      sessionStorage.setItem("loggedUser", JSON.stringify(user));
+      sessionStorage.setItem("loggedUser", JSON.stringify(user))
       return true;
   } 
   else{
-    throw Error("Login Inválido");
+    throw Error("Login Inválido")
   }
 }
 
 export function logout(){
-  sessionStorage.removeItem("loggedUser");
+  sessionStorage.removeItem("loggedUser")
 }
 
 export function isLogged() {
-  return sessionStorage.getItem("loggedUser") ? true : false;
+  return sessionStorage.getItem("loggedUser") ? true : false
 }
 
 export function getUserLogged() {
-  return JSON.parse(sessionStorage.getItem("loggedUser"));
+  return JSON.parse(sessionStorage.getItem("loggedUser"))
 }
 
 class User{
