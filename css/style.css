@@ -95,7 +95,11 @@ body{
 h1{
   font-family: ClashDisplay-Semibold;
   font-size: clamp(1.875rem,9.23078vw,3.75rem);
-  text-align: left;
+}
+
+h2{
+  font-family: ClashDisplay-Semibold;
+  font-size: clamp(1.5rem,9.23078vw,3rem);
 }
 
 li{
