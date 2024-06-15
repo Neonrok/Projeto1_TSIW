@@ -16,9 +16,9 @@ function createHeader(){
               <li><a href="/html/testemunhos.html" class="hover-underline-animation text-16 text-medium">Testemunhos</a></li>
               <li><a href="" class="hover-underline-animation text-16 text-medium">Sobre</a></li>
           </ul>
-          <div>
-            <a href="/html/notificacoes.html"><img src="img/NotificationIcon.svg" width="16px" height="18px"></a>
-            <a href="/html/conta.html"><img src="${loggedUser.avatar}" width="36px" height="36px"></a>
+          <div class="flex gap-24 items-center">
+            <a href="/html/notificacoes.html"><img src="/img/NotificationIcon.svg" width="16px" height="18px"></a>
+            <a href="/html/conta.html"><img src=${loggedUser.avatar} width="36px" height="36px"></a>
           </div>
           <button class="button" id="headerButtonLogOut">Log out</button>
           <button id="buttonHamburger" class="header-hamburger flex direction-column">
