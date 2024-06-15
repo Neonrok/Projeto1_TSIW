@@ -20,8 +20,8 @@
   margin-top: 6rem;
 }
 
-.hero-description{
-  max-width: 653px;;
+.m-bot-128{
+  margin-bottom: 6rem;
 }
 
 .hero-shape-square{
@@ -64,6 +64,17 @@
   font-family: ClashDisplay-Regular;
   color: var(--mainBlack);
   z-index: 1000;
+}
+
+.video-mask{
+  width: 625px;
+  height: 500px;
+  object-fit: cover;
+  mask: url(/img/videoMask2.svg);
+}
+
+.max-w-653{
+  max-width: 653px;
 }
 
 #hero-shape-topSquare{
