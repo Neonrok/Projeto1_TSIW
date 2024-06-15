@@ -1,0 +1,5 @@
+const perfilNavbutton = document.getElementById("perfilNavbutton")
+const passwordNavbutton = document.getElementById("passwordNavbutton")
+const atividadesGuardNavbutton = document.getElementById("atividadesGuardNavbutton")
+const notifNavbutton = document.getElementById("notifNavbutton")
+const eliminarContaNavbutton = document.getElementById("eliminarContaNavbutton")

@@ -10,13 +10,13 @@
   <div id="mainContainer" class="flex direction-column gap-128">
     <div class="flex gap-24 px-container container mx-auto">
       <div class="flex direction-column gap-8">
-        <p class="text-18 text-medium contaNavItem container">Perfil</p>
-        <p class="text-18 text-medium contaNavItem container text-mainGrey">Password</p>
-        <p class="text-18 text-medium contaNavItem container text-mainGrey">Atividades Guardadas</p>
-        <p class="text-18 text-medium contaNavItem container text-mainGrey">Notificações</p>
-        <p class="text-18 text-medium contaNavItem container text-mainGrey">Eliminar Conta</p>
+        <p class="text-18 text-medium contaNavItem container active" id="perfilNavbutton">Perfil</p>
+        <p class="text-18 text-medium contaNavItem container text-mainGrey" id="passwordNavbutton">Password</p>
+        <p class="text-18 text-medium contaNavItem container text-mainGrey" id="atividadesGuardNavbutton">Atividades Guardadas</p>
+        <p class="text-18 text-medium contaNavItem container text-mainGrey" id="notifNavbutton">Notificações</p>
+        <p class="text-18 text-medium contaNavItem container text-mainGrey" id="eliminarContaNavbutton">Eliminar Conta</p>
       </div>
-      <div id="contaArea" class="flex container">
+      <div id="perfilSection" class="flex container d-none">
         <div class="flex direction-column gap-24 perfilContainer container">
           <div class="perfilInfo-container flex direction-column gap-24">
             <div class="flex direction-column gap-4">
@@ -36,6 +36,42 @@
           </div>
           <div class="flex perfilButton-container">
             <button class="button" id="guardarPerfilButton">Guardar</button>
+          </div>
+        </div>
+      </div>
+      <div id="passwordSection" class="flex container d-none">
+        <div class="flex direction-column gap-24 perfilContainer container">
+          <div class="perfilInfo-container flex direction-column gap-24">
+            <p class="text-30 text-medium">Alterar password</p>
+            <div class="flex direction-column gap-8">
+              <label for="Password atual" class="text-18 text-medium">Password atual</label>
+              <input type="text" class="text-18 text-regular conta-changeInput container" id="currentPassInput">
+            </div>
+            <div class="flex direction-column gap-8">
+              <label for="Nova password" class="text-18 text-medium">Nova password</label>
+              <input type="text" class="text-18 text-regular conta-changeInput container" id="newPassInput">
+            </div>
+          </div>
+          <div class="flex perfilButton-container">
+            <button class="button" id="guardarPassButton">Guardar</button>
+          </div>
+        </div>
+      </div>
+      <div id="passwordSection" class="flex container">
+        <div class="flex direction-column gap-24 perfilContainer container">
+          <div class="perfilInfo-container flex direction-column gap-24">
+            <p class="text-30 text-medium">Alterar password</p>
+            <div class="flex direction-column gap-8">
+              <label for="Password atual" class="text-18 text-medium">Password atual</label>
+              <input type="text" class="text-18 text-regular conta-changeInput container" id="currentPassInput">
+            </div>
+            <div class="flex direction-column gap-8">
+              <label for="Nova password" class="text-18 text-medium">Nova password</label>
+              <input type="text" class="text-18 text-regular conta-changeInput container" id="newPassInput">
+            </div>
+          </div>
+          <div class="flex perfilButton-container">
+            <button class="button" id="guardarPassButton">Guardar</button>
           </div>
         </div>
       </div>

@@ -28,7 +28,8 @@ input[type="file"] {
   width: min(30vw, 316px);
   min-width: 163px;
   border-radius: 8px;
-  background-color: var(--grey18);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .conta-changeInput{
@@ -55,4 +56,18 @@ input[type="file"] {
   border-bottom-left-radius: 16px;
   justify-content: right;
   background-color: var(--grey25);
+}
+
+.contaNavItem:hover{
+  color: var(--mainWhite);
+  background-color: var(--grey18);
+}
+
+.contaNavItem.active{
+  color: white;
+  background-color: var(--grey18);
+}
+
+.d-none{
+  display: none;
 }
