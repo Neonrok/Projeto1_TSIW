@@ -64,6 +64,7 @@ let Console_p4_get = false
 
 
 let local = 0;
+let ST = 0;
 //funções----------------------------------------------------------------------------------------------
 const S_1 = function() {
     alterar_sala("Sala_Entrada",0) 
@@ -233,7 +234,7 @@ const Consola = function(n){
 };
 
 //debug--professor--------------------------------------------------------------------------------------------------------------------------------------------
-const quise_p1 = function(n) {
+const quise_pcs = function(n) {
     let ST = 0;
     stop=true
     while (stop) {
@@ -357,7 +358,7 @@ const Tela_pc1 = document.getElementById("tela_pc1").addEventListener('click', f
             alterar_sala("Pc1_on_unlock",3);
         }else{
             alterar_sala("Pc1_on_lock",4);
-            quise_p1(Q1_Pc1);
+            quise_pcs(Q1_Pc1);
         }
     } else {
         alterar_sala("Pc1_off",2);
