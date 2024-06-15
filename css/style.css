@@ -110,6 +110,10 @@ a{
   border-bottom: 1px solid var(--grey20);
 }
 
+.border-top{
+  border-top: 1px solid var(--grey20);
+}
+
 /*buttons*/
 
 .button{

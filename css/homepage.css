@@ -4,7 +4,15 @@
   font: inherit;
 }
 
-.hero-section{
+.m-top-64{
+  margin-top: 4rem;
+}
+
+.m-top-96{
+  margin-top: 6rem;
+}
+
+.m-top-128{
   margin-top: 6rem;
 }
 
