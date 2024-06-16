@@ -1,8 +1,12 @@
 import * as data from "./SR_Back.js"
 import * as Inve from "./SR_Item_use.js"
 import * as Q1_Pc1_data from "./SR_Q_Pc1.js"
+import * as Q1_Pc2_data from "./SR_Q_Pc2.js"
+import * as Q1_Pc4_data from "./SR_Q_Pc4.js"
 import * as Consola_pc1 from "./Console_map_pc1.js"
-
+import * as Consola_pc2 from "./Console_map_pc2.js"
+import * as Consola_pc3 from "./Console_map_pc3.js"
+import * as Consola_pc4 from "./Console_map_pc4.js"
 
 
 
@@ -16,24 +20,25 @@ $(document).ready(function(e) {
 let Back_ordem = [];
 Back_ordem = data.init();
 let Item_ordem = [];
+
 Item_ordem = Inve.init();
 let Q1_Pc1 = [];
 Q1_Pc1 = Q1_Pc1_data.init();
 let Com_Pc1 = [];
 Com_Pc1 = Consola_pc1.init();
 
-
-
-
 let Q1_Pc2 = [];
-
+Q1_Pc2 = Q1_Pc2_data.init();
 let Com_Pc2 = [];
-
-let Q1_Pc3 = [];
+Com_Pc2 = Consola_pc2.init();
 
 let Com_Pc3 = [];
+Com_Pc3 = Consola_pc3.init();
 
+let Q1_Pc4 = [];
+Q1_Pc4 = Q1_Pc4_data.init();
 let Com_Pc4 = [];
+Com_Pc4 = Consola_pc4.init();
 
 let stop=false
 let Use_Item = document.querySelectorAll(".inventário img");
@@ -378,9 +383,11 @@ const Pc1_active_But = document.getElementById("Pc1_Usar").addEventListener('cli
 })
 
 const Pc1_Console_Acess = document.getElementById("Pc1_Distrair").addEventListener('click', function(){
-    alterar_sala("Pc1_on_Console",6);
-    Consola("");
-    focar.focus();
+    if(!Console_p1_get){
+        alterar_sala("Pc1_on_Console",6);
+        Consola("");
+        focar.focus();
+    }
 })
 
 
