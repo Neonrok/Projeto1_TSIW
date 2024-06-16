@@ -285,6 +285,11 @@ button{
   height: 74px;
 }
 
+.header-avatar{
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .header-hamburger{
   display: none;
   border: 1px solid var(--grey25);

@@ -18,7 +18,7 @@ function createHeader(){
           </ul>
           <div class="flex gap-24 items-center">
             <a href="/html/notificacoes.html"><img src="/img/NotificationIcon.svg" width="16px" height="18px"></a>
-            <a href="/html/conta.html"><img src=${loggedUser.avatar} width="36px" height="36px"></a>
+            <a href="/html/conta.html"><img class="header-avatar" src=${loggedUser.avatar} width="36px" height="36px"></a>
           </div>
           <a href="/index.html" class="button" id="headerButtonLogOut" role="button">Log out</a>
           <button id="buttonHamburger" class="header-hamburger flex direction-column">

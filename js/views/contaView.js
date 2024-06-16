@@ -1,4 +1,5 @@
 import * as User from "../models/userModel.js"
+User.init()
 let loggedUser = User.getUserLogged()
 
 //get conta navigation buttons
@@ -90,6 +91,7 @@ eliminarContaNavbutton.addEventListener("click", ()=>{
 })
 
 guardarPerfilButton.addEventListener("click", ()=>{
+  loggedUser = User.getUserLogged()
   reader(avatarInput.files[0], (err, res) => {
     User.changePerfil(loggedUser,res,changeNameInput.value)
     location.reload()
@@ -97,17 +99,21 @@ guardarPerfilButton.addEventListener("click", ()=>{
 })
 
 guardarPassButton.addEventListener("click", ()=>{
+  loggedUser = User.getUserLogged()
   try {
     User.changePassword(loggedUser,currentPassInput.value,newPassInput.value)
     location.reload()
   } catch (e) {
+    console.log(e.message)
   }
 })
 
 eliminarContaButton.addEventListener("click", ()=>{
+  loggedUser = User.getUserLogged()
   try {
     User.deleteAccount(loggedUser,passwordInput.value)
     location.href = "/index.html"
   } catch (e) {
+    console.log(e.message)
   }
 })
