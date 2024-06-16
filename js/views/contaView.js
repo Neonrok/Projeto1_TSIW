@@ -1,14 +1,28 @@
+import * as User from "../models/userModel.js"
+let loggedUser = User.getUserLogged()
+
+//get conta navigation buttons
 const perfilNavbutton = document.getElementById("perfilNavbutton")
 const passwordNavbutton = document.getElementById("passwordNavbutton")
 const atividadesGuardNavbutton = document.getElementById("atividadesGuardNavbutton")
 const notifNavbutton = document.getElementById("notifNavbutton")
 const eliminarContaNavbutton = document.getElementById("eliminarContaNavbutton")
 
+//get sections
 const perfilSection = document.getElementById("perfilSection")
 const passwordSection = document.getElementById("passwordSection")
 const atividadesGuardSection = document.getElementById("atividadesGuardSection")
 const notifSection = document.getElementById("notifSection")
 const eliminarContaSection = document.getElementById("eliminarContaSection")
+
+//inputs and button perfil section
+const avatarInput = document.getElementById("avatarInput")
+const changeNameInput = document.getElementById("changeNameInput")
+const guardarPerfilButton = document.getElementById("guardarPerfilButton")
+changeNameInput.value = loggedUser.name
+
+
+
 
 function resetSectionSelection(){
   perfilNavbutton.classList.remove("active")

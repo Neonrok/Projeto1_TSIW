@@ -4,7 +4,7 @@ function createHeader(){
   const header = document.createElement("header")
   header.className = "border-bottom"
   if(User.isLogged()){
-    let loggedUser = User.isLogged()
+    let loggedUser = User.getUserLogged()
     header.innerHTML = `
     <div class="header flex space-between items-center container mx-auto px-container">
       <a href="../index.html"><img src="/img/LogoTSIW.svg"></a>
