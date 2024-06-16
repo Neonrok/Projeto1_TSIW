@@ -80,6 +80,29 @@ export function deleteAccount(loggedUser,currentPassword){
   }
 }
 
+export function saveActivity(loggedUser,atividadeTitle){
+  let user = users.find((user) => user.name === loggedUser.name)
+  user.savedActivities.push(atividadeTitle)
+  localStorage.setItem("users", JSON.stringify(users))
+  sessionStorage.setItem("loggedUser", JSON.stringify(user))
+}
+
+export function removeSavedActivity(loggedUser,atividadeTitle){
+  let user = users.find((user) => user.name === loggedUser.name)
+  user.savedActivities = user.savedActivities.filter((activity) => activity !== atividadeTitle)
+  localStorage.setItem("users", JSON.stringify(users))
+  sessionStorage.setItem("loggedUser", JSON.stringify(user))
+}
+
+export function checkIfActivityIsSaved(loggedUser,atividadeTitle){
+  if(loggedUser.savedActivities !== null){
+    return loggedUser.savedActivities.some((activity) => activity === atividadeTitle) ? true : false
+  }
+  else{
+    return false
+  }
+}
+
 class User{
 
   avatar = "/img/DefaultAvatar.svg"
