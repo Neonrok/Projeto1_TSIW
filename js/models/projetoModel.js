@@ -2,12 +2,12 @@ let projetos = []
 
 export function init() {
   if(localStorage.projetos) {
-    const tempProjetos = JSON.parse(localStorage.projetos);
+    const tempProjetos = JSON.parse(localStorage.projetos)
     for(let projeto of tempProjetos) {
-      projetos.push(new Projeto(projeto.title, projeto.images, projeto.author, projeto.description));
+      projetos.push(new Projeto(projeto.title, projeto.images, projeto.author, projeto.description))
     }
   } else {
-    projetos = [];
+    projetos = []
   }
 }
 

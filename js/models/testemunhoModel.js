@@ -2,12 +2,12 @@ let testemunhos = []
 
 export function init() {
   if(localStorage.testemunhos) {
-    const tempTestemunhos = JSON.parse(localStorage.testemunhos);
+    const tempTestemunhos = JSON.parse(localStorage.testemunhos)
     for(let testemunho of tempTestemunhos) {
-      testemunhos.push(new Testemunho(testemunho.name, testemunho.image, testemunho.testimony, testemunho.ocupation));
+      testemunhos.push(new Testemunho(testemunho.name, testemunho.image, testemunho.testimony, testemunho.ocupation))
     }
   } else {
-    testemunhos = [];
+    testemunhos = []
   }
 }
 

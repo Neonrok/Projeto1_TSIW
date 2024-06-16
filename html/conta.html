@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TSIW</title>
+  <link rel="stylesheet" href="/css/contapage.css">
+</head>
+<body>
+  <div id="mainContainer" class="flex direction-column gap-128">
+    <div class="flex gap-24 px-container container mx-auto">
+      <div class="flex direction-column gap-8">
+        <p class="text-18 text-medium contaNavItem container text-mainGrey active" id="perfilNavbutton">Perfil</p>
+        <p class="text-18 text-medium contaNavItem container text-mainGrey" id="passwordNavbutton">Password</p>
+        <p class="text-18 text-medium contaNavItem container text-mainGrey" id="atividadesGuardNavbutton">Atividades Guardadas</p>
+        <p class="text-18 text-medium contaNavItem container text-mainGrey" id="notifNavbutton">Notificações</p>
+        <p class="text-18 text-medium contaNavItem container text-mainGrey" id="eliminarContaNavbutton">Eliminar Conta</p>
+      </div>
+      <div id="perfilSection" class="flex container">
+        <div class="flex direction-column gap-24 perfilContainer container">
+          <div class="perfilInfo-container flex direction-column gap-24">
+            <div class="flex direction-column gap-4">
+              <p class="text-30 text-medium">Perfil</p>
+              <p class="text-18 text-medium text-mainGrey">Aqui podes ver e mudar o teu perfil</p>
+            </div>
+            <div class="flex direction-column gap-8">
+              <label for="Avatar" class="text-18 text-medium">Avatar</label>
+              <label class="avatar-input" id="avatarInputLabel">
+                <input type="file" id="avatarInput">
+              </label>
+            </div>
+            <div class="flex direction-column gap-8">
+              <label for="Nome" class="text-18 text-medium">Nome</label>
+              <input type="text" class="text-18 text-regular conta-changeInput container" id="changeNameInput">
+            </div>
+          </div>
+          <div class="flex perfilButton-container">
+            <button class="button" id="guardarPerfilButton">Guardar</button>
+          </div>
+        </div>
+      </div>
+      <div id="passwordSection" class="flex container d-none">
+        <div class="flex direction-column gap-24 perfilContainer container">
+          <div class="perfilInfo-container flex direction-column gap-24">
+            <p class="text-30 text-medium">Alterar password</p>
+            <div class="flex direction-column gap-8">
+              <label for="Password atual" class="text-18 text-medium">Password atual</label>
+              <input type="password" class="text-18 text-regular conta-changeInput container" id="currentPassInput">
+            </div>
+            <div class="flex direction-column gap-8">
+              <label for="Nova password" class="text-18 text-medium">Nova password</label>
+              <input type="password" class="text-18 text-regular conta-changeInput container" id="newPassInput">
+            </div>
+          </div>
+          <div class="flex perfilButton-container">
+            <button class="button" id="guardarPassButton">Guardar</button>
+          </div>
+        </div>
+      </div>
+      <div id="atividadesGuardSection" class="flex direction-column gap-32 container d-none">
+        <p class="text-30 text-medium">Atividades Guardadas</p>
+        <div class="" id="atividadesGuardContainer"></div>
+      </div>
+      <div id="notifSection" class="flex container d-none">
+        <div class="flex direction-column gap-24 perfilContainer container">
+          <div class="perfilInfo-container flex direction-column gap-24">
+            <p class="text-30 text-medium">Notificações</p>
+            <div class="flex direction-column gap-8">
+              <label for="Password atual" class="text-18 text-medium">Personalizar notificações</label>
+              <div class="flex notif-ChoicesContainer">
+                <div class="text-16 text-mainGrey text-regular notif-Choice" id="atividadesChoice">Atividades</div>
+                <div class="text-16 text-mainGrey text-regular notif-Choice" id="projetosChoice">Projetos</div>
+                <div class="text-16 text-mainGrey text-regular notif-Choice" id="proxAtividadesChoice">Próximas atividades</div>
+                <div class="text-16 text-mainGrey text-regular notif-Choice" id="desafiosChoice">Desafios</div>
+              </div>
+            </div>
+          </div>
+          <div class="flex perfilButton-container">
+            <button class="button" id="desativarNotifButton">Desativar</button>
+          </div>
+        </div>
+      </div>
+      <div id="eliminarContaSection" class="flex container d-none">
+        <div class="flex direction-column gap-24 perfilContainer container">
+          <div class="perfilInfo-container flex direction-column gap-24">
+            <p class="text-30 text-medium">Eliminar Conta</p>
+            <div class="flex direction-column gap-8">
+              <label for="Password" class="text-18 text-medium">Insira a sua password</label>
+              <input type="password" class="text-18 text-regular conta-changeInput container" id="passwordInput">
+            </div>
+          </div>
+          <div class="flex perfilButton-container">
+            <button class="button" id="eliminarContaButton">Eliminar Conta</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/js/views/headerView.js"></script>
+  <script type="module" src="/js/views/contaView.js"></script>
+</body>
+</html>

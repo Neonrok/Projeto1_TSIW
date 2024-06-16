@@ -3,6 +3,7 @@
   --mainWhite: #EDEDED;
   --mainGrey: #A0A0A2;
   --grey12: #1F1F1F;
+  --grey18: #2E2E2E;
   --grey20: #333333;
   --grey25: #404040;
   --grey40: #666666;
@@ -94,7 +95,11 @@ body{
 h1{
   font-family: ClashDisplay-Semibold;
   font-size: clamp(1.875rem,9.23078vw,3.75rem);
-  text-align: left;
+}
+
+h2{
+  font-family: ClashDisplay-Semibold;
+  font-size: clamp(1.5rem,9.23078vw,3rem);
 }
 
 li{
@@ -107,6 +112,10 @@ a{
 
 .border-bottom{
   border-bottom: 1px solid var(--grey20);
+}
+
+.border-top{
+  border-top: 1px solid var(--grey20);
 }
 
 /*buttons*/
@@ -276,6 +285,11 @@ button{
   height: 74px;
 }
 
+.header-avatar{
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .header-hamburger{
   display: none;
   border: 1px solid var(--grey25);
@@ -384,7 +398,7 @@ footer{
 }
 
 @media (max-width: 400px) {
-  #headerButtonRegisto{
+  #headerButtonRegisto, #headerButtonLogOut{
     display: none;
   }
 }
