@@ -16,13 +16,17 @@ const notifSection = document.getElementById("notifSection")
 const eliminarContaSection = document.getElementById("eliminarContaSection")
 
 //inputs and button perfil section
+const avatarInputLabel = document.getElementById("avatarInputLabel")
 const avatarInput = document.getElementById("avatarInput")
 const changeNameInput = document.getElementById("changeNameInput")
 const guardarPerfilButton = document.getElementById("guardarPerfilButton")
+
+avatarInputLabel.style.backgroundImage = `url(${loggedUser.avatar})`
 changeNameInput.value = loggedUser.name
 
-
-
+guardarPerfilButton.addEventListener("click", ()=>{
+  
+})
 
 function resetSectionSelection(){
   perfilNavbutton.classList.remove("active")

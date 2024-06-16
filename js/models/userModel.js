@@ -49,8 +49,37 @@ export function getUserLogged() {
   return JSON.parse(sessionStorage.getItem("loggedUser"))
 }
 
-export function changePerfil(loggedUser){
-  return users.find((user) => user.name === loggedUser.name)
+export function changePerfil(loggedUser,avatar,name){
+  let user = users.find((user) => user.name === loggedUser.name)
+  user.avatar = avatar
+  user.name = name
+  localStorage.setItem("users", JSON.stringify(users))
+  sessionStorage.setItem("loggedUser", JSON.stringify(user))
+}
+
+export function changePassword(loggedUser,currentPassword,newPassword){
+  let user = users.find((user) => user.name === loggedUser.name && user.password === currentPassword)
+  if(user){
+    user.password = newPassword
+    localStorage.setItem("users", JSON.stringify(users))
+    sessionStorage.setItem("loggedUser", JSON.stringify(user))
+    return true
+  } 
+  else{
+    throw Error("Não foi possível alterar a password")
+  }
+}
+
+export function deleteAccount(loggedUser,currentPassword){
+  let user = users.find((user) => user.name === loggedUser.name && user.password === currentPassword)
+  if(user){
+    removeUser(user.name)
+    logout()
+    return true
+  } 
+  else{
+    throw Error("Não foi possível eliminar a conta")
+  }
 }
 
 class User{
