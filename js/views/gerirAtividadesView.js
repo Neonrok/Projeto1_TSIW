@@ -49,7 +49,7 @@ function generateCard(atividade){
   cardTitle.className = "text-16 text-medium atividade-title"
   cardTitle.innerText = atividade.title
 
-  let removeButton = document.createElement("p")
+  let removeButton = document.createElement("button")
   removeButton.innerText = "Eliminar"
   removeButton.className = "button"
   removeButton.addEventListener("click",()=>{

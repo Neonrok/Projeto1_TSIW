@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TSIW</title>
   <link rel="stylesheet" href="/css/adminGeral.css">
+  <link rel="stylesheet" href="/css/testemunhospage.css">
 </head>
 <body>
   <div id="mainContainer">
-    <div class="px-container mx-auto">
+    <div class="flex gap-48 direction-column px-container mx-auto">
       <h1>Gerir Testemunhos</h1>
       <form action="" class="flex direction-column gap-16" id="testimonyForm">
         <div class="flex direction-column gap-8">
@@ -29,6 +30,10 @@
         </div>
         <button class="button adicionar-button text-20" type="submit">Adicionar</button>
       </form>
+      <div class="flex direction-column items-center gap-64 px-container">
+        <h1 class="text-center">Testemunhos Alumni</h1>
+        <div id="testemunhosContainer" class="flex direction-column gap-48 testemunhos-container"></div>
+      </div>
     </div>
   </div>
   <script type="module" src="../js/views/gerirTestemunhosView.js"></script>

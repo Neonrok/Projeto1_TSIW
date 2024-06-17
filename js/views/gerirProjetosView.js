@@ -64,7 +64,7 @@ function generateCard(projeto){
   projetoTitle.innerText = projeto.title
   projetoAuthor.innerText = projeto.author
 
-  let removeButton = document.createElement("p")
+  let removeButton = document.createElement("button")
   removeButton.innerText = "Eliminar"
   removeButton.className = "button"
   removeButton.addEventListener("click",()=>{
