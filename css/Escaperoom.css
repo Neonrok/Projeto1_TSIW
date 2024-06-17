@@ -213,7 +213,20 @@ body{
     width: 8%;
 }
 
-
+.SR_S2_Item{
+    position: absolute;
+    top: 35.5%;
+    left: 73.3%;
+    height: 14%;
+    width: auto;
+}
+.SR_S2_Pc{
+    position: absolute;
+    top: 32%;
+    left: 37%;
+    height: 25%;
+    width: 25.5%;
+}
 
 
 

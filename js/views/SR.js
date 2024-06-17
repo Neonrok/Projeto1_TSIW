@@ -51,7 +51,7 @@ let QCom3 = document.getElementById("Pc3_on_Console")
 let QCom4 = document.getElementById("Pc4_on_Console")
 
 //para--Salas------------------------------------------------------------------------------------------
-let P1_S1 = true;
+let P1_S1 = false;
 let P2_S1 = true;
 let P3_S1 = true;
 
@@ -291,7 +291,7 @@ const Pc1_interior = function() {
     }
 }
 
-const Inventario = function(n) {//ajuda-----vaso das variaveis e arranjar uma forma de evitar usar o ciclo for----------------------------------
+const Inventario = function(n) {
     if (Item_ordem[n].var_item != true) {
         document.getElementById(Item_ordem[n].item).style.display = "none"
     } else {
@@ -326,9 +326,9 @@ for (let i = 0 ; i<Back_ordem.length ; i++) {
     document.getElementById(Sala_secundaria).style.display = "none";
 };
 for (let i = 0 ; i<Item_ordem.length ; i++) {
+    console.log(i)
     Inventario(i);
 };
-
 
 //ações----------------------------------------------------------------------------------------------------
 const Iniciar = document.getElementById("LCA").addEventListener('click', function() {

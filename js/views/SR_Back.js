@@ -64,6 +64,14 @@ export function init() {
         N_estado: "none"
     }
     Back.push(SPV)
+//8
+    SPV = {
+        sala: "SR_S3",
+        efeito: "Sala_Entrada",
+        estado: "block",
+        N_estado: "none"
+    }
+    Back.push(SPV)
 
     return Back
 }
