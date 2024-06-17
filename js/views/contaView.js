@@ -1,4 +1,6 @@
 import * as User from "../models/userModel.js"
+import * as Atividade from "../models/atividadeModel.js"
+
 User.init()
 let loggedUser = User.getUserLogged()
 
@@ -34,6 +36,9 @@ const guardarPassButton = document.getElementById("guardarPassButton")
 const passwordInput = document.getElementById("passwordInput")
 const eliminarContaButton = document.getElementById("eliminarContaButton")
 
+//saved activities container
+const atividadesGuardContainer = document.getElementById("atividadesGuardContainer")
+
 //functions
 
 function reader(file, callback) {
@@ -62,6 +67,39 @@ function activateSectionSelection(selection){
   resetSectionSelection()
   selection.classList.add("active")
 }
+
+function renderGuardAtividades(){
+  Atividade.init()
+
+  for (let atividade of loggedUser.savedActivities) {
+    let savedActivity = Atividade.getSavedActivity(atividade)
+    atividadesGuardContainer.append(generateCard(savedActivity))
+  }
+}
+
+function generateCard(atividade){
+
+  let cardContainer = document.createElement("div")
+  cardContainer.className = "flex direction-column gap-16 atividade-card"
+
+  let cardImg = document.createElement("img")
+  cardImg.className = "atividade-img"
+  cardImg.src = atividade.image
+
+  let cardTitle = document.createElement("p")
+  cardTitle.className = "text-16 text-medium atividade-title"
+  cardTitle.innerText = atividade.title
+
+  cardContainer.append(cardImg,cardTitle)
+  cardContainer.addEventListener("click", ()=>{
+    Atividade.setCurrentAtividade(atividade.title)
+    location.href = "/html/atividade.html"
+  })
+
+  return cardContainer
+}
+
+renderGuardAtividades()
 
 //event listeners
 
