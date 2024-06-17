@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TSIW</title>
   <link rel="stylesheet" href="/css/adminGeral.css">
+  <link rel="stylesheet" href="/css/projetospage.css">
 </head>
 <body>
   <div id="mainContainer">
-    <div class="px-container mx-auto">
+    <div class="flex gap-48 direction-column px-container mx-auto">
       <h1>Gerir Projetos</h1>
       <form action="" class="flex direction-column gap-16" id="projetoForm">
         <div class="flex direction-column gap-8">
@@ -29,6 +30,7 @@
         </div>
         <button class="button adicionar-button text-20" type="submit">Adicionar</button>
       </form>
+      <div id="projetosContainer" class="grid gap-32 projetos-container"></div>
     </div>
   </div>
   <script type="module" src="../js/views/gerirProjetosView.js"></script>
