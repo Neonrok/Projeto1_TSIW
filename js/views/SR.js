@@ -395,7 +395,17 @@ const Pc1_Console_Acess = document.getElementById("Pc1_Distrair").addEventListen
     }
 })
 
+const Asses_S2 = document.getElementById("Porta_s1").addEventListener('click', function(){
+    alterar_sala("SR_S2",7);
+})
 
+const Asses_S3 = document.getElementById("Porta2_s1").addEventListener('click', function(){
+    alterar_sala("SR_S3",7);
+})
+
+const Asses_Corredor = document.getElementById("Porta3_s1").addEventListener('click', function(){
+    alterar_sala("SR_Corredor",8);
+})
 
 const back = document.getElementById("voltar").addEventListener('click',function() {
     Execut_Back();
