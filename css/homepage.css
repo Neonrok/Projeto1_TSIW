@@ -77,6 +77,10 @@
   max-width: 653px;
 }
 
+.max-w-103{
+  max-width: 103px;
+}
+
 #hero-shape-topSquare{
   transform: translate(170px,119px);
 }

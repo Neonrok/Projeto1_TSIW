@@ -7,28 +7,35 @@
   <link rel="stylesheet" href="/css/adminGeral.css">
 </head>
 <body>
-  <div class="px-container mx-auto">
-    <h1>Gerir Atividades</h1>
-    <form action="" class="flex direction-column gap-16" id="atividadeForm">
-      <div class="flex direction-column gap-8">
-        <label for="titulo" class="text-20">Título</label>
-        <input class="admin-input text-16" type="text" id="inputTitle">
+  <div id="mainContainer">
+    <div class="flex gap-48 direction-column px-container mx-auto">
+      <h1>Gerir Atividades</h1>
+      <form action="" class="flex direction-column gap-16" id="atividadeForm">
+        <div class="flex direction-column gap-8">
+          <label for="titulo" class="text-20">Título</label>
+          <input class="admin-input text-16" type="text" id="inputTitle">
+        </div>
+        <div class="flex direction-column gap-8">
+          <label for="imagem" class="text-20">Imagem</label>
+          <input type="file" id="inputFile">
+        </div>
+        <div class="flex direction-column gap-8">
+          <label for="data" class="">Data</label>
+          <input class="admin-input date-input" type="date" id="inputDate">
+        </div>
+        <div class="flex direction-column gap-8">
+          <label for="Descrição" class="text-20">Descrição</label>
+          <textarea class="admin-input big-input text-16" id="inputDescp"></textarea>
+        </div>
+        <button class="button adicionar-button text-20" type="submit">Adicionar</button>
+      </form>
+      <div class="px-container mx-auto container">
+        <h2>Todas as atividades</h2>
+        <div id="atividadesContainer" class="grid gap-32 atividades-container"></div>
       </div>
-      <div class="flex direction-column gap-8">
-        <label for="imagem" class="text-20">Imagem</label>
-        <input type="file" id="inputFile">
-      </div>
-      <div class="flex direction-column gap-8">
-        <label for="data" class="">Data</label>
-        <input class="admin-input date-input" type="date" id="inputDate">
-      </div>
-      <div class="flex direction-column gap-8">
-        <label for="Descrição" class="text-20">Descrição</label>
-        <textarea class="admin-input big-input text-16" id="inputDescp"></textarea>
-      </div>
-      <button class="button adicionar-button text-20" type="submit">Adicionar</button>
-    </form>
+    </div>
   </div>
+  <script type="module" src="/js/views/headerView.js"></script>
   <script type="module" src="../js/views/gerirAtividadesView.js"></script>
 </body>
 </html>
