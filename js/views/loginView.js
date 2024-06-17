@@ -17,11 +17,12 @@ loginForm.addEventListener("submit", (event)=>{
       loginForm.reset()
     }
   }
-
-  try {
-    User.login(loginName.value,loginPassword.value)
-    location.href = "/html/conta.html"
-  } catch (e) {
-    loginForm.reset()
+  else{
+    try {
+      User.login(loginName.value,loginPassword.value)
+      location.href = "/html/conta.html"
+    } catch (e) {
+      loginForm.reset()
+    }
   }
 })
