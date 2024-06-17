@@ -4,7 +4,7 @@ export function init() {
   if (localStorage.users) {
     users = JSON.parse(localStorage.users)
   } else {
-    users = []
+    addUser("admin","123")
   }
 }
 
