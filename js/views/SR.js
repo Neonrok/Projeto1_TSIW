@@ -56,13 +56,13 @@ let P2_S1 = true;
 let P3_S1 = true;
 
 let pc1_state = false;
-let pc1_game = true;
+let pc1_game = false;
 let Console_p1_get = false;
 let pc2_state = false;
-let pc2_game = true;
+let pc2_game = false;
 let Console_p2_get = false;
 let pc3_state = false;
-let pc3_game = true;
+let pc3_game = false;
 let Console_p3_Activate = false
 let Console_p4_get = false
 
@@ -241,8 +241,8 @@ const Consola = function(n){
 //debug--professor--------------------------------------------------------------------------------------------------------------------------------------------
 const quise_pcs = function(n) {
     let ST = 0;
-    stop=true
-    while (stop) {
+
+    const generateQuestion = () => {
         let CQ = Math.floor(Math.random() * n.length);
         document.getElementById('question').textContent = n[CQ].Qest;
 
@@ -261,20 +261,25 @@ const quise_pcs = function(n) {
         opti.forEach((opt) => {
             const button = document.getElementById(opt.id);
             button.textContent = opt.text;
-            button.onclick = () => function() {
+            button.onclick = () => {
+                const selectedOption = button.textContent;
                 const currentQuestion = n[CQ];
                 if (selectedOption === currentQuestion.Opt3) {
                     ST++;
                     if (ST === 3) {
                         pc1_game = true;
                         Execut_Back();
+                    } else {
+                        generateQuestion();
                     }
                 } else {
                     ST = 0;
+                    generateQuestion();
                 }
             };
         });
-    }
+    };
+    generateQuestion();
 }
 
 

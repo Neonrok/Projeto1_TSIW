@@ -122,7 +122,13 @@ body{
     left: 59%;
     top: 15.5%;
 }
-
+.overlayQWP{
+    position: absolute;
+    width: 70%;
+    height: auto;
+    left: 20%;
+    top: 45%;
+}
 .overlay {
     position: absolute;
     border: solid grey 2px;
