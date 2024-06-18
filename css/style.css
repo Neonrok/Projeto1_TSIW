@@ -336,7 +336,7 @@ button{
 
 .footer-slogan{
   font-family: ClashDisplay-Semibold;
-  font-size: 2.25rem;
+  font-size: clamp(1.5rem,9.23078vw,2.25rem);
 }
 
 footer{

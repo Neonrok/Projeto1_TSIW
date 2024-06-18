@@ -70,7 +70,7 @@
   width: 625px;
   height: 500px;
   object-fit: cover;
-  mask: url(/img/videoMask2.svg);
+  mask: url(/img/videoMaskShape.svg);
 }
 
 .max-w-653{
