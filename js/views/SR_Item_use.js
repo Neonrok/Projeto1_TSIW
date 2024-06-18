@@ -14,8 +14,8 @@ export function init() {
     Use.push(SPV)
 
     SPV = { 
-        sala: "Pc1_interior_lock",
-        Nsala: "Pc1_interior_unlock",
+        sala: "Porta_Bloqueada",
+        Nsala: "Porta_Desbloquada",
         item: "item_2_use",
         id: "SR_S2_Item",
         id_1: "item_2_use",

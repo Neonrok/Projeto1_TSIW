@@ -124,6 +124,46 @@ export function init() {
         N_estado: "none"
     }
     Back.push(SPV)
+//15
+    SPV = {
+        sala: "Corredor",
+        efeito: "Sala_Entrada",
+        estado: "block",
+        N_estado: "none"
+    }
+    Back.push(SPV)
+//16
+    SPV = {
+        sala: "Porta_Bloqueada",
+        efeito: "Corredor",
+        estado: "block",
+        N_estado: "block"
+    }
+    Back.push(SPV)
+//17
+    SPV = {
+        sala: "Porta_Desbloquada",
+        efeito: "Corredor",
+        estado: "block",
+        N_estado: "block"
+    }
+    Back.push(SPV)
+//18
+    SPV = {
+        sala: "Pc4_acesse",
+        efeito: "Corredor",
+        estado: "block",
+        N_estado: "block"
+    }
+    Back.push(SPV)
+//19
+    SPV = {
+        sala: "Pc4_on_Console",
+        efeito: "Corredor",
+        estado: "block",
+        N_estado: "block"
+    }
+    Back.push(SPV)
 
     return Back
 }

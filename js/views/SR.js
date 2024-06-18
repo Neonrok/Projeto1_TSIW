@@ -101,6 +101,7 @@ const alterar_sala = function(n,y){
     next_tela = document.getElementById(n);
     tela_atual.style.display = "none";
     tela_atual = next_tela;
+    console.log(tela_atual, n, y)
     tela_atual.style.display = "block";
     Butão_voltar.style.display = Back_ordem[y].estado;
 };
@@ -438,7 +439,7 @@ const Asses_S3 = document.getElementById("Porta2_s1").addEventListener('click', 
 })
 
 const Asses_Corredor = document.getElementById("Porta3_s1").addEventListener('click', function(){
-    alterar_sala("SR_Corredor",);
+    alterar_sala("Corredor",15);
 })
 
 const Pega_Item2 = document.getElementById("Item2_Usar").addEventListener('click', function(){
@@ -495,7 +496,6 @@ const Pc3_Console_Acess = document.getElementById("Pc3_entrar").addEventListener
 const Ins_card = document.getElementById("Insert_Card").addEventListener('click', function(){
     alterar_sala("Portao_All",14);
 })
-
 
 
 

@@ -289,3 +289,33 @@ body{
     height: 10%;
     width: 7.5%;
 }
+.Corredor_P1{
+    position: absolute;
+    top: 24%;
+    left: 88.4%;
+    height: 73%;
+    width: 10%;
+}
+
+
+
+
+.Corredor_P2{
+    position: absolute;
+    top: 32.5%;
+    left: 6.2%;
+    height: 40%;
+    width: 9%;
+}
+
+
+
+
+
+.Corredor_Pc{
+    position: absolute;
+    top: 42.5%;
+    left: 41%;
+    height: 19%;
+    width: 18%;
+}
