@@ -24,6 +24,14 @@
   margin-bottom: 6rem;
 }
 
+.heroMask-top{
+  transition: linear 0.6s;
+  transform: translate(0px,-19px);
+  mask: url(/img/HoverMaskTop.svg);
+  mask-repeat: no-repeat;
+  mask-position: 89px 19px;
+}
+
 .hero-shape-square{
   position: relative;
   background-color: var(--mainWhite);
@@ -33,6 +41,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10000;
 }
 
 .hero-square-text{
@@ -63,7 +72,6 @@
 .hero-topShape-text{
   font-family: ClashDisplay-Regular;
   color: var(--mainBlack);
-  z-index: 1000;
 }
 
 .video-mask{
@@ -89,3 +97,8 @@
   transition: linear 0.6s;
   transform: translate(-148px,-77px);
 } 
+
+#hero-shape-topSquare:hover + .hero-topShape .heroMask-top{
+  transition: linear 0.6s;
+  mask-position: -150px -77px;
+}
