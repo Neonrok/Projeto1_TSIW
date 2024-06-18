@@ -5,13 +5,13 @@ const testemunhosContainer = document.getElementById("testemunhosContainer")
 function renderTestemunhos(){
   Testemunho.init()
   let testemunhos = Testemunho.getTestemunhos()
-  let result = "";
+  let result = ""
 
   for (let testemunho of testemunhos) {
-    result += generateCard(testemunho);
+    result += generateCard(testemunho)
   }
 
-  testemunhosContainer.innerHTML = result;
+  testemunhosContainer.innerHTML = result
 }
 
 function generateCard(testemunho){

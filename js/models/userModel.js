@@ -4,7 +4,7 @@ export function init() {
   if (localStorage.users) {
     users = JSON.parse(localStorage.users)
   } else {
-    users = []
+    addUser("admin","123")
   }
 }
 
@@ -77,6 +77,29 @@ export function deleteAccount(loggedUser,currentPassword){
   } 
   else{
     throw Error("Não foi possível eliminar a conta")
+  }
+}
+
+export function saveActivity(loggedUser,atividadeTitle){
+  let user = users.find((user) => user.name === loggedUser.name)
+  user.savedActivities.push(atividadeTitle)
+  localStorage.setItem("users", JSON.stringify(users))
+  sessionStorage.setItem("loggedUser", JSON.stringify(user))
+}
+
+export function removeSavedActivity(loggedUser,atividadeTitle){
+  let user = users.find((user) => user.name === loggedUser.name)
+  user.savedActivities = user.savedActivities.filter((activity) => activity !== atividadeTitle)
+  localStorage.setItem("users", JSON.stringify(users))
+  sessionStorage.setItem("loggedUser", JSON.stringify(user))
+}
+
+export function checkIfActivityIsSaved(loggedUser,atividadeTitle){
+  if(loggedUser.savedActivities !== null){
+    return loggedUser.savedActivities.some((activity) => activity === atividadeTitle) ? true : false
+  }
+  else{
+    return false
   }
 }
 

@@ -19,7 +19,7 @@ export function createSlider(projeto){
   leftButton.src = "/img/Slider left button.svg"
   rightButton.src = "/img/Slider right button.svg"
 
-  leftButton.addEventListener("click", () =>{
+  leftButton.addEventListener("click", (e) =>{
     if(currentPosition == 0){
       sliderCurrentImage.src = sliderImages[lastIndex]
       currentPosition = lastIndex
@@ -28,9 +28,10 @@ export function createSlider(projeto){
       sliderCurrentImage.src = sliderImages[currentPosition - 1]
       currentPosition = currentPosition - 1
     }
+    e.stopPropagation()
   })
 
-  rightButton.addEventListener("click", () =>{
+  rightButton.addEventListener("click", (e) =>{
     if(currentPosition == lastIndex){
       sliderCurrentImage.src = sliderImages[0]
       currentPosition = 0
@@ -39,6 +40,7 @@ export function createSlider(projeto){
       sliderCurrentImage.src = sliderImages[currentPosition + 1]
       currentPosition = currentPosition + 1
     }
+    e.stopPropagation()
   })
 
   buttonsContainer.append(leftButton,rightButton)
