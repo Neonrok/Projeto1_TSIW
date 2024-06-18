@@ -37,6 +37,7 @@ Com_Pc3 = Consola_pc3.init();
 
 let Q1_Pc4 = [];
 Q1_Pc4 = Q1_Pc4_data.init();
+
 let Com_Pc4 = [];
 Com_Pc4 = Consola_pc4.init();
 
@@ -44,27 +45,29 @@ let stop=false
 let Use_Item = document.querySelectorAll(".inventário img");
 let tela_atual = document.getElementById("T_Inicio");
 let next_tela;
-let focar = document.getElementById("input_consola")
+
 let QCom1 = document.getElementById("Pc1_on_Console")
 let QCom2 = document.getElementById("Pc2_on_Console")
 let QCom3 = document.getElementById("Pc3_on_Console")
 let QCom4 = document.getElementById("Pc4_on_Console")
 
 //para--Salas------------------------------------------------------------------------------------------
-let P1_S1 = false;
-let P2_S1 = true;
+let P1_S1 = true;
+let P2_S1 = false;
 let P3_S1 = true;
 
 let pc1_state = false;
-let pc1_game = false;
 let Console_p1_get = false;
-let pc2_state = false;
-let pc2_game = false;
 let Console_p2_get = false;
 let pc3_state = false;
-let pc3_game = false;
 let Console_p3_Activate = false
 let Console_p4_get = false
+
+const gameState = [
+    {pc_game: false},
+    {pc_game: true},
+    {pc_game: false}
+];
 
 
 
@@ -100,40 +103,43 @@ const alterar_sala = function(n,y){
     tela_atual.style.display = "block";
     Butão_voltar.style.display = Back_ordem[y].estado;
 };
+let focar = document.getElementById("input_consola_Pc1")
 
-
-focar.addEventListener('keydown', function(event){
-    if (tela_atual=document.getElementById("Pc1_on_Console")){
+document.addEventListener('keydown', function(event){
+    if (tela_atual === document.getElementById("Pc1_on_Console")){
+        focar= document.getElementById("input_consola_Pc1")
         if(event.key === 'Enter'){
             event.preventDefault();
             Console_p1_get = Consola(focar.value);
             focar.value = '';
             if(Console_p1_get){Execut_Back();}
         }
-    } else if (tela_atual=document.getElementById("Pc2_on_Console")){
+    } else if (tela_atual === document.getElementById("Pc2_on_Console")){
+        focar= document.getElementById("input_consola_Pc2")
         if(event.key === 'Enter'){
             event.preventDefault();
             Console_p2_get = Consola(focar.value);
             focar.value = '';
             if(Console_p2_get){Execut_Back();}
         }
-    } else if (tela_atual=document.getElementById("Pc3_on_Console")){
+    } else if (tela_atual === document.getElementById("Pc3_on_Console")){
+        focar= document.getElementById("input_consola_Pc3")
         if(event.key === 'Enter'){
             event.preventDefault();
             Console_p3_Activate = Consola(focar.value);
             focar.value = '';
             if(Console_p3_Activate){Execut_Back();}
         }
-    } else if (tela_atual=document.getElementById("Pc4_on_Console")){
+    } else if (tela_atual === document.getElementById("Pc4_on_Console")){
+        focar= document.getElementById("input_consola_Pc4")
         if(event.key === 'Enter'){
             event.preventDefault();
             Console_p4_get = Consola(focar.value);
             focar.value = '';
             if(Console_p4_get){Execut_Back();}
         }
-    }
-    
-})
+    } 
+});
 
 const Consola = function(n){
     let mapa;
@@ -144,81 +150,108 @@ const Consola = function(n){
     let pright = true;
     let pget = true;
     let pactivate = true;
+    let bloco1_consola_p1 = "bloco1_consola_p1"
+    let bloco1_consola_p2 = "bloco1_consola_p2"
+    let bloco1_consola_p3 = "bloco1_consola_p3"
+    let bloco1_consola_p4 = "bloco1_consola_p4"
+    let bloco1_consola_p5 = "bloco1_consola_p5"
+    let bloco1_consola_p6 = "bloco1_consola_p6"
     
 
     if( tela_atual === QCom1){
         mapa = Com_Pc1;
+        bloco1_consola_p1 = "bloco1_consola_p1" + "_Pc1";
+        bloco1_consola_p2 = "bloco1_consola_p2" + "_Pc1";
+        bloco1_consola_p3 = "bloco1_consola_p3" + "_Pc1";
+        bloco1_consola_p4 = "bloco1_consola_p4" + "_Pc1";
+        bloco1_consola_p5 = "bloco1_consola_p5" + "_Pc1";
+        bloco1_consola_p6 = "bloco1_consola_p6" + "_Pc1";
         reloc();
     } else if( tela_atual === QCom2){
         mapa = Com_Pc2;
+        bloco1_consola_p1 = "bloco1_consola_p1" + "_Pc2";
+        bloco1_consola_p2 = "bloco1_consola_p2" + "_Pc2";
+        bloco1_consola_p3 = "bloco1_consola_p3" + "_Pc2";
+        bloco1_consola_p4 = "bloco1_consola_p4" + "_Pc2";
+        bloco1_consola_p5 = "bloco1_consola_p5" + "_Pc2";
+        bloco1_consola_p6 = "bloco1_consola_p6" + "_Pc2";
         reloc();
     } else if( tela_atual === QCom3){
         mapa = Com_Pc3;
+        bloco1_consola_p1 = "bloco1_consola_p1" + "_Pc3";
+        bloco1_consola_p2 = "bloco1_consola_p2" + "_Pc3";
+        bloco1_consola_p3 = "bloco1_consola_p3" + "_Pc3";
+        bloco1_consola_p4 = "bloco1_consola_p4" + "_Pc3";
+        bloco1_consola_p5 = "bloco1_consola_p5" + "_Pc3";
+        bloco1_consola_p6 = "bloco1_consola_p6" + "_Pc3";
         reloc();
     } else if( tela_atual === QCom4){
         mapa = Com_Pc4;
+        bloco1_consola_p1 = "bloco1_consola_p1" + "_Pc4";
+        bloco1_consola_p2 = "bloco1_consola_p2" + "_Pc4";
+        bloco1_consola_p3 = "bloco1_consola_p3" + "_Pc4";
+        bloco1_consola_p4 = "bloco1_consola_p4" + "_Pc4";
+        bloco1_consola_p5 = "bloco1_consola_p5" + "_Pc4";
+        bloco1_consola_p6 = "bloco1_consola_p6" + "_Pc4";
         reloc();
     };
 
     function reloc(){
-        console.log(local)
         if(mapa[local].up !== "N/A"){
             
-            document.getElementById("bloco1_consola_p4").style.display = "none"
+            document.getElementById(bloco1_consola_p4).style.display = "none"
             pup = true;
         }else{
             
-            document.getElementById("bloco1_consola_p4").style.display = "block"
+            document.getElementById(bloco1_consola_p4).style.display = "block"
             pup = false;
         };
 
         if(mapa[local].down !== "N/A"){
             
-            document.getElementById("bloco1_consola_p3").style.display = "none"
+            document.getElementById(bloco1_consola_p3).style.display = "none"
             pdown = true;
         }else{
             
-            document.getElementById("bloco1_consola_p3").style.display = "block"
+            document.getElementById(bloco1_consola_p3).style.display = "block"
             pdown = false;
         };
 
         if(mapa[local].left !== "N/A"){
             
-            document.getElementById("bloco1_consola_p2").style.display = "none"
+            document.getElementById(bloco1_consola_p2).style.display = "none"
             pleft = true;
         }else{
             
-            document.getElementById("bloco1_consola_p2").style.display = "block"
+            document.getElementById(bloco1_consola_p2).style.display = "block"
             pleft = false;
         };
 
         if(mapa[local].right !== "N/A"){
             
-            document.getElementById("bloco1_consola_p1").style.display = "none"
+            document.getElementById(bloco1_consola_p1).style.display = "none"
             pright = true;
         }else{
-            
-            document.getElementById("bloco1_consola_p1").style.display = "block"
+            document.getElementById(bloco1_consola_p1).style.display = "block"
             pright = false;
         };
 
         if(mapa[local].get !== "N/A"){
-            document.getElementById("bloco1_consola_p5").style.display = "none"
+            document.getElementById(bloco1_consola_p5).style.display = "none"
             pget = true;
         }else{
-            document.getElementById("bloco1_consola_p5").style.display = "block"
+            document.getElementById(bloco1_consola_p5).style.display = "block"
             pget = false;
         };
 
         if(mapa[local].activate !== "N/A"){
-            document.getElementById("bloco1_consola_p6").style.display = "none"
+            document.getElementById(bloco1_consola_p6).style.display = "none"
             pactivate = true;
         }else{
-            document.getElementById("bloco1_consola_p6").style.display = "block"
+            document.getElementById(bloco1_consola_p6).style.display = "block"
             pactivate = false;
         };
     }
-    
     if (n === "up" && pup){
         local=mapa[local].up
         reloc()
@@ -238,10 +271,9 @@ const Consola = function(n){
     };
 };
 
-//debug--professor--------------------------------------------------------------------------------------------------------------------------------------------
-const quise_pcs = function(n) {
+const quise_pcs = function(n, s) {
     let ST = 0;
-
+    document.getElementById('overlayQWP').style.display = "block";
     const generateQuestion = () => {
         let CQ = Math.floor(Math.random() * n.length);
         document.getElementById('question').textContent = n[CQ].Qest;
@@ -267,8 +299,9 @@ const quise_pcs = function(n) {
                 if (selectedOption === currentQuestion.Opt3) {
                     ST++;
                     if (ST === 3) {
-                        pc1_game = true;
+                        document.getElementById('overlayQWP').style.display = "none";
                         Execut_Back();
+                        gameState[s].pc_game = true;
                     } else {
                         generateQuestion();
                     }
@@ -281,7 +314,6 @@ const quise_pcs = function(n) {
     };
     generateQuestion();
 }
-
 
 const Pc1_interior = function() {
     if (Item_ordem[0].var_local){
@@ -300,6 +332,7 @@ const Inventario = function(n) {
 }
 
 const Execut_Back = function() {
+    document.getElementById('overlayQWP').style.display = "none";
     for (let i = 0; i<Back_ordem.length; i++) {
         let estado_ = document.getElementById(Back_ordem[i].sala);
         let efeito_ = document.getElementById(Back_ordem[i].efeito);
@@ -319,14 +352,14 @@ const Execut_Back = function() {
 }
 
 //renderização---------------------------------------------------------------------------------------
+document.getElementById('overlayQWP').style.display = "none";
 let Butão_voltar = document.getElementById("voltar");
 Butão_voltar.style.display = "none";
-for (let i = 0 ; i<Back_ordem.length ; i++) {
+for (let i = 0 ; i<Back_ordem.length ; i++) { 
     let Sala_secundaria = Back_ordem[i].sala;
     document.getElementById(Sala_secundaria).style.display = "none";
 };
 for (let i = 0 ; i<Item_ordem.length ; i++) {
-    console.log(i)
     Inventario(i);
 };
 
@@ -364,11 +397,11 @@ const Tampa_pa1 = document.getElementById("tampa_pc1").addEventListener('click',
 
 const Tela_pc1 = document.getElementById("tela_pc1").addEventListener('click', function() {
     if (pc1_state) {
-        if (pc1_game){
+        if (gameState[0].pc_game){
             alterar_sala("Pc1_on_unlock",3);
         }else{
             alterar_sala("Pc1_on_lock",4);
-            quise_pcs(Q1_Pc1);
+            quise_pcs(Q1_Pc1, 0);
         }
     } else {
         alterar_sala("Pc1_off",2);
@@ -400,12 +433,72 @@ const Asses_S2 = document.getElementById("Porta_s1").addEventListener('click', f
 })
 
 const Asses_S3 = document.getElementById("Porta2_s1").addEventListener('click', function(){
-    alterar_sala("SR_S3",7);
+    alterar_sala("SR_S3",8);
 })
 
 const Asses_Corredor = document.getElementById("Porta3_s1").addEventListener('click', function(){
-    alterar_sala("SR_Corredor",8);
+    alterar_sala("SR_Corredor",);
 })
+
+const Pega_Item2 = document.getElementById("Item2_Usar").addEventListener('click', function(){
+    let element = document.getElementById(Item_ordem[1].id);
+    element.style.display = "none";
+    Item_ordem[1].var_item = true;
+    Inventario(1);
+})
+
+const Pega_Item3 = document.getElementById("Item3_Usar").addEventListener('click', function(){
+    let element = document.getElementById(Item_ordem[2].id);
+    console.log(element)
+    element.style.display = "none";
+    Item_ordem[2].var_item = true;
+    Inventario(2);
+})
+
+const Tela_pc2 = document.getElementById("Pc2_entrar").addEventListener('click', function() {
+    if (gameState[1].pc_game){
+        alterar_sala("Pc2_unlock",3);
+    }else{
+        alterar_sala("Pc2_on_lock",4);
+        quise_pcs(Q1_Pc2,1);
+    }
+    
+});
+
+const Pc2_active_But = document.getElementById("Pc2_Usar").addEventListener('click', function(){
+    if(P1_S1){
+        P1_S1=false;
+        document.getElementById("Pc1_Act_block").style.display="none"
+        Execut_Back();
+    }
+})
+
+const Pc2_Console_Acess = document.getElementById("Pc2_Distrair").addEventListener('click', function(){
+    if(!Console_p2_get){
+        alterar_sala("Pc2_on_Console",11);
+        Consola("");
+        focar.focus();
+    }
+})
+
+const Pc3_Console_Acess = document.getElementById("Pc3_entrar").addEventListener('click', function(){
+    if(Console_p1_get && Console_p2_get && Console_p4_get && !Console_p3_Activate){
+        alterar_sala("Pc3_on_Console",12);
+        Consola("");
+        focar.focus();
+    } else {
+        alterar_sala("Pc3_off",13)
+    }
+})
+
+
+
+
+
+
+
+
+
 
 const back = document.getElementById("voltar").addEventListener('click',function() {
     Execut_Back();

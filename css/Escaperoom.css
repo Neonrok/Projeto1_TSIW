@@ -228,12 +228,6 @@ body{
     width: 25.5%;
 }
 
-
-
-
-
-
-
 .escrever_inventário{
     margin: 0% 25% 0% 25%;
     font-size: larger;
@@ -245,21 +239,53 @@ body{
     margin: 0% 25% 0% 25%;
     border: 2px solid snow;
     padding: 2px;
-    display: flex;
-    flex-direction: row;
     min-height: 75px;
     width: auto;
 }
 
 .Items{
+    display: flex;
+    flex-direction: row;
     height: 75px;
     width: auto;
     margin: 2px;
-    border: 1px solid snow;
     cursor: pointer;
 }
 
 .Item_1_use{
     max-height: 75px;
     width: auto;
+    border: 1px solid snow;
+    margin: 2px;
+}
+
+.Pc2_Act_block{
+    position: absolute;
+    top: 49.3%;
+    left: 62.4%;
+    height: 9%;
+    width: auto;
+}
+
+.Pc2_f_block{
+    position: absolute;
+    top: 21%;
+    left: 23%;
+    height: 29%;
+    width: auto;
+}
+
+.SR_S3_Item{
+    position: absolute;
+    top: 72%;
+    left: 48%;
+    height: 5%;
+    width: auto;}
+
+.SR_S3_Pc{
+    position: absolute;
+    top: 42.5%;
+    left: 46.2%;
+    height: 10%;
+    width: 7.5%;
 }

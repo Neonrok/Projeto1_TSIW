@@ -13,14 +13,14 @@ export function init() {
     }
     Use.push(SPV)
 
-    SPV = {
+    SPV = { 
         sala: "Pc1_interior_lock",
         Nsala: "Pc1_interior_unlock",
         item: "item_2_use",
-        id: "item_S2",
-        id_1: "item_s2",
-        var_item: false,//chave_entrada
-        var_local: false //pc1_int
+        id: "SR_S2_Item",
+        id_1: "item_2_use",
+        var_item: false,//pé de cabra
+        var_local: false //assesso à dica
     }
     Use.push(SPV)
 
@@ -28,10 +28,10 @@ export function init() {
         sala: "Pc1_interior_lock",
         Nsala: "Pc1_interior_unlock",
         item: "item_3_use",
-        id: "item_S3",
-        id_1: "item_s3",
-        var_item: false,//chave_entrada
-        var_local: false //pc1_int
+        id: "SR_S3_Item",
+        id_1: "item_3_use",
+        var_item: false,//Cartão
+        var_local: false //acesso ao corredor
     }
     Use.push(SPV)
 
