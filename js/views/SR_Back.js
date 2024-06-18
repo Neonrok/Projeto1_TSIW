@@ -116,6 +116,14 @@ export function init() {
         N_estado: "block"
     }
     Back.push(SPV)
+//14
+    SPV = {
+        sala: "Portao_All",
+        efeito: "Sala_Entrada",
+        estado: "block",
+        N_estado: "none"
+    }
+    Back.push(SPV)
 
     return Back
 }

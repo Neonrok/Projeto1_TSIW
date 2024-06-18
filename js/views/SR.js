@@ -76,6 +76,7 @@ let ST = 0;
 //funções----------------------------------------------------------------------------------------------
 const S_1 = function() {
     alterar_sala("Sala_Entrada",0) 
+    if (Item_ordem[2].var_local){P3_S1 = false}
     if (Item_ordem[0].var_item) {
         document.getElementById(Item_ordem[0].id).style.display = "none"
     }
@@ -491,10 +492,9 @@ const Pc3_Console_Acess = document.getElementById("Pc3_entrar").addEventListener
     }
 })
 
-
-
-
-
+const Ins_card = document.getElementById("Insert_Card").addEventListener('click', function(){
+    alterar_sala("Portao_All",14);
+})
 
 
 
