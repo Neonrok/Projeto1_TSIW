@@ -124,11 +124,11 @@
 }
 
 #hero-shape-bottomSquare:hover + .heroMask-bottom{
-  transition: linear 0.7s;
+  transition: linear 0.8s;
   mask-position: -200px 0px;
 }
 
 #hero-shape-sideSquare:hover + .heroMask-side{
-  transition: linear 0.6s;
-  mask-position: -63px 35px;
+  transition: linear 0.5s;
+  mask-position: -70px 35px;
 }
