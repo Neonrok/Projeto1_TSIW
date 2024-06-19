@@ -212,6 +212,7 @@ const Consola = function(n){
     };
 
     function reloc(){
+        console.log(local);
         if(mapa[local].up !== "N/A"){
             
             document.getElementById(bloco1_consola_p4).style.display = "none"

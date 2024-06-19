@@ -37,7 +37,7 @@ export function init() {
             down: 2,
             right: 6,
             left: "N/A",
-            get: true,
+            get: "N/A",
             activate: "N/A"
         }
         Use.push(SPV)
@@ -45,8 +45,8 @@ export function init() {
         SPV = {
             up: "N/A",
             down: 3,
-            right: 14,
-            left: 17,
+            right: 17,
+            left: 14,
             get: "N/A",
             activate: "N/A"
         }
@@ -188,8 +188,8 @@ export function init() {
     SPV = {
         up: "N/A",
         down: "N/A",
-        right: 4,
-        left: 18,
+        right: 18,
+        left: 4,
         get: "N/A",
         activate: "N/A"
     }
@@ -199,8 +199,8 @@ export function init() {
     SPV = {
         up: 19,
         down: "N/A",
-        right: 17,
-        left: 23,
+        right: 23,
+        left: 17,
         get: "N/A",
         activate: "N/A"
     }
@@ -254,8 +254,8 @@ export function init() {
     SPV = {
         up: 24,
         down: "N/A",
-        right: 18,
-        left: "N/A",
+        right: "N/A",
+        left: 18,
         get: "N/A",
         activate: "N/A"
     }
