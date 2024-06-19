@@ -58,7 +58,6 @@ let P3_S1 = true;
 
 //
 let pc1_state = false;
-let pc3_state = false;
 
 let Console_p1_get = false;
 let Console_p2_get = false;
@@ -103,7 +102,7 @@ const S_1 = function() {
 const C_1 = function() {
     alterar_sala("Corredor",15) 
     
-    if (pc3_state) {
+    if (Console_p3_Activate) {
         document.getElementById("Corredor_Pc2_exit").style.display = "block"
     } else {
         document.getElementById("Corredor_Pc2_exit").style.display = "none"
@@ -306,8 +305,13 @@ const quise_pcs = function(n, s) {
             [opti[i], opti[j]] = [opti[j], opti[i]];
         }
 
+        const optDiv = document.querySelector('.Opt');
+        optDiv.innerHTML = '';
+
         opti.forEach((opt) => {
-            const button = document.getElementById(opt.id);
+            const button = document.createElement('button');
+            button.className = 'Opti';
+            button.id = opt.id;
             button.textContent = opt.text;
             button.onclick = () => {
                 const selectedOption = button.textContent;
@@ -326,6 +330,7 @@ const quise_pcs = function(n, s) {
                     generateQuestion();
                 }
             };
+            optDiv.appendChild(button);
         });
     };
     generateQuestion();
@@ -457,7 +462,6 @@ const Asses_S3 = document.getElementById("Porta2_s1").addEventListener('click', 
 })
 
 const Asses_Corredor = document.getElementById("Porta3_s1").addEventListener('click', function(){
-    alterar_sala("Corredor",15);
     C_1();
 })
 
@@ -527,7 +531,13 @@ const Acesso_dica = document.getElementById("Corredor_P1").addEventListener('cli
 })
 
 const Pc4_enter = document.getElementById("Corredor_Pc").addEventListener('click',function() {
-    alterar_sala("Pc4_acesse",18)
+    if (!gameState[2].pc_game) {
+        alterar_sala("Pc4_acesse_Blocked",18);
+        quise_pcs(Q1_Pc4, 2);
+    } else {
+        alterar_sala("Pc4_acesse",18)
+    }
+    
 })
 
 const Pc4_enter_Console = document.getElementById("Cor_Pc4_dist").addEventListener('click',function() {
@@ -538,7 +548,6 @@ const Pc4_enter_Console = document.getElementById("Cor_Pc4_dist").addEventListen
         focar.focus();
     }
 })
-
 
 
 const back = document.getElementById("voltar").addEventListener('click',function() {

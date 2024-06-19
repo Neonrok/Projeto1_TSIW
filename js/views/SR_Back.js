@@ -188,6 +188,14 @@ export function init() {
         N_estado: "block"
     }
     Back.push(SPV)
+//23
+    SPV = {
+        sala: "Pc4_acesse_Blocked",
+        efeito: "Corredor",
+        estado: "block",
+        N_estado: "block"
+    }
+    Back.push(SPV)
 
     return Back
 }
