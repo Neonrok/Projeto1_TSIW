@@ -14,7 +14,7 @@ function createFooter(){
           <div class="flex direction-column gap-24 footer-nav">
             <p class="text-18 text-medium text-mainGrey">Navegação</p>
             <ul class="flex direction-column gap-24">
-                <li><a href="" class="hover-underline-animation text-18 text-medium">Aprender</a></li>
+                <li><a href="/html/aprender.html" class="hover-underline-animation text-18 text-medium">Aprender</a></li>
                 <li><a href="/html/atividades.html" class="hover-underline-animation text-18 text-medium">Atividades</a></li>
                 <li><a href="/html/projetos.html" class="hover-underline-animation text-18 text-medium">Projetos</a></li>
                 <li><a href="/html/testemunhos.html" class="hover-underline-animation text-18 text-medium">Testemunhos</a></li>

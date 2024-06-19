@@ -27,7 +27,7 @@ function createHeader(){
         <a href="../index.html"><img src="/img/LogoTSIW.svg"></a>
         <nav class="flex items-center gap-32">
             <ul class="header-links flex items-center gap-24">
-                <li><a href="" class="hover-underline-animation text-16 text-medium">Aprender</a></li>
+                <li><a href="/html/aprender.html" class="hover-underline-animation text-16 text-medium">Aprender</a></li>
                 <li><a href="/html/atividades.html" class="hover-underline-animation text-16 text-medium">Atividades</a></li>
                 <li><a href="/html/projetos.html" class="hover-underline-animation text-16 text-medium">Projetos</a></li>
                 <li><a href="/html/testemunhos.html" class="hover-underline-animation text-16 text-medium">Testemunhos</a></li>
@@ -58,7 +58,7 @@ function createHeader(){
           <div class="flex direction-column gap-16">
               <p class="text-18 text-medium text-mainGrey">Navegação</p>
               <ul class="flex direction-column gap-16">
-                  <li><a href="" class="hover-underline-animation text-18 text-medium">Aprender</a></li>
+                  <li><a href="/html/aprender.html" class="hover-underline-animation text-18 text-medium">Aprender</a></li>
                   <li><a href="/html/atividades.html" class="hover-underline-animation text-18 text-medium">Atividades</a></li>
                   <li><a href="/html/projetos.html" class="hover-underline-animation text-18 text-medium">Projetos</a></li>
                   <li><a href="/html/testemunhos.html" class="hover-underline-animation text-18 text-medium">Testemunhos</a></li>
@@ -82,7 +82,7 @@ function createHeader(){
       <a href="../index.html"><img src="/img/LogoTSIW.svg"></a>
       <nav class="flex items-center gap-32">
           <ul class="header-links flex items-center gap-24">
-              <li><a href="" class="hover-underline-animation text-16 text-medium">Aprender</a></li>
+              <li><a href="/html/aprender.html" class="hover-underline-animation text-16 text-medium">Aprender</a></li>
               <li><a href="/html/atividades.html" class="hover-underline-animation text-16 text-medium">Atividades</a></li>
               <li><a href="/html/projetos.html" class="hover-underline-animation text-16 text-medium">Projetos</a></li>
               <li><a href="/html/testemunhos.html" class="hover-underline-animation text-16 text-medium">Testemunhos</a></li>
@@ -109,7 +109,7 @@ function createHeader(){
         <div class="flex direction-column gap-16">
             <p class="text-18 text-medium text-mainGrey">Navegação</p>
             <ul class="flex direction-column gap-16">
-                <li><a href="" class="hover-underline-animation text-18 text-medium">Aprender</a></li>
+                <li><a href="/html/aprender.html" class="hover-underline-animation text-18 text-medium">Aprender</a></li>
                 <li><a href="/html/atividades.html" class="hover-underline-animation text-18 text-medium">Atividades</a></li>
                 <li><a href="/html/projetos.html" class="hover-underline-animation text-18 text-medium">Projetos</a></li>
                 <li><a href="/html/testemunhos.html" class="hover-underline-animation text-18 text-medium">Testemunhos</a></li>
