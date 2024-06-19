@@ -319,3 +319,10 @@ body{
     height: 19%;
     width: 18%;
 }
+.Pc4_dist{
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    height: 50%;
+    width: 45%;
+}

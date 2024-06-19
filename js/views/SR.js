@@ -53,7 +53,7 @@ let QCom4 = document.getElementById("Pc4_on_Console")
 
 //para--Salas------------------------------------------------------------------------------------------
 let P1_S1 = true;
-let P2_S1 = false;
+let P2_S1 = true;
 let P3_S1 = true;
 
 let pc1_state = false;
@@ -65,7 +65,7 @@ let Console_p4_get = false
 
 const gameState = [
     {pc_game: false},
-    {pc_game: true},
+    {pc_game: false},
     {pc_game: false}
 ];
 
@@ -96,12 +96,21 @@ const S_1 = function() {
         document.getElementById("P3_S1").style.display = "block"
     }
 }
+const C_1 = function() {
+    alterar_sala("Corredor",15) 
+    
+    if (pc3_state) {
+        document.getElementById("Corredor_Pc2_exit").style.display = "block"
+    } else {
+        document.getElementById("Corredor_Pc2_exit").style.display = "none"
+    }
+}
 
 const alterar_sala = function(n,y){
     next_tela = document.getElementById(n);
     tela_atual.style.display = "none";
     tela_atual = next_tela;
-    console.log(tela_atual, n, y)
+    console.log(next_tela);
     tela_atual.style.display = "block";
     Butão_voltar.style.display = Back_ordem[y].estado;
 };
@@ -326,7 +335,7 @@ const Pc1_interior = function() {
 }
 
 const Inventario = function(n) {
-    if (Item_ordem[n].var_item != true) {
+    if (!Item_ordem[n].var_item) {
         document.getElementById(Item_ordem[n].item).style.display = "none"
     } else {
         document.getElementById(Item_ordem[n].item).style.display = "block"
@@ -342,6 +351,9 @@ const Execut_Back = function() {
             if (efeito_ === document.getElementById("Sala_Entrada")) {
                 estado_.style.display = "none";
                 S_1();
+            } else if (efeito_ === document.getElementById("Corredor")) {
+                estado_.style.display = "none";
+                C_1();
             }
             estado_.style.display = "none";
             efeito_.style.display = Back_ordem[i].estado;
@@ -440,6 +452,7 @@ const Asses_S3 = document.getElementById("Porta2_s1").addEventListener('click', 
 
 const Asses_Corredor = document.getElementById("Porta3_s1").addEventListener('click', function(){
     alterar_sala("Corredor",15);
+    C_1();
 })
 
 const Pega_Item2 = document.getElementById("Item2_Usar").addEventListener('click', function(){
@@ -497,6 +510,25 @@ const Ins_card = document.getElementById("Insert_Card").addEventListener('click'
     alterar_sala("Portao_All",14);
 })
 
+const Acesso_dica = document.getElementById("Corredor_P1").addEventListener('click',function(){
+    if(Item_ordem[1].var_local){
+        alterar_sala("Porta_Desbloquada",17)
+    }else{
+        alterar_sala("Porta_Bloqueada",16)
+    }
+})
+
+const Pc4_enter = document.getElementById("Corredor_Pc").addEventListener('click',function() {
+    alterar_sala("Pc4_acesse",18)
+})
+
+const Pc4_enter_Console = document.getElementById("Cor_Pc4_dist").addEventListener('click',function() {
+    if(!Console_p4_get){
+        alterar_sala("Pc4_on_Console",19);
+        Consola("");
+        focar.focus();
+    }
+})
 
 
 
