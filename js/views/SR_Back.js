@@ -164,6 +164,30 @@ export function init() {
         N_estado: "block"
     }
     Back.push(SPV)
+//20
+    SPV = {
+        sala: "Corredor_p2_",
+        efeito: "Corredor",
+        estado: "block",
+        N_estado: "block"
+    }
+    Back.push(SPV)
+//21
+    SPV = {
+        sala: "Corredor_p2_Pc_",
+        efeito: "Corredor_p2_",
+        estado: "block",
+        N_estado: "block"
+    }
+    Back.push(SPV)
+//22
+    SPV = {
+        sala: "Corredor_p2_Pc_Button",
+        efeito: "Corredor_p2_Pc_",
+        estado: "block",
+        N_estado: "block"
+    }
+    Back.push(SPV)
 
     return Back
 }

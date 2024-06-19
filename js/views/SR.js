@@ -41,7 +41,6 @@ Q1_Pc4 = Q1_Pc4_data.init();
 let Com_Pc4 = [];
 Com_Pc4 = Consola_pc4.init();
 
-let stop=false
 let Use_Item = document.querySelectorAll(".inventário img");
 let tela_atual = document.getElementById("T_Inicio");
 let next_tela;
@@ -52,21 +51,25 @@ let QCom3 = document.getElementById("Pc3_on_Console")
 let QCom4 = document.getElementById("Pc4_on_Console")
 
 //para--Salas------------------------------------------------------------------------------------------
+//abrir portas
 let P1_S1 = true;
 let P2_S1 = true;
 let P3_S1 = true;
 
+//
 let pc1_state = false;
+let pc3_state = false;
+
 let Console_p1_get = false;
 let Console_p2_get = false;
-let pc3_state = false;
 let Console_p3_Activate = false
 let Console_p4_get = false
 
+//completou o quizz
 const gameState = [
-    {pc_game: false},
-    {pc_game: false},
-    {pc_game: false}
+    {pc_game: false},//1
+    {pc_game: false},//2
+    {pc_game: false}//4
 ];
 
 
@@ -96,6 +99,7 @@ const S_1 = function() {
         document.getElementById("P3_S1").style.display = "block"
     }
 }
+
 const C_1 = function() {
     alterar_sala("Corredor",15) 
     
@@ -481,8 +485,8 @@ const Tela_pc2 = document.getElementById("Pc2_entrar").addEventListener('click',
 });
 
 const Pc2_active_But = document.getElementById("Pc2_Usar").addEventListener('click', function(){
-    if(P1_S1){
-        P1_S1=false;
+    if(P2_S1){
+        P2_S1=false;
         document.getElementById("Pc1_Act_block").style.display="none"
         Execut_Back();
     }
