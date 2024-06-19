@@ -12,6 +12,7 @@ function createHeader(){
         <nav class="flex items-center gap-32">
             <ul class="header-links flex items-center gap-24">
                 <li><a href="/html/admin.html" class="hover-underline-animation text-16 text-medium">Zona Admin</a></li>
+                <li><a href="/html/gerirDesafios.html" class="hover-underline-animation text-16 text-medium">Desafios</a></li>
                 <li><a href="/html/gerirAtividades.html" class="hover-underline-animation text-16 text-medium">Atividades</a></li>
                 <li><a href="/html/gerirProjetos.html" class="hover-underline-animation text-16 text-medium">Projetos</a></li>
                 <li><a href="/html/gerirTestemunhos.html" class="hover-underline-animation text-16 text-medium">Testemunhos</a></li>
