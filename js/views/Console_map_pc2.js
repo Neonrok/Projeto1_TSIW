@@ -47,7 +47,7 @@ export function init() {
         down: "N/A",
         right: "N/A",
         left: 2,
-        get: true,
+        get: "N/A",
         activate: "N/A"
     }
     Use.push(SPV)

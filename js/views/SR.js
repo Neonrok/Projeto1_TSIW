@@ -441,6 +441,7 @@ const Pc1_active_But = document.getElementById("Pc1_Usar").addEventListener('cli
 const Pc1_Console_Acess = document.getElementById("Pc1_Distrair").addEventListener('click', function(){
     if(!Console_p1_get){
         alterar_sala("Pc1_on_Console",6);
+        local = 0;
         Consola("");
         focar.focus();
     }
@@ -495,6 +496,7 @@ const Pc2_active_But = document.getElementById("Pc2_Usar").addEventListener('cli
 const Pc2_Console_Acess = document.getElementById("Pc2_Distrair").addEventListener('click', function(){
     if(!Console_p2_get){
         alterar_sala("Pc2_on_Console",11);
+        local = 0;
         Consola("");
         focar.focus();
     }
@@ -503,6 +505,7 @@ const Pc2_Console_Acess = document.getElementById("Pc2_Distrair").addEventListen
 const Pc3_Console_Acess = document.getElementById("Pc3_entrar").addEventListener('click', function(){
     if(Console_p1_get && Console_p2_get && Console_p4_get && !Console_p3_Activate){
         alterar_sala("Pc3_on_Console",12);
+        local = 0;
         Consola("");
         focar.focus();
     } else {
@@ -529,6 +532,7 @@ const Pc4_enter = document.getElementById("Corredor_Pc").addEventListener('click
 const Pc4_enter_Console = document.getElementById("Cor_Pc4_dist").addEventListener('click',function() {
     if(!Console_p4_get){
         alterar_sala("Pc4_on_Console",19);
+        local = 0;
         Consola("");
         focar.focus();
     }
