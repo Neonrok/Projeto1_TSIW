@@ -38,11 +38,31 @@
   mask-position: 83px -122px;
 }
 
+.heroMask-side{
+  transition: linear 0.6s;
+  mask: url(/img/HoverMaskSide.svg);
+  mask-repeat: no-repeat;
+  mask-position: 5px -102px;
+}
+
 .hero-shape-square{
   position: relative;
   background-color: var(--mainWhite);
   width: 55px;
   height: 64px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+#hero-shape-sideSquare{
+  position: relative;
+  transform: translate(176px,54px);
+  background-color: var(--mainWhite);
+  width: 59px;
+  height: 54px;
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -70,6 +90,11 @@
   transform: translate(46px,-130px);
 }
 
+.hero-sideShape-container{
+  position: absolute;
+  transform: translate(-112px,-246px);
+}
+
 .video-mask{
   width: 625px;
   height: 500px;
@@ -94,11 +119,16 @@
 }
 
 #hero-shape-topSquare:hover + .heroMask-top{
-  transition: linear 0.6s;
+  transition: linear 0.7s;
   mask-position: -150px -77px;
 }
 
 #hero-shape-bottomSquare:hover + .heroMask-bottom{
   transition: linear 0.7s;
   mask-position: -200px 0px;
+}
+
+#hero-shape-sideSquare:hover + .heroMask-side{
+  transition: linear 0.6s;
+  mask-position: -63px 35px;
 }
