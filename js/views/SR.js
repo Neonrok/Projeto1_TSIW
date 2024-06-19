@@ -54,14 +54,14 @@ let QCom4 = document.getElementById("Pc4_on_Console")
 //abrir portas
 let P1_S1 = true;
 let P2_S1 = true;
-let P3_S1 = true;
+let P3_S1 = false;
 
 //
 let pc1_state = false;
 
 let Console_p1_get = false;
 let Console_p2_get = false;
-let Console_p3_Activate = false
+let Console_p3_Activate = true
 let Console_p4_get = false
 
 //completou o quizz
@@ -379,7 +379,7 @@ const Execut_Back = function() {
 document.getElementById('overlayQWP').style.display = "none";
 let Butão_voltar = document.getElementById("voltar");
 Butão_voltar.style.display = "none";
-for (let i = 0 ; i<Back_ordem.length ; i++) { 
+for (let i = 0 ; i<Back_ordem.length ; i++) {
     let Sala_secundaria = Back_ordem[i].sala;
     document.getElementById(Sala_secundaria).style.display = "none";
 };
@@ -548,6 +548,20 @@ const Pc4_enter_Console = document.getElementById("Cor_Pc4_dist").addEventListen
         focar.focus();
     }
 })
+
+const Acess_Cor_p2 = document.getElementById("Corredor_P2").addEventListener('click', function(){
+    alterar_sala("Corredor_p2_",20);
+})
+
+const Acess_Cor_p2_Pc = document.getElementById("Corredor_Pc_p5").addEventListener('click', function(){
+    alterar_sala("Corredor_p2_Pc_",21);
+})
+
+const Acess_Cor_p2_Pc_But = document.getElementById("SR_p2_Botão_/").addEventListener('click', function(){
+    alterar_sala("Corredor_p2_Pc_Button",22);
+})
+
+//const Acess_Cor_Door = document.getElementById("Corredor_P2").addEventListener('click', function(){alterar_sala("Corredor_p2_Exit",24);})
 
 
 const back = document.getElementById("voltar").addEventListener('click',function() {

@@ -197,5 +197,14 @@ export function init() {
     }
     Back.push(SPV)
 
+//24
+    SPV = {
+        sala: "Corredor_p2_Exit",
+        efeito: "Corredor_p2_",
+        estado: "none",
+        N_estado: "none"
+    }
+    Back.push(SPV)
+
     return Back
 }

@@ -308,10 +308,45 @@ body{
     width: 9%;
 }
 
+.Corredor_Pc5{
+    position: absolute;
+    top: 44.5%;
+    left: 46%;
+    height: 12.5%;
+    width: 14.1%;
+}
 
+.Corredor_Exit  {
+    position: absolute;
+    top: 37.5%;
+    left: 61.7%;
+    height: 35%;
+    width: 16.5%;
+}
 
+.SR_p2_Botão  {
+    position: absolute;
+    top: 60%;
+    left: 46.25%;
+    height: 35%;
+    width: 7.5%;
+}
 
-
+.SR_p2_Botão__{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+}
+.SR_fim{
+    position: absolute;
+    border: solid grey 2px;
+    width: 62.5%;
+    height: 21%;
+    left: 0.5%;
+    top: 77%;
+}
 .Corredor_Pc{
     position: absolute;
     top: 42.5%;
