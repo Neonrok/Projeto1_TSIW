@@ -23,6 +23,8 @@
 .opcao{
   padding: 12px 0px 12px 16px;
   border-radius: 4px;
+  cursor: pointer;
+  transition: 0.4s;
 }
 
 .opcao-square{
@@ -56,4 +58,12 @@
 .opcao.wrong .opcao-square{
   border: none;
   background-color: #DC2C2C;
+}
+
+.opcao:hover{
+  background-color: var(--grey25);
+}
+
+.opcao.disable{
+  pointer-events: none;
 }
