@@ -57,7 +57,7 @@ let QCom4 = document.getElementById("Pc4_on_Console")
 //abrir portas
 let P1_S1 = true;
 let P2_S1 = true;
-let P3_S1 = false;
+let P3_S1 = true;
 
 let Open_Exit = false;
 
@@ -66,8 +66,8 @@ let pc1_state = false;
 
 let Console_p1_get = false;
 let Console_p2_get = false;
-let Console_p3_Activate = true
-let Console_p4_get = false
+let Console_p3_Activate = false;
+let Console_p4_get = false;
 
 //completou o quizz
 const gameState = [
