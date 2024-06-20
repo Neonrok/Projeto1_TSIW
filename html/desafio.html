@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TSIW</title>
+  <link rel="stylesheet" href="/css/desafio.css">
+</head>
+<body>
+  <div id="mainContainer" class="flex direction-column gap-128">
+    <div class="flex direction-column gap-48 container px-container mx-auto desafio-container">
+      <h2 id="desafioTitle">Desafio de HTML</h2>
+      <div id="desafioPerguntasContainer" class="flex direction-column gap-48"></div>
+      <div class="flex items-center justify-center score-container">
+        <p id="score" class="text-24 text-medium"></p>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/js/views/headerView.js"></script>
+  <script type="module" src="/js/views/desafioView.js"></script>
+  <script type="module" src="/js/views/footerView.js"></script>
+</body>
+</html>

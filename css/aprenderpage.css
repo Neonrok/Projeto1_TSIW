@@ -1,0 +1,33 @@
+@import "style.css";
+
+.desafios-container{
+  grid-template-columns: repeat(auto-fill, minmax(312px, 1fr));
+}
+
+.desafio-card{
+  padding: 1.5rem;
+  background-color: var(--mainBlack);
+  border: 1px solid var(--grey20);
+  border-radius: 16px;
+  filter: drop-shadow(8px 8px var(--grey20));
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.desafio-img{
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.desafio-title{
+  font-family: ClashDisplay-Medium;
+  font-size: 1.5rem;
+  height: 60px;
+}
+
+.desafio-card:hover{
+  filter: none;
+  background-color: var(--grey20);
+}

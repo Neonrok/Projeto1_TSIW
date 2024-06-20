@@ -24,6 +24,27 @@
   margin-bottom: 6rem;
 }
 
+.heroMask-top{
+  transition: linear 0.6s;
+  mask: url(/img/HoverMaskTop.svg);
+  mask-repeat: no-repeat;
+  mask-position: 89px 19px;
+}
+
+.heroMask-bottom{
+  transition: linear 0.6s;
+  mask: url(/img/HoverMaskBottom.svg);
+  mask-repeat: no-repeat;
+  mask-position: 83px -122px;
+}
+
+.heroMask-side{
+  transition: linear 0.6s;
+  mask: url(/img/HoverMaskSide.svg);
+  mask-repeat: no-repeat;
+  mask-position: 5px -102px;
+}
+
 .hero-shape-square{
   position: relative;
   background-color: var(--mainWhite);
@@ -33,21 +54,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10000;
+}
+
+#hero-shape-sideSquare{
+  position: relative;
+  transform: translate(176px,54px);
+  background-color: var(--mainWhite);
+  width: 59px;
+  height: 54px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
 }
 
 .hero-square-text{
   font-family: ClashDisplay-Medium;
   color: var(--mainBlack);
-}
-
-.hero-fillShape{
-  transition: linear 0.6s;
-  transform: translate(89px,19px);
-}
-
-.hero-fillShape-hover{
-  transition: linear 0.6s;
-  transform: translate(-148px,-77px);
 }
 
 .hero-shape{
@@ -60,17 +85,21 @@
   transform: translate(91px,-512px);
 }
 
-.hero-topShape-text{
-  font-family: ClashDisplay-Regular;
-  color: var(--mainBlack);
-  z-index: 1000;
+.hero-bottomShape-container{
+  position: absolute;
+  transform: translate(46px,-130px);
+}
+
+.hero-sideShape-container{
+  position: absolute;
+  transform: translate(-112px,-246px);
 }
 
 .video-mask{
   width: 625px;
   height: 500px;
   object-fit: cover;
-  mask: url(/img/videoMask2.svg);
+  mask: url(/img/videoMaskShape.svg);
 }
 
 .max-w-653{
@@ -85,7 +114,21 @@
   transform: translate(170px,119px);
 }
 
-#hero-shape-topSquare:hover + svg defs mask g{
-  transition: linear 0.6s;
-  transform: translate(-148px,-77px);
-} 
+#hero-shape-bottomSquare{
+  transform: translate(214px,64px);
+}
+
+#hero-shape-topSquare:hover + .heroMask-top{
+  transition: linear 0.7s;
+  mask-position: -150px -77px;
+}
+
+#hero-shape-bottomSquare:hover + .heroMask-bottom{
+  transition: linear 0.8s;
+  mask-position: -200px 0px;
+}
+
+#hero-shape-sideSquare:hover + .heroMask-side{
+  transition: linear 0.5s;
+  mask-position: -70px 35px;
+}

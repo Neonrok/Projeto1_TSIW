@@ -1,0 +1,76 @@
+@import "style.css";
+
+.pergunta-num{
+  background-color: var(--grey20);
+  padding: 16px 32px;
+}
+
+.pergunta-card{
+  background-color: var(--grey12);
+  border: 1px solid var(--mainGrey);
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.desafio-container{
+  max-width: 1056px;
+}
+
+.pergunta-opcoes{
+  padding: 32px;
+}
+
+.opcao{
+  padding: 12px 0px 12px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.opcao-square{
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  border: 1px solid var(--mainWhite);
+}
+
+.score-container{
+  background-color: var(--grey25);
+  padding: 24px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.opcao.correct{
+  background-color: #D2EBDC;
+}
+
+.opcao.correct p{
+  color: var(--mainBlack);
+}
+
+.opcao.correct .opcao-square{
+  border: none;
+  background-color: #47B172;
+}
+
+.opcao.wrong{
+  background-color: #EEB4B4;
+}
+
+.opcao.wrong p{
+  color: var(--mainBlack);
+}
+
+.opcao.wrong .opcao-square{
+  border: none;
+  background-color: #DC2C2C;
+}
+
+.opcao:hover{
+  background-color: var(--grey25);
+}
+
+.opcao.disable{
+  pointer-events: none;
+}

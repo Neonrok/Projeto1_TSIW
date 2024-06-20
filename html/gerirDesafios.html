@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TSIW</title>
+  <link rel="stylesheet" href="/css/adminGeral.css">
+  <link rel="stylesheet" href="/css/aprenderpage.css">
+</head>
+<body>
+  <div id="mainContainer">
+    <div class="flex gap-48 direction-column px-container mx-auto">
+      <h1>Gerir Desafios</h1>
+      <form action="" class="flex direction-column gap-16" id="desafioForm">
+        <div class="flex direction-column gap-8">
+          <label for="Título" class="text-20">Título</label>
+          <input class="admin-input text-16" type="text" id="inputTitle">
+        </div>
+        <div class="flex direction-column gap-8">
+          <label for="imagem" class="text-20">Imagem</label>
+          <input type="file" id="inputFile">
+        </div>
+        <div class="flex direction-column gap-8">
+          <label for="Número de perguntas" class="text-20">Número de perguntas</label>
+          <input class="admin-input text-16" type="number" id="inputNumPerguntas">
+        </div>
+        <div id="perguntasContainer" class="flex direction-column gap-32">
+        </div>
+        <button class="button adicionar-button text-20" type="submit">Adicionar Desafio</button>
+      </form>
+      <div class="flex direction-column items-center gap-64 px-container">
+        <h1 class="text-center">Desafios</h1>
+        <div id="desafiosContainer" class="flex direction-column gap-48 desafios-container"></div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="../js/views/gerirDesafiosView.js"></script>
+  <script type="module" src="/js/views/headerView.js"></script>
+</body>
+</html>
