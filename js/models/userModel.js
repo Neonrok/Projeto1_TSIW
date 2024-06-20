@@ -108,7 +108,7 @@ class User{
   avatar = "/img/DefaultAvatar.svg"
   savedActivities = []
   activeNotifications = ["Atividades","Projetos","Próximas atividades","Desafios"]
-  solvedChallenges = []
+  seenNotifications = []
 
   constructor(name,password,avatar){
     this.name = name
