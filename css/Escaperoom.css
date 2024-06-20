@@ -377,3 +377,24 @@ body{
     height: 50%;
     width: 45%;
 }
+.ent_SR_ALL{
+    position: absolute;
+    top: 17.5%;
+    left: 78%;
+    height: 70.5%;
+    width: 5.3%;
+}
+.chave_Para_usar{
+    position: absolute;
+    top: 60%;
+    left: 45%;
+    height: 5%;
+    width: 10%;
+}
+.Pc_DA_Entrada{
+    position: absolute;
+    top: 43.7%;
+    left: 45%;
+    height: 11.5%;
+    width: 10%;
+}

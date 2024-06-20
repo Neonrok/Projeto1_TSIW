@@ -98,9 +98,11 @@ const S_1 = function() {
         document.getElementById("P2_S1").style.display = "block"
     }
     if (P3_S1) {
-        document.getElementById("P3_S1").style.display = "none"
+        document.getElementById("P3_S1").style.display = "none";
+        document.getElementById("item_S1_port").style.display = "block";
     } else {
-        document.getElementById("P3_S1").style.display = "block"
+        document.getElementById("P3_S1").style.display = "block";
+        document.getElementById("item_S1_port").style.display = "none";
     }
 }
 
