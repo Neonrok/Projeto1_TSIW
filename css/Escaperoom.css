@@ -148,7 +148,7 @@ body{
 .texto_qt{
     height: 40%;
     padding: 2%;
-    color: rgb(0, 0, 0);
+    color: #000000;
     text-align: center;
     background: rgb(255, 255, 255);
     border-radius: 5px;
@@ -166,8 +166,13 @@ body{
     border-top: none;
 }
 
+.QOpti{
+    color: #000000;
+}
+
 .Opti{
     border: solid #000000 1px;
+    color: #000000;
 }
 
 .bloco_da_consola1{
