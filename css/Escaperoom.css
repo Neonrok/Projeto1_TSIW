@@ -341,12 +341,23 @@ body{
 }
 .SR_fim{
     position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     border: solid grey 2px;
-    width: 62.5%;
+    width: 50%;
     height: 21%;
-    left: 0.5%;
-    top: 77%;
+    left: 25%;
+    top: 20%;
 }
+
+.vre{
+    font-family: sans-serif;
+    font-size: 180%;
+}
+
+
 .Corredor_Pc{
     position: absolute;
     top: 42.5%;

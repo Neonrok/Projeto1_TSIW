@@ -396,11 +396,11 @@ const Execut_Back = function() {
 
 const Timer = function(x,y) {
     let time = ((y - x)/1000).toFixed(2);
-    let min_time = (time/60).toFixed(0);
-    let tempor = `Tempo gasto- ${min_time}:${time-(min_time*60)}`
-    return tempor
+    let min_time = ~~(time/60)
+    let tempor = `Tempo gasto- ${min_time}:${(time-(min_time*60).toFixed(2))< 10 ? '0' : ''}${time-(min_time*60).toFixed(2)}`;
+    console.log(x,y,time,min_time,tempor)
+    return tempor;
 }
-
 
 //renderização---------------------------------------------------------------------------------------
 document.getElementById('overlayQWP').style.display = "none";
@@ -416,7 +416,7 @@ for (let i = 0 ; i<Item_ordem.length ; i++) {
 
 //ações----------------------------------------------------------------------------------------------------
 const Iniciar = document.getElementById("LCA").addEventListener('click', function() {
-    S_T = new Date();
+    S_T = performance.now();
     S_1();
 });
 
@@ -595,9 +595,13 @@ const Acess_Cor_p2_Pc_But_click = document.getElementById("SR_p2_Botão_/_").add
     
 })
 
+
+
 const Acess_Cor_Door = document.getElementById("In_The_End").addEventListener('click', function(){
-    S_E = new Date();
+    S_E = performance.now();
     alterar_sala("Corredor_p2_Exit",24);
+    let letra = Timer(S_T, S_E)
+    document.getElementById("tempo").textContent = letra
 })
 
 
