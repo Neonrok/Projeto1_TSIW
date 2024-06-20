@@ -56,6 +56,8 @@ let P1_S1 = true;
 let P2_S1 = true;
 let P3_S1 = false;
 
+let Open_Exit = false;
+
 //
 let pc1_state = false;
 
@@ -106,6 +108,16 @@ const C_1 = function() {
         document.getElementById("Corredor_Pc2_exit").style.display = "block"
     } else {
         document.getElementById("Corredor_Pc2_exit").style.display = "none"
+    }
+}
+
+const C_2 = function() {
+    alterar_sala("Corredor_p2_",20) 
+    
+    if (Open_Exit) {
+        document.getElementById("Corredor_Exit__").style.display = "block"
+    } else {
+        document.getElementById("Corredor_Exit__").style.display = "none"
     }
 }
 
@@ -364,7 +376,11 @@ const Execut_Back = function() {
             } else if (efeito_ === document.getElementById("Corredor")) {
                 estado_.style.display = "none";
                 C_1();
+            }else if (efeito_ === document.getElementById("Corredor_p2_")) {
+                estado_.style.display = "none";
+                C_2();
             }
+            
             estado_.style.display = "none";
             efeito_.style.display = Back_ordem[i].estado;
             document.getElementById("voltar").style.display = Back_ordem[i].N_estado;
@@ -550,7 +566,7 @@ const Pc4_enter_Console = document.getElementById("Cor_Pc4_dist").addEventListen
 })
 
 const Acess_Cor_p2 = document.getElementById("Corredor_P2").addEventListener('click', function(){
-    alterar_sala("Corredor_p2_",20);
+    C_2();
 })
 
 const Acess_Cor_p2_Pc = document.getElementById("Corredor_Pc_p5").addEventListener('click', function(){
@@ -559,6 +575,12 @@ const Acess_Cor_p2_Pc = document.getElementById("Corredor_Pc_p5").addEventListen
 
 const Acess_Cor_p2_Pc_But = document.getElementById("SR_p2_Botão_/").addEventListener('click', function(){
     alterar_sala("Corredor_p2_Pc_Button",22);
+})
+const Acess_Cor_p2_Pc_But_click = document.getElementById("SR_p2_Botão_/_").addEventListener('click', function(){
+    document.getElementById("SR_p2_Botão__").style.display = "none";
+    Open_Exit = true;
+    setTimeout(function() {C_2()}, 333);
+    
 })
 
 //const Acess_Cor_Door = document.getElementById("Corredor_P2").addEventListener('click', function(){alterar_sala("Corredor_p2_Exit",24);})
