@@ -34,6 +34,13 @@
   border: 1px solid var(--mainWhite);
 }
 
+.score-container{
+  background-color: var(--grey25);
+  padding: 24px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
 .opcao.correct{
   background-color: #D2EBDC;
 }

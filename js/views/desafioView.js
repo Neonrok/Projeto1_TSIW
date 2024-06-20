@@ -5,6 +5,9 @@ let currentDesafio = Desafio.getCurrentDesafio()
 
 const desafioPerguntasContainer = document.getElementById("desafioPerguntasContainer")
 const desafioTitle = document.getElementById("desafioTitle")
+const scoreEle = document.getElementById("score")
+let score = 0
+scoreEle.innerText = `Pontuação: ${score}/${currentDesafio.questions.length}`
 
 function renderDesafio(){
   desafioTitle.innerText = currentDesafio.title
@@ -38,7 +41,7 @@ function generateQuestionCard(index){
   optionsContainer.className = "flex direction-column gap-8"
 
   for(let option of options){
-    optionsContainer.append(generateOption(option,index))
+    optionsContainer.append(generateOption(option,index,optionsContainer))
   }
 
   perguntaOpcoes.append(pergunta,optionsContainer)
@@ -47,7 +50,7 @@ function generateQuestionCard(index){
   return perguntaCard
 }
 
-function generateOption(option,index){
+function generateOption(option,index,optionsContainer){
   let optionContainer = document.createElement("div")
   optionContainer.className = "flex items-center gap-16 opcao"
 
@@ -62,9 +65,13 @@ function generateOption(option,index){
   optionContainer.addEventListener("click",()=>{
     if(option == currentDesafio.answers[index]){
       optionContainer.classList.add("correct","disable")
+      optionsContainer.replaceWith(optionsContainer.cloneNode(true));
+      score += 1
+      scoreEle.innerText = `Pontuação: ${score}/${currentDesafio.questions.length}`
     }
     else{
       optionContainer.classList.add("wrong","disable")
+      optionsContainer.replaceWith(optionsContainer.cloneNode(true));
     }
   }, { once: true })
 
