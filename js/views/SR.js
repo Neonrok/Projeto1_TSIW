@@ -45,6 +45,9 @@ let Use_Item = document.querySelectorAll(".inventário img");
 let tela_atual = document.getElementById("T_Inicio");
 let next_tela;
 
+let S_T;
+let S_E;
+
 let QCom1 = document.getElementById("Pc1_on_Console")
 let QCom2 = document.getElementById("Pc2_on_Console")
 let QCom3 = document.getElementById("Pc3_on_Console")
@@ -391,6 +394,14 @@ const Execut_Back = function() {
     }
 }
 
+const Timer = function(x,y) {
+    let time = ((y - x)/1000).toFixed(2);
+    let min_time = (time/60).toFixed(0);
+    let tempor = `Tempo gasto- ${min_time}:${time-(min_time*60)}`
+    return tempor
+}
+
+
 //renderização---------------------------------------------------------------------------------------
 document.getElementById('overlayQWP').style.display = "none";
 let Butão_voltar = document.getElementById("voltar");
@@ -405,6 +416,7 @@ for (let i = 0 ; i<Item_ordem.length ; i++) {
 
 //ações----------------------------------------------------------------------------------------------------
 const Iniciar = document.getElementById("LCA").addEventListener('click', function() {
+    S_T = new Date();
     S_1();
 });
 
@@ -583,7 +595,10 @@ const Acess_Cor_p2_Pc_But_click = document.getElementById("SR_p2_Botão_/_").add
     
 })
 
-//const Acess_Cor_Door = document.getElementById("Corredor_P2").addEventListener('click', function(){alterar_sala("Corredor_p2_Exit",24);})
+const Acess_Cor_Door = document.getElementById("In_The_End").addEventListener('click', function(){
+    S_E = new Date();
+    alterar_sala("Corredor_p2_Exit",24);
+})
 
 
 const back = document.getElementById("voltar").addEventListener('click',function() {
