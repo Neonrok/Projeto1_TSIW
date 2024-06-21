@@ -29,14 +29,23 @@ function renderAtividadesNotifications(type){
     let dateDiffDays = datediff(atividade.date)
     console.log(dateDiffDays)
 
-    if(type == "Próximas atividades" && dateDiffDays <=3){
-      let description = `Atividade a realizar-se em ${dateDiffDays} dias`
+    if(type == "Próximas atividades" && dateDiffDays <=2 && dateDiffDays>-1){
+      let description = ""
+      if(dateDiffDays == 0){
+        description = `Atividade a realizar-se hoje`
+      }
+      else if(dateDiffDays == 1){
+        description = `Atividade a realizar-se amanhã`
+      }
+      else{
+        description = `Atividade a realizar-se em ${dateDiffDays+1} dias`
+      }
       generateCard(atividade.title,description,atividade.image,"atividade",type)
     }
 
     dateDiffDays = datediff(atividade.addedDate)
 
-    if(type == "Atividades" && dateDiffDays >=-3){
+    if(type == "Atividades" && dateDiffDays >=-2){
       let description = "Nova atividade adicionada"
       generateCard(atividade.title,description,atividade.image,type)
     }
@@ -79,11 +88,11 @@ function generateCard(title,description,image,type){
       location.href = "/html/atividade.html"
     }
     else if(type == "Projetos"){
-      Projeto.setCurrentAtividade(title)
+      Projeto.setCurrentProjeto(title)
       location.href = "/html/projeto.html"
     }
     else{
-      Desafio.setCurrentAtividade(title)
+      Desafio.setCurrentDesafio(title)
       location.href = "/html/desafio.html"
     }
   })
