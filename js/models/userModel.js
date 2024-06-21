@@ -103,6 +103,13 @@ export function checkIfActivityIsSaved(loggedUser,atividadeTitle){
   }
 }
 
+export function updateSeenNotifications(loggedUser,notificationTitle){
+  let user = users.find((user) => user.name === loggedUser.name)
+  user.seenNotifications.push(notificationTitle)
+  localStorage.setItem("users", JSON.stringify(users))
+  sessionStorage.setItem("loggedUser", JSON.stringify(user))
+}
+
 class User{
 
   avatar = "/img/DefaultAvatar.svg"

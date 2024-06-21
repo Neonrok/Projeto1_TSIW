@@ -45,7 +45,18 @@ export function getCurrentProjeto(){
   return projetos.find((projeto) => projeto.title === localStorage.getItem("projeto"))
 }
 
+export function getProjetoByTitle(title){
+  return projetos.find((projeto) => projeto.title === title)
+}
+
+export function getCurrentDate(){
+  return new Date().toJSON().slice(0, 10)
+}
+
 export class Projeto{
+
+  addedDate = getCurrentDate()
+
   constructor(title,images,author,description){
     this.title = title
     this.images = images
