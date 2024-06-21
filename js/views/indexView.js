@@ -4,6 +4,8 @@ import { createSlider } from "/js/views/projetoSliderView.js"
 
 const atividadesContainer = document.getElementById("atividadesContainer")
 const projetosContainer = document.getElementById("projetosContainer")
+const heroVideo = document.getElementById("heroVideo")
+let isVideoPlaying = false
 
 function renderAtividades(){
   Atividade.init()
@@ -74,6 +76,17 @@ function generateCard(projeto){
 
   return projetoCard
 }
+
+heroVideo.addEventListener("click",()=>{
+  if(isVideoPlaying){
+    heroVideo.pause()
+    isVideoPlaying = false
+  }
+  else{
+    heroVideo.play()
+    isVideoPlaying = true
+  }
+})
 
 renderProjetos()
 renderAtividades()

@@ -34,7 +34,7 @@ function createHeader(){
                 <li><a href="" class="hover-underline-animation text-16 text-medium">Sobre</a></li>
             </ul>
             <div class="flex gap-24 items-center">
-              <a href="/html/notificacoes.html"><img src="/img/NotificationIcon.svg" width="16px" height="18px"></a>
+              <a href="/html/notifications.html"><img src="/img/NotificationIcon.svg" width="16px" height="18px"></a>
               <a href="/html/conta.html"><img class="header-avatar" src=${loggedUser.avatar} width="36px" height="36px"></a>
             </div>
             <a href="/index.html" class="button" id="headerButtonLogOut" role="button">Log out</a>

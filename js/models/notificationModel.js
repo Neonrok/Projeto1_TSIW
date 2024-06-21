@@ -1,4 +1,4 @@
-notifications = []
+let notifications = []
 
 export function init() {
   if (localStorage.notifications) {
@@ -14,13 +14,13 @@ export function init() {
   }
 }
 
-export function addNotification(title,type,addedDate){
+export function addNotification(title,type){
   if(notifications.some((notification) => notification.title === title)){
     throw Error(`Notificação com o título ${title} já existe`)
   }
   else{
-    notifications.push(new Notification(title,type,addedDate))
-    localStorage.setItem("atividades", JSON.stringify(atividades))
+    notifications.push(new Notification(title,type))
+    localStorage.setItem("notifications", JSON.stringify(notifications))
   }
 }
 

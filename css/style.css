@@ -261,6 +261,10 @@ button{
   display: grid;
 }
 
+.d-none{
+  display: none;
+}
+
 /*header*/
 
 .header{
