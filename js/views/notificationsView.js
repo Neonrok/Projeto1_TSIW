@@ -27,8 +27,8 @@ function renderAtividadesNotifications(type){
 
   for(let atividade of atividades){
 
-    if(){
-
+    if(seenNotifications.some((notification) => notification === atividade.title)){
+      continue
     }
 
     let dateDiffDays = datediff(atividade.date)

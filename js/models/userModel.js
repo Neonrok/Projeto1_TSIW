@@ -110,8 +110,6 @@ export function updateSeenNotifications(loggedUser,notificationTitle){
   sessionStorage.setItem("loggedUser", JSON.stringify(user))
 }
 
-export function checkIfNotificationHasBeenSeen(){}
-
 class User{
 
   avatar = "/img/DefaultAvatar.svg"
