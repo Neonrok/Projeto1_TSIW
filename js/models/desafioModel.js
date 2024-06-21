@@ -33,7 +33,18 @@ export function getCurrentDesafio(){
   return desafios.find((desafio) => desafio.title === localStorage.getItem("desafio"))
 }
 
+export function getDesafioByTitle(title){
+  return desafios.find((desafio) => desafio.title === title)
+}
+
+export function getCurrentDate(){
+  return new Date().toJSON().slice(0, 10)
+}
+
 export class Desafio{
+
+  addedDate = getCurrentDate()
+
   constructor(title,image,questions,options,answers){
     this.title = title
     this.image = image

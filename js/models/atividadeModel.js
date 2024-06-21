@@ -48,7 +48,14 @@ export function getSavedActivity(savedActivity){
   return atividades.find((atividade) => atividade.title === savedActivity)
 }
 
+export function getCurrentDate(){
+  return new Date().toJSON().slice(0, 10)
+}
+
 export class Atividade{
+
+  addedDate = getCurrentDate()
+
   constructor(title,image,date,description){
     this.title = title
     this.image = image
