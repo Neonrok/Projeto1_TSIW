@@ -8,12 +8,20 @@
 </head>
 <body>
   <div id="mainContainer" class="flex direction-column gap-128">
-    <div class="flex direction-column gap-32 px-container notifications-container">
-      <div class="flex space-between">
+    <div class="flex direction-column gap-32 px-container notifications-container container mx-auto">
+      <div class="flex space-between items-center">
         <h2 class="text-center">Notificações</h2>
         <button class="button" id="button-limpar">Limpar</button>
       </div>
-      <div id="notificationsContainer" class="flex direction-column gap-32"></div>
+      <div id="notificationsContainer" class="flex direction-column gap-32">
+        <div class="flex items-center notification">
+          <img class="notification-img" src="/img/DESAFIO IMG.svg" alt="">
+          <div class="flex direction-column gap-4">
+            <p class="text-20 text-medium">Desafio de HTML</p>
+            <p class="text-18 text-regular text-mainGrey">Novo desafio adicionado</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <script type="module" src="/js/views/headerView.js"></script>
