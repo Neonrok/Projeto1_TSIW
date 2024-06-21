@@ -10,6 +10,7 @@ Desafio.init()
 
 let loggedUser = User.getUserLogged()
 let activeNotifications = loggedUser.activeNotifications
+let seenNotifications = loggedUser.seenNotifications
 
 const notificationsContainer = document.getElementById("notificationsContainer")
 
@@ -26,6 +27,10 @@ function renderAtividadesNotifications(type){
 
   for(let atividade of atividades){
 
+    if(){
+
+    }
+
     let dateDiffDays = datediff(atividade.date)
     console.log(dateDiffDays)
 
@@ -40,7 +45,7 @@ function renderAtividadesNotifications(type){
       else{
         description = `Atividade a realizar-se em ${dateDiffDays+1} dias`
       }
-      generateCard(atividade.title,description,atividade.image,"atividade",type)
+      generateCard(atividade.title,description,atividade.image,type)
     }
 
     dateDiffDays = datediff(atividade.addedDate)
@@ -83,6 +88,7 @@ function generateCard(title,description,image,type){
   notificationContainer.append(notificationImg,notificationTextContainer)
 
   notificationContainer.addEventListener("click",()=>{
+    User.updateSeenNotifications(loggedUser,title)
     if(type == "Próximas atividades" || type == "Atividades"){
       Atividade.setCurrentAtividade(title)
       location.href = "/html/atividade.html"
@@ -98,9 +104,6 @@ function generateCard(title,description,image,type){
   })
   
   notificationsContainer.append(notificationContainer)
-}
-
-function checkIfNotificationHasBeenSeen(){
 }
 
 function datediff(date) { 
