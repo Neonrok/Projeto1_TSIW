@@ -19,6 +19,12 @@ function renderNotifications(){
     if(notificationType == "Atividades" || notificationType == "Próximas atividades"){
       renderAtividadesNotifications(notificationType)
     }
+    else if(notificationType == "Projetos"){
+      renderProjetosNotifications(notificationType)
+    }
+    else{
+      renderDesafiosNotifications(notificationType)
+    }
   }
 }
 
@@ -53,6 +59,42 @@ function renderAtividadesNotifications(type){
     if(type == "Atividades" && dateDiffDays >=-2){
       let description = "Nova atividade adicionada"
       generateCard(atividade.title,description,atividade.image,type)
+    }
+  }
+}
+
+function renderProjetosNotifications(type){
+  let projetos = Projeto.getProjetos()
+
+  for(let projeto of projetos){
+
+    if(seenNotifications.some((notification) => notification === projeto.title)){
+      continue
+    }
+
+    let dateDiffDays = datediff(projeto.addedDate)
+
+    if(dateDiffDays >=-2){
+      let description = "Novo projeto adicionado"
+      generateCard(projeto.title,description,projeto.images[0],type)
+    }
+  }
+}
+
+function renderDesafiosNotifications(type){
+  let desafios = Desafio.getDesafios()
+
+  for(let desafio of desafios){
+
+    if(seenNotifications.some((notification) => notification === desafio.title)){
+      continue
+    }
+
+    let dateDiffDays = datediff(desafio.addedDate)
+
+    if(dateDiffDays >=-2){
+      let description = "Novo desafio adicionado"
+      generateCard(desafio.title,description,desafio.image,type)
     }
   }
 }
