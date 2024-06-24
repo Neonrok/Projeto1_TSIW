@@ -40,6 +40,9 @@ const eliminarContaButton = document.getElementById("eliminarContaButton")
 //saved activities container
 const atividadesGuardContainer = document.getElementById("atividadesGuardContainer")
 
+//personalize notifications
+const notifChoices = document.getElementsByClassName("notif-Choice")
+
 //functions
 
 function reader(file, callback) {
@@ -47,6 +50,20 @@ function reader(file, callback) {
   fr.onload = () => callback(null, fr.result)
   fr.onerror = (err) => callback(err)
   fr.readAsDataURL(file)
+}
+
+function initNotificationsState(){
+  let activeNotifications = loggedUser.activeNotifications
+
+  for(let notif of activeNotifications){
+    for(let notifChoice of notifChoices){
+      if(notif == notifChoice.innerText){
+        notifChoice.dataset.state = "active"
+        notifChoice.classList.add("active")
+      } 
+    }
+  }
+
 }
 
 
@@ -122,6 +139,7 @@ atividadesGuardNavbutton.addEventListener("click", ()=>{
 notifNavbutton.addEventListener("click", ()=>{
   activateSectionSelection(notifNavbutton)
   notifSection.classList.remove("d-none")
+  initNotificationsState()
 })
 
 eliminarContaNavbutton.addEventListener("click", ()=>{
@@ -162,3 +180,23 @@ eliminarContaButton.addEventListener("click", ()=>{
     console.log(e.message)
   }
 })
+
+for(let notifChoice of notifChoices){
+  notifChoice.addEventListener("click",()=>{
+    if(notifChoice.dataset.state == "active"){
+      User.removeActiveNotification(loggedUser,notifChoice.innerText)
+      notifChoice.dataset.state = "inactive"
+      notifChoice.classList.remove("active")
+      User.init()
+      loggedUser = User.getUserLogged()
+
+    }
+    else{
+      User.addActiveNotification(loggedUser,notifChoice.innerText)
+      notifChoice.dataset.state = "active"
+      notifChoice.classList.add("active")
+      User.init()
+      loggedUser = User.getUserLogged()
+    }
+  })
+}

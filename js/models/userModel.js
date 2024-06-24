@@ -110,6 +110,20 @@ export function updateSeenNotifications(loggedUser,notificationTitle){
   sessionStorage.setItem("loggedUser", JSON.stringify(user))
 }
 
+export function addActiveNotification(loggedUser,title){
+  let user = users.find((user) => user.name === loggedUser.name)
+  user.activeNotifications.push(title)
+  localStorage.setItem("users", JSON.stringify(users))
+  sessionStorage.setItem("loggedUser", JSON.stringify(user))
+}
+
+export function removeActiveNotification(loggedUser,title){
+  let user = users.find((user) => user.name === loggedUser.name)
+  user.activeNotifications = user.activeNotifications.filter((notification) => notification !== title)
+  localStorage.setItem("users", JSON.stringify(users))
+  sessionStorage.setItem("loggedUser", JSON.stringify(user))
+}
+
 class User{
 
   avatar = "/img/DefaultAvatar.svg"
@@ -117,7 +131,7 @@ class User{
   activeNotifications = ["Atividades","Projetos","Próximas atividades","Desafios"]
   seenNotifications = []
 
-  constructor(name,password,avatar){
+  constructor(name,password){
     this.name = name
     this.password = password
   }
