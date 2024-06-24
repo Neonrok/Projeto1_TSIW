@@ -12,6 +12,10 @@ input[type="file"] {
   cursor: pointer;
 }
 
+#eliminarContaSection{
+  height: fit-content;
+}
+
 .perfilContainer{
   background-color: var(--grey18);
   border: 1px solid var(--mainGrey);
@@ -93,4 +97,10 @@ input[type="file"] {
 
 .d-none{
   display: none;
+}
+
+@media (max-width: 592px) {
+  .conta-container{
+    flex-direction: column;
+  }
 }

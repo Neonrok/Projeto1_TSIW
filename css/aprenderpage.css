@@ -54,3 +54,9 @@
   filter: none;
   background-color: var(--grey20);
 }
+
+@media (max-width: 728px) {
+  .escapeRoom-container{
+    grid-template-columns: repeat(auto-fill, minmax(312px, 1fr));
+  }
+}

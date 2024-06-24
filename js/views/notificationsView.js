@@ -13,6 +13,7 @@ let activeNotifications = loggedUser.activeNotifications
 let seenNotifications = loggedUser.seenNotifications
 
 const notificationsContainer = document.getElementById("notificationsContainer")
+const buttonLimpar = document.getElementById("buttonLimpar")
 
 function renderNotifications(){
   for(let notificationType of activeNotifications){
@@ -38,7 +39,6 @@ function renderAtividadesNotifications(type){
     }
 
     let dateDiffDays = datediff(atividade.date)
-    console.log(dateDiffDays)
 
     if(type == "Próximas atividades" && dateDiffDays <=2 && dateDiffDays>-1){
       let description = ""
@@ -119,7 +119,7 @@ function generateCard(title,description,image,type){
   notificationTextContainer.className = "flex direction-column gap-4"
 
   const notificationTitle = document.createElement("p")
-  notificationTitle.className = "text-20 text-medium"
+  notificationTitle.className = "text-20 text-medium notificationTitles"
   notificationTitle.innerText = title
 
   const notificationDescription = document.createElement("p")
@@ -153,5 +153,15 @@ function datediff(date) {
   let convertedDate = new Date(date)            
   return Math.round((convertedDate - currentDate) / (1000 * 60 * 60 * 24))
 }
+
+buttonLimpar.addEventListener("click",()=>{
+  let notificationTitles = document.getElementsByClassName("notificationTitles")
+
+  for(let title of notificationTitles){
+    User.updateSeenNotifications(loggedUser,title.innerText)
+  }
+
+  notificationsContainer.innerHTML = ""
+})
 
 renderNotifications()

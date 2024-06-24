@@ -25,6 +25,7 @@ const changeNameInput = document.getElementById("changeNameInput")
 const guardarPerfilButton = document.getElementById("guardarPerfilButton")
 
 avatarInputLabel.style.backgroundImage = `url(${loggedUser.avatar})`
+avatarInputLabel.style.backgroundSize = "cover"
 changeNameInput.value = loggedUser.name
 
 //inputs and button password section
@@ -130,10 +131,16 @@ eliminarContaNavbutton.addEventListener("click", ()=>{
 
 guardarPerfilButton.addEventListener("click", ()=>{
   loggedUser = User.getUserLogged()
-  reader(avatarInput.files[0], (err, res) => {
-    User.changePerfil(loggedUser,res,changeNameInput.value)
+  if(avatarInput.files.length === 0){
+    User.changePerfil(loggedUser,loggedUser.avatar,changeNameInput.value)
     location.reload()
-  })
+  }
+  else{
+    reader(avatarInput.files[0], (err, res) => {
+      User.changePerfil(loggedUser,res,changeNameInput.value)
+      location.reload()
+    })
+  }
 })
 
 guardarPassButton.addEventListener("click", ()=>{

@@ -113,9 +113,10 @@
 
 .video-mask{
   max-width: 625px;
+  width: 100%;
   height: 500px;
   object-fit: cover;
-  mask: url(/img/videoMaskShape.svg);
+  mask: url(/img/videoMaskShape.svg) 0 0/100% 100%;
   mask-repeat: no-repeat;
 }
 
@@ -150,3 +151,54 @@
   mask-position: -70px 35px;
 }
 
+@media (max-width: 1184px) {
+  .hero-container{
+    flex-direction: column;
+    gap: 96px;
+  }
+
+  .heroText-container{
+    align-self: flex-start;
+  }
+
+  .max-w-653{
+    max-width: 100%;
+  }
+
+  .aprender-videoSection{
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  .video-mask{
+    max-width: 100%;
+    object-fit: fill;
+    mask-size: cover;
+  }
+
+  .aprender-textSection{
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1378px) {
+  .video-mask{
+    height: auto;
+  }
+}
+
+@media (max-width: 787px) {
+  .video-mask{
+    height: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-shape{
+    display: none;
+  }
+
+  .button-big{
+    font-size: 1.25rem;
+  }
+}

@@ -42,3 +42,12 @@
 .projeto-card:hover .projeto-slider .slider-buttons{
   opacity: 1;
 }
+
+@media (max-width: 728px) {
+  .projetos-container{
+    grid-template-columns: repeat(auto-fill, minmax(312px, 1fr));
+  }
+  .slider-buttons{
+    opacity: 1;
+  }
+}
