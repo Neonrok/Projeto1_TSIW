@@ -11,6 +11,10 @@
   cursor: url("/img/PlayButton.svg"),auto;
 }
 
+.hero-video[poster]{ 
+  object-fit: cover;
+}
+
 .custom-cursor p{
   font-family: ClashDisplay-Medium;
   font-size: 1rem;
@@ -108,10 +112,11 @@
 }
 
 .video-mask{
-  width: 625px;
+  max-width: 625px;
   height: 500px;
   object-fit: cover;
   mask: url(/img/videoMaskShape.svg);
+  mask-repeat: no-repeat;
 }
 
 .max-w-653{
@@ -144,3 +149,4 @@
   transition: linear 0.5s;
   mask-position: -70px 35px;
 }
+

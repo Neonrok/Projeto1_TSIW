@@ -4,6 +4,29 @@
   grid-template-columns: repeat(auto-fill, minmax(312px, 1fr));
 }
 
+.escapeRoom-container{
+  grid-template-columns: repeat(auto-fill, minmax(656px, 1fr));
+}
+
+.escapeRoom-card{
+  padding: 24px;
+  background-color: var(--mainBlack);
+  border: 1px solid var(--grey20);
+  border-radius: 16px;
+  filter: drop-shadow(8px 8px var(--grey20));
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.escapeRoom-card:hover{
+  filter: none;
+  background-color: var(--grey20);
+}
+
+.escapeRoom-title{
+  font-family: ClashDisplay-Medium;
+}
+
 .desafio-card{
   padding: 1.5rem;
   background-color: var(--mainBlack);
