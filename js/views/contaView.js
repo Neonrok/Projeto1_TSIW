@@ -42,6 +42,7 @@ const atividadesGuardContainer = document.getElementById("atividadesGuardContain
 
 //personalize notifications
 const notifChoices = document.getElementsByClassName("notif-Choice")
+const desativarNotifButton = document.getElementById("desativarNotifButton")
 
 //functions
 
@@ -53,6 +54,7 @@ function reader(file, callback) {
 }
 
 function initNotificationsState(){
+  const notifChoices = document.getElementsByClassName("notif-Choice")
   let activeNotifications = loggedUser.activeNotifications
 
   for(let notif of activeNotifications){
@@ -60,7 +62,7 @@ function initNotificationsState(){
       if(notif == notifChoice.innerText){
         notifChoice.dataset.state = "active"
         notifChoice.classList.add("active")
-      } 
+      }
     }
   }
 
@@ -189,7 +191,6 @@ for(let notifChoice of notifChoices){
       notifChoice.classList.remove("active")
       User.init()
       loggedUser = User.getUserLogged()
-
     }
     else{
       User.addActiveNotification(loggedUser,notifChoice.innerText)
@@ -200,3 +201,28 @@ for(let notifChoice of notifChoices){
     }
   })
 }
+
+desativarNotifButton.addEventListener("click",()=>{
+  if(desativarNotifButton.dataset.state == "desativar"){
+    User.removeAllActiveNotification(loggedUser)
+    desativarNotifButton.dataset.state = "ativar"
+    desativarNotifButton.innerText = "Ativar"
+    User.init()
+    loggedUser = User.getUserLogged()
+    for(let notifChoice of notifChoices){
+        notifChoice.dataset.state = "inactive"
+        notifChoice.classList.remove("active")
+    }
+  }
+  else{
+    User.activateAllActiveNotification(loggedUser)
+    desativarNotifButton.dataset.state = "desativar"
+    desativarNotifButton.innerText = "Desativar"
+    User.init()
+    loggedUser = User.getUserLogged()
+    for(let notifChoice of notifChoices){
+      notifChoice.dataset.state = "active"
+      notifChoice.classList.add("active")
+  }
+  }
+})

@@ -139,18 +139,20 @@ const sideNavBar = document.getElementById("sideNavBar")
 const headerButtonLogOut = document.getElementById("headerButtonLogOut")
 const sideNavButtonLogOut = document.getElementById("sideNavButtonLogOut")
 
+if(User.isLogged()){
+  headerButtonLogOut.addEventListener("click", () =>{
+    User.logout()
+  })
+  
+  sideNavButtonLogOut.addEventListener("click", () =>{
+    User.logout()
+  })
+}
+
 buttonHamburger.addEventListener("click", () =>{
   sideNavBar.classList.add("side-nav-active")
 })
 
 buttonSideNavClose.addEventListener("click", () =>{
   sideNavBar.classList.remove("side-nav-active")
-})
-
-headerButtonLogOut.addEventListener("click", () =>{
-  User.logout()
-})
-
-sideNavButtonLogOut.addEventListener("click", () =>{
-  User.logout()
 })

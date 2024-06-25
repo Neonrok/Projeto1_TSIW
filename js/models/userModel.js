@@ -124,6 +124,20 @@ export function removeActiveNotification(loggedUser,title){
   sessionStorage.setItem("loggedUser", JSON.stringify(user))
 }
 
+export function removeAllActiveNotification(loggedUser){
+  let user = users.find((user) => user.name === loggedUser.name)
+  user.activeNotifications = []
+  localStorage.setItem("users", JSON.stringify(users))
+  sessionStorage.setItem("loggedUser", JSON.stringify(user))
+}
+
+export function activateAllActiveNotification(loggedUser){
+  let user = users.find((user) => user.name === loggedUser.name)
+  user.activeNotifications = ["Atividades","Projetos","Próximas atividades","Desafios"]
+  localStorage.setItem("users", JSON.stringify(users))
+  sessionStorage.setItem("loggedUser", JSON.stringify(user))
+}
+
 class User{
 
   avatar = "/img/DefaultAvatar.svg"
