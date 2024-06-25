@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root{
   --mainBlack: #171717;
   --mainWhite: #EDEDED;
@@ -12,8 +14,6 @@
   --mainPurple: #9CA6FC;
   --lightPurple: #D6D9F3;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 /**
 * @license
