@@ -8,6 +8,7 @@ const inputNumPerguntas = document.getElementById("inputNumPerguntas")
 const inputFile = document.getElementById("inputFile")
 const desafioForm = document.getElementById("desafioForm")
 const perguntasContainer = document.getElementById("perguntasContainer")
+const desafiosContainer = document.getElementById("desafiosContainer")
 
 //functions
 function reader(file, callback) {
@@ -111,8 +112,43 @@ inputNumPerguntas.addEventListener("change",()=>{
   perguntasContainer.innerHTML = result
 })
 
+function renderDesafios(){
+  let desafios = Desafio.getDesafios()
+
+  for(let desafio of desafios){
+    desafiosContainer.append(generateCard(desafio))
+  }
+}
+
+function generateCard(desafio){
+  let desafioCard = document.createElement("div")
+  desafioCard.className = "flex direction-column gap-16 desafio-card"
+
+  let desafioImg = document.createElement("img")
+  desafioImg.className = "desafio-img"
+  desafioImg.src = desafio.image
+
+  let desafioTitle = document.createElement("p")
+  desafioTitle.className = "desafio-title"
+  desafioTitle.innerText = desafio.title
+  
+  let removeButton = document.createElement("button")
+  removeButton.innerText = "Eliminar"
+  removeButton.className = "button"
+  removeButton.addEventListener("click",()=>{
+    Desafio.removeDesafio(desafio.title)
+    location.reload()
+  })
+
+  desafioCard.append(desafioImg,desafioTitle,removeButton)
+
+  return desafioCard
+}
+
 desafioForm.addEventListener('submit', (event) => {
   event.preventDefault()
   addDesafio()
   desafioForm.reset()
 })
+
+renderDesafios()

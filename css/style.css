@@ -76,7 +76,7 @@ body{
 
 h1{
   font-family: ClashDisplay-Semibold;
-  font-size: clamp(1.875rem,9.23078vw,3.75rem);
+  font-size: clamp(1.875rem,8vw,3.75rem);
 }
 
 h2{
@@ -373,7 +373,7 @@ footer{
   }
 }
 
-@media (max-width: 810px) {
+@media (max-width: 950px) {
   .header-links {
     display: none;
   }
@@ -383,8 +383,27 @@ footer{
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   #headerButtonRegisto, #headerButtonLogOut{
+    display: none;
+  }
+  .footer-navContainer{
+    flex-direction: column;
+  }
+
+  .footer-nav{
+    border: none;
+  }
+}
+
+@media (max-width: 930px) {
+  .footer-container{
+    padding-left: clamp(1rem, 5vw, 3rem);
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-slogan{
     display: none;
   }
 }

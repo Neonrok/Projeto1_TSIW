@@ -10,7 +10,7 @@ function createFooter(){
             <p class="footer-slogan">Começa Aqui</p>
           </div>
         </div>
-        <div class="flex gap-64">
+        <div class="flex gap-64 footer-navContainer">
           <div class="flex direction-column gap-24 footer-nav">
             <p class="text-18 text-medium text-mainGrey">Navegação</p>
             <ul class="flex direction-column gap-24">

@@ -9,7 +9,7 @@
 </head>
 <body>
   <div id="mainContainer" class="flex direction-column gap-128">
-    <div class="flex gap-24 px-container container mx-auto">
+    <div class="flex gap-24 px-container container mx-auto conta-container">
       <div class="flex direction-column gap-8">
         <p class="text-18 text-medium contaNavItem container text-mainGrey active" id="perfilNavbutton">Perfil</p>
         <p class="text-18 text-medium contaNavItem container text-mainGrey" id="passwordNavbutton">Password</p>
@@ -69,15 +69,15 @@
             <div class="flex direction-column gap-8">
               <label for="Password atual" class="text-18 text-medium">Personalizar notificações</label>
               <div class="flex notif-ChoicesContainer">
-                <div class="text-16 text-mainGrey text-regular notif-Choice" id="atividadesChoice">Atividades</div>
-                <div class="text-16 text-mainGrey text-regular notif-Choice" id="projetosChoice">Projetos</div>
-                <div class="text-16 text-mainGrey text-regular notif-Choice" id="proxAtividadesChoice">Próximas atividades</div>
-                <div class="text-16 text-mainGrey text-regular notif-Choice" id="desafiosChoice">Desafios</div>
+                <div class="text-16 text-mainGrey text-regular notif-Choice" data-state="inactive" id="atividadesChoice">Atividades</div>
+                <div class="text-16 text-mainGrey text-regular notif-Choice" data-state="inactive" id="projetosChoice">Projetos</div>
+                <div class="text-16 text-mainGrey text-regular notif-Choice" data-state="inactive atividades" id="proxAtividadesChoice">Próximas atividades</div>
+                <div class="text-16 text-mainGrey text-regular notif-Choice" data-state="inactive" id="desafiosChoice">Desafios</div>
               </div>
             </div>
           </div>
           <div class="flex perfilButton-container">
-            <button class="button" id="desativarNotifButton">Desativar</button>
+            <button class="button" id="desativarNotifButton" data-state="desativar">Desativar</button>
           </div>
         </div>
       </div>

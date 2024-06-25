@@ -13,11 +13,18 @@ let activeNotifications = loggedUser.activeNotifications
 let seenNotifications = loggedUser.seenNotifications
 
 const notificationsContainer = document.getElementById("notificationsContainer")
+const buttonLimpar = document.getElementById("buttonLimpar")
 
 function renderNotifications(){
   for(let notificationType of activeNotifications){
     if(notificationType == "Atividades" || notificationType == "Próximas atividades"){
       renderAtividadesNotifications(notificationType)
+    }
+    else if(notificationType == "Projetos"){
+      renderProjetosNotifications(notificationType)
+    }
+    else{
+      renderDesafiosNotifications(notificationType)
     }
   }
 }
@@ -32,7 +39,6 @@ function renderAtividadesNotifications(type){
     }
 
     let dateDiffDays = datediff(atividade.date)
-    console.log(dateDiffDays)
 
     if(type == "Próximas atividades" && dateDiffDays <=2 && dateDiffDays>-1){
       let description = ""
@@ -57,6 +63,42 @@ function renderAtividadesNotifications(type){
   }
 }
 
+function renderProjetosNotifications(type){
+  let projetos = Projeto.getProjetos()
+
+  for(let projeto of projetos){
+
+    if(seenNotifications.some((notification) => notification === projeto.title)){
+      continue
+    }
+
+    let dateDiffDays = datediff(projeto.addedDate)
+
+    if(dateDiffDays >=-2){
+      let description = "Novo projeto adicionado"
+      generateCard(projeto.title,description,projeto.images[0],type)
+    }
+  }
+}
+
+function renderDesafiosNotifications(type){
+  let desafios = Desafio.getDesafios()
+
+  for(let desafio of desafios){
+
+    if(seenNotifications.some((notification) => notification === desafio.title)){
+      continue
+    }
+
+    let dateDiffDays = datediff(desafio.addedDate)
+
+    if(dateDiffDays >=-2){
+      let description = "Novo desafio adicionado"
+      generateCard(desafio.title,description,desafio.image,type)
+    }
+  }
+}
+
 function generateCard(title,description,image,type){
   `        <div class="flex items-center notification">
           <img class="notification-img" src="/img/DESAFIO IMG.svg" alt="">
@@ -77,7 +119,7 @@ function generateCard(title,description,image,type){
   notificationTextContainer.className = "flex direction-column gap-4"
 
   const notificationTitle = document.createElement("p")
-  notificationTitle.className = "text-20 text-medium"
+  notificationTitle.className = "text-20 text-medium notificationTitles"
   notificationTitle.innerText = title
 
   const notificationDescription = document.createElement("p")
@@ -111,5 +153,15 @@ function datediff(date) {
   let convertedDate = new Date(date)            
   return Math.round((convertedDate - currentDate) / (1000 * 60 * 60 * 24))
 }
+
+buttonLimpar.addEventListener("click",()=>{
+  let notificationTitles = document.getElementsByClassName("notificationTitles")
+
+  for(let title of notificationTitles){
+    User.updateSeenNotifications(loggedUser,title.innerText)
+  }
+
+  notificationsContainer.innerHTML = ""
+})
 
 renderNotifications()

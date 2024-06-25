@@ -8,9 +8,26 @@
 </head>
 <body>
   <div id="mainContainer" class="flex direction-column gap-128">
-    <div class="flex direction-column gap-32 px-container mx-auto container">
-      <h1>Desafios</h1>
-      <div id="desafiosContainer" class="grid gap-32 desafios-container"></div>
+    <div class="flex direction-column gap-64">
+      <div class="flex direction-column gap-32 px-container mx-auto container">
+        <h1>Escape Room</h1>
+        <div class="grid gap-32 escapeRoom-container">
+          <a class="" href="/html/escape_room.html">
+            <div class="flex direction-column gap-24 escapeRoom-card">
+              <img src="/img/escapeRoomImg.png" alt="">
+              <div class="flex direction-column gap-8">
+                <p class="text-30 escapeRoom-title">Escape Room de Programação</p>
+                <p class="text-24 text-regular text-mainGrey">Explora o Escape Room de Programação, interage com os objetos e testa o teu conhecimento de programação ao resolver desafios</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="flex direction-column gap-32 px-container mx-auto container">
+        <h1>Desafios</h1>
+        <div id="desafiosContainer" class="grid gap-32 desafios-container"></div>
+      </div>
+    </div>
   </div>
   <script type="module" src="/js/views/headerView.js"></script>
   <script type="module" src="/js/views/aprenderView.js"></script>
